@@ -1,0 +1,214 @@
+import 'dart:convert';
+import 'dart:io';
+
+import 'package:crypto/crypto.dart';
+import 'package:flutter/services.dart';
+import 'package:path/path.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:nunu/main.dart';
+import 'package:nunu/utils/logger.dart';
+
+final macPkg = Platform.isMacOS && appFlavor == 'pkg';
+
+/// dir to hold geosite, geoip, wintun.dll, unix socket
+Future<Directory> resourceDir() async {
+  if (Platform.isWindows || Platform.isAndroid || Platform.isLinux) {
+    return await getApplicationSupportDirectory();
+  }
+
+  if (Platform.isMacOS || Platform.isIOS) {
+    final appGroupPath = await darwinHostApi!.appGroupPath();
+    final dir = Directory(join(appGroupPath, "Library", "Application Support"));
+    if (!dir.existsSync()) {
+      dir.createSync(recursive: true);
+    }
+    return dir;
+  }
+
+  throw UnimplementedError("Unsupported platform");
+}
+
+Directory getFlutterLogDir() {
+  final dir = Directory(join(resourceDirectory.path, "flutter_logs"));
+  if (!dir.existsSync()) {
+    dir.createSync(recursive: true);
+  }
+  return dir;
+}
+
+Directory getTunnelLogDir() {
+  final dir = Directory(join(resourceDirectory.path, "tunnel_logs"));
+  if (!dir.existsSync()) {
+    dir.createSync(recursive: true);
+  }
+  return dir;
+}
+
+Future<Directory> getDebugLogDir() async {
+  final dir = Directory(join((await resourceDir()).path, "debug_logs"));
+  if (!dir.existsSync()) {
+    dir.createSync(recursive: true);
+  }
+  return dir;
+}
+
+/// logs
+Future<String> getCacheDir() async {
+  if (Platform.isMacOS || Platform.isIOS) {
+    final appGroupPath = await darwinHostApi!.appGroupPath();
+    final dir = Directory(join(appGroupPath, "Library", "Caches"));
+    if (!dir.existsSync()) {
+      dir.createSync(recursive: true);
+    }
+    return dir.path;
+  }
+  // if (Platform.isIOS) {
+  //   final appGroupPath = await platformHostApi.appGroupPath();
+  //   return appGroupPath;
+  // }
+  if (Platform.isWindows || Platform.isAndroid || Platform.isLinux) {
+    return (await getApplicationCacheDirectory()).path;
+  }
+  throw UnimplementedError("Unsupported platform");
+}
+
+Future<String> getGeositePath() async {
+  String path;
+  final geositeFile = File(join((await resourceDir()).path, 'geosite.dat'));
+  path = geositeFile.path;
+  return path;
+}
+
+Future<String> getSimplifiedGeositePath() async {
+  String path;
+  final geositeFile = File(
+    join((await resourceDir()).path, 'geosite_simplified.dat'),
+  );
+  path = geositeFile.path;
+  return path;
+}
+
+Future<String> getGeoIPPath() async {
+  String path;
+  final geoIPFile = File(join((resourceDirectory).path, 'geoip.dat'));
+  path = geoIPFile.path;
+  return path;
+}
+
+Future<String> getCnPackageIdFilePath() async {
+  return join((resourceDirectory).path, 'cn_package_id.txt');
+}
+
+Future<String> getSimplifiedGeoIPPath() async {
+  String path;
+  final geoIPFile = File(
+    join((resourceDirectory).path, 'geoip_simplified.dat'),
+  );
+  path = geoIPFile.path;
+  return path;
+}
+
+Future<String> getFallbackDomainPath() async {
+  return join((resourceDirectory).path, 'fallback_domain.list');
+}
+
+Future<String> getWintunDir() async {
+  return join((await resourceDir()).path, 'wintun', 'bin');
+}
+
+Future<String> configFilePath() async {
+  return join((await resourceDir()).path, 'config');
+}
+
+String getDllPath() {
+  // if (kReleaseMode) {
+  final String localLibPath = join(
+    'data',
+    'flutter_assets',
+    'packages',
+    'tm_windows',
+    'assets',
+    'x.dll',
+  );
+  String pathToLib = join(
+    Directory(Platform.resolvedExecutable).parent.path,
+    localLibPath,
+  );
+  return pathToLib;
+  // } else {
+  // return join(Directory.current.parent.path, 'nunu-plugin', 'tm_windows',
+  // 'assets', 'x.dll');
+  // }
+}
+
+String getSoPath() {
+  final String localLibPath = join(
+    'data',
+    'flutter_assets',
+    'packages',
+    'tm_linux',
+    'assets',
+    'x.so',
+  );
+  String pathToLib = join(
+    Directory(Platform.resolvedExecutable).parent.path,
+    localLibPath,
+  );
+  return pathToLib;
+}
+
+Future<Directory> getClashRulesDir() async {
+  final dir = Directory(join((await resourceDir()).path, 'clash_rules'));
+  if (!dir.existsSync()) {
+    dir.createSync(recursive: true);
+  }
+  return dir;
+}
+
+Future<String> getClashRulesPath(String url, {bool isPkg = false}) async {
+  final dir = isPkg ? Directory('/tmp/com.nunu/geo') : await getClashRulesDir();
+  if (!dir.existsSync()) {
+    dir.createSync(recursive: true);
+  }
+  // hash the url
+  final hash = sha256.convert(utf8.encode(url)).toString();
+  return join(dir.path, hash);
+}
+
+String getServiceInstallExePath() {
+  final String localExePath = join(
+    'data',
+    'flutter_assets',
+    'packages',
+    'tm_windows',
+    'assets',
+    'service_install.exe',
+  );
+  String pathToExe = join(
+    Directory(Platform.resolvedExecutable).parent.path,
+    localExePath,
+  );
+  logger.d('pathToExe: $pathToExe');
+  return pathToExe;
+}
+
+String getServiceExePath() {
+  final String localExePath = join(
+    'data',
+    'flutter_assets',
+    'packages',
+    'tm_windows',
+    'assets',
+    'umi_service.exe',
+  );
+  String pathToExe = join(
+    Directory(Platform.resolvedExecutable).parent.path,
+    localExePath,
+  );
+  logger.d('pathToExe: $pathToExe');
+  return pathToExe;
+}
+
+String getServicePath() {
+  return join((resourceDirectory).path, 'umi_service.exe');
+}

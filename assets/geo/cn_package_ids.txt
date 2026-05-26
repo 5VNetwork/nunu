@@ -1,0 +1,279 @@
+# Application Stores (应用商店)
+# 腾讯应用宝
+PROCESS-NAME,com.tencent.android.qqdownloader
+# 360手机助手
+PROCESS-NAME,com.qihoo.appstore
+# 百度手机助手
+PROCESS-NAME,com.baidu.appsearch
+# 小米应用商店
+PROCESS-NAME,com.xiaomi.market
+# 华为应用商店
+PROCESS-NAME,com.huawei.appmarket
+# 魅族应用市场
+PROCESS-NAME,com.meizu.mstore
+# 91手机助手
+PROCESS-NAME,com.dragon.android.pandaspace
+# PP手机助手
+PROCESS-NAME,com.pp.assistant
+# OPPO应用商店
+PROCESS-NAME,com.oppo.market
+# VIVO应用商店
+PROCESS-NAME,com.bbk.appstore
+# 搜狗应用市场
+PROCESS-NAME,com.sogou.androidtool
+# 三星应用商店
+PROCESS-NAME,com.sec.android.app.samsungapps
+# 联想应用商店
+PROCESS-NAME,com.lenovo.leos.appstore
+# 中兴应用商店
+PROCESS-NAME,zte.com.market
+# 安智应用商店
+PROCESS-NAME,com.hiapk.marketpho
+# 应用汇
+PROCESS-NAME,com.yingyonghui.market
+
+# Social Apps (社交)
+# QQ
+PROCESS-NAME,com.tencent.mobileqq
+# QQ空间
+PROCESS-NAME,com.qzone
+# 微信
+PROCESS-NAME,com.tencent.mm
+# 探探
+PROCESS-NAME,com.p1.mobile.putong
+# 陌陌
+PROCESS-NAME,com.immomo.momo
+
+# Shopping Apps (购物)
+# 淘宝
+PROCESS-NAME,com.taobao.taobao
+# 手机淘宝
+PROCESS-NAME,com.taobao.taobao
+# 京东
+PROCESS-NAME,com.jingdong.app.mall
+# 拼多多
+PROCESS-NAME,com.xunmeng.pinduoduo
+# 美团
+PROCESS-NAME,com.sankuai.meituan
+# 苏宁易购
+PROCESS-NAME,com.suning.mobile.ebuy
+# 咸鱼
+PROCESS-NAME,com.taobao.idlefish
+# 每日优鲜
+PROCESS-NAME,cn.missfresh.application
+# 唯品会
+PROCESS-NAME,com.achievo.vipshop
+
+# Reading Apps (阅读)
+# QQ阅读
+PROCESS-NAME,com.qq.reader
+# 微信读书
+PROCESS-NAME,com.tencent.weread
+# 掌阅
+PROCESS-NAME,com.chaozh.iReaderFree
+
+# News Apps (新闻)
+# 今日头条
+PROCESS-NAME,com.ss.android.article.news
+# 今日头条极速版
+PROCESS-NAME,com.ss.android.article.lite
+# 新浪微博
+PROCESS-NAME,com.sina.weibo
+# 微博
+PROCESS-NAME,com.sina.weibo
+# 网易新闻
+PROCESS-NAME,com.netease.newsreader.activity
+# 搜狐新闻
+PROCESS-NAME,com.sohu.newsclient
+
+# Video Apps (视频)
+# 抖音短视频
+PROCESS-NAME,com.ss.android.ugc.aweme
+# 抖音极速版
+PROCESS-NAME,com.ss.android.ugc.aweme.lite
+# 快手
+PROCESS-NAME,com.smile.gifmaker
+# 火山小视频
+PROCESS-NAME,com.ss.android.ugc.live
+# 秒拍
+PROCESS-NAME,com.yixia.videoeditor
+# 优酷
+PROCESS-NAME,com.youku.phone
+# 爱奇艺
+PROCESS-NAME,com.qiyi.video
+# 腾讯视频
+PROCESS-NAME,com.tencent.qqlive
+# 斗鱼直播
+PROCESS-NAME,air.tv.douyu.android
+# 熊猫直播
+PROCESS-NAME,com.panda.videoliveplatform
+# 虎牙直播
+PROCESS-NAME,com.duowan.kiwi
+# 映客直播
+PROCESS-NAME,com.meelive.ingkee
+
+# Travel Apps (旅游)
+# 携程
+PROCESS-NAME,ctrip.android.view
+# 携程旅行
+PROCESS-NAME,ctrip.android.view
+# 去哪儿旅行
+PROCESS-NAME,com.Qunar
+# 飞猪
+PROCESS-NAME,com.taobao.trip
+# 艺龙旅行
+PROCESS-NAME,com.dp.android.elong
+# 途牛旅游
+PROCESS-NAME,com.tuniu.app.ui
+
+# Photo Apps (拍照)
+# 美图秀秀
+PROCESS-NAME,com.mt.mtxx.mtxx
+# 美颜相机
+PROCESS-NAME,com.meitu.meiyancamera
+# 美拍
+PROCESS-NAME,com.meitu.meipaimv
+
+# Finance Apps (金融)
+# 支付宝
+PROCESS-NAME,com.eg.android.AlipayGphone
+# 百度钱包
+PROCESS-NAME,com.baidu.wallet
+# 京东钱包
+PROCESS-NAME,com.wangyin.payment
+
+# Food Delivery Apps (美食)
+# 美团外卖
+PROCESS-NAME,com.sankuai.meituan.takeoutnew
+# 饿了么
+PROCESS-NAME,me.ele
+# 大众点评
+PROCESS-NAME,com.dianping.v1
+
+# Input Method Apps (输入法)
+# 讯飞输入法
+PROCESS-NAME,com.iflytek.inputmethod
+# 百度输入法
+PROCESS-NAME,com.baidu.input
+# 百度输入法华为版
+PROCESS-NAME,com.baidu.input_huawei
+# 搜狗输入法
+PROCESS-NAME,com.sohu.inputmethod.sogou
+
+# Map Apps (地图)
+# 百度地图
+PROCESS-NAME,com.baidu.BaiduMap
+# 高德地图
+PROCESS-NAME,com.autonavi.minimap
+
+# Transportation Apps (出行)
+# 摩拜单车
+PROCESS-NAME,com.mobike.mobikeapp
+# OFO单车
+PROCESS-NAME,so.ofo.labofo
+# 滴滴出行
+PROCESS-NAME,com.sdu.didi.psnger
+# 12306
+PROCESS-NAME,battymole.trainticket
+# 铁路12306
+PROCESS-NAME,com.MobileTicket
+# 航班管家
+PROCESS-NAME,com.flightmanager.view
+
+# Forum Apps (论坛)
+# 简书
+PROCESS-NAME,com.jianshu.haruki
+# 知乎
+PROCESS-NAME,com.zhihu.android
+# 得到
+PROCESS-NAME,com.luojilab.player
+# 百度贴吧
+PROCESS-NAME,com.baidu.tieba
+
+# Music Apps (音乐)
+# QQ音乐
+PROCESS-NAME,com.tencent.qqmusic
+# 酷狗
+PROCESS-NAME,com.kugou.android
+# 全民K歌
+PROCESS-NAME,com.tencent.karaoke
+# 酷我
+PROCESS-NAME,cn.kuwo.player
+# 虾米
+PROCESS-NAME,fm.xiami.main
+# 唱吧
+PROCESS-NAME,com.changba
+# 网易云音乐
+PROCESS-NAME,com.netease.cloudmusic
+# 喜马拉雅
+PROCESS-NAME,com.ximalaya.ting.android
+
+# Education & Learning (教育学习)
+# 学习强国
+PROCESS-NAME,cn.xuexi.android
+# 腾讯课堂
+PROCESS-NAME,com.tencent.edu
+
+# Business & Productivity (商务办公)
+# 钉钉
+PROCESS-NAME,com.alibaba.android.rimet
+# 菜鸟裹裹
+PROCESS-NAME,com.cainiao.wireless
+# BOSS直聘
+PROCESS-NAME,com.hpbr.bosszhipin
+
+# Real Estate (房产)
+# 安居客
+PROCESS-NAME,com.anjuke.android.app
+
+# Games (游戏)
+# 王者荣耀
+PROCESS-NAME,com.tencent.tmgp.sgame
+
+# Social Media & Lifestyle (社交生活)
+# 小红书
+PROCESS-NAME,com.xingin.xhs
+
+# Telecom (运营商)
+# 中国移动
+PROCESS-NAME,com.greenpoint.android.mc10086.activity
+# 手机营业厅(联通)
+PROCESS-NAME,com.sinovatech.unicom.ui
+
+# University Apps (大学应用)
+# 青春科大
+PROCESS-NAME,com.joinin.ustc1
+# 北师大人
+PROCESS-NAME,com.cidtech.beijingshifan
+# 掌上湖大
+PROCESS-NAME,com.chinacreator.hnu
+# i南昌大学
+PROCESS-NAME,com.ipowertec.incu
+# 南昌航空大学
+PROCESS-NAME,com.eteasun.nanhang
+# 你好苏大
+PROCESS-NAME,com.wisorg.szdx
+# i重大
+PROCESS-NAME,com.wisorg.cqdx
+# 北京大学
+PROCESS-NAME,cn.edu.pku.PKUAndroid
+# 清华大学校园通
+PROCESS-NAME,com.ideaqhdx.news
+# 武汉大学
+PROCESS-NAME,com.wisorg.whdx
+# 掌上川大
+PROCESS-NAME,com.cutt.zhiyue.android.app542735
+# 移动交通大学
+PROCESS-NAME,com.wisedu.xjtu
+# 上海交通大学
+PROCESS-NAME,com.appbyme.app19108
+# i大工
+PROCESS-NAME,cn.edu.dlut.ws
+# i复旦
+PROCESS-NAME,org.apache.cordova.exampleFudan
+# 合肥工大人
+PROCESS-NAME,com.cidtech.hefeigongye
+# 南京大学
+PROCESS-NAME,cn.edu.nju.iportal
+# 中山大学
+PROCESS-NAME,com.lantu.MobileCampus.sysu

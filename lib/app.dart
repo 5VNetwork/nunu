@@ -1,0 +1,137 @@
+part of 'main.dart';
+
+class App extends StatefulWidget {
+  const App({super.key});
+
+  @override
+  State<App> createState() => _AppState();
+
+  static _AppState? of(BuildContext context) =>
+      context.findAncestorStateOfType<_AppState>();
+}
+
+class _AppState extends State<App> with WidgetsBindingObserver {
+  Locale? _locale;
+  late ThemeMode _themeMode;
+  late final AppLifecycleListener _listener;
+  final appLinks = AppLinks();
+  AppLifecycleReactor? _appLifecycleReactor;
+  void setLocale(Locale? value) {
+    setState(() {
+      _locale = value;
+    });
+  }
+
+  void setThemeMode(ThemeMode value) {
+    context.read<SharedPreferences>().setThemeMode(value);
+    setState(() {
+      _themeMode = value;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp.router(
+      scaffoldMessengerKey: rootScaffoldMessengerKey,
+      locale: Locale('zh', 'CN'),
+      debugShowCheckedModeBanner: false,
+      themeMode: _themeMode,
+      theme: lightTheme(_locale),
+      darkTheme: darkTheme(_locale),
+      builder: desktopPlatforms
+          ? (context, child) => DesktopTray(child: child!)
+          : null,
+      routerConfig: router,
+      localizationsDelegates: [
+        ...AppLocalizations.localizationsDelegates,
+        ...xv_app_localizations.AppLocalizations.localizationsDelegates,
+        ...country_app_localizations.AppLocalizations.localizationsDelegates,
+      ],
+      supportedLocales: AppLocalizations.supportedLocales,
+    );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    final pref = context.read<SharedPreferences>();
+    _appLifecycleReactor = AppLifecycleReactor(
+      appOpenAdManager: context.read<OpenInterAdManager>(),
+    )..listenToAppStateChanges();
+
+    if (pref.initialLaunch || true) {
+      pref.setInitialLaunch();
+    }
+    _locale = pref.language?.locale ?? PlatformDispatcher.instance.locale;
+    _themeMode = pref.themeMode;
+    WidgetsBinding.instance.addObserver(this);
+    // app link
+    if (Platform.isWindows && !isRunningAsAdmin) {
+      _register('nunu');
+    }
+    appLinks.uriLinkStream.listen(handlerAppLinks);
+    // _setupFcm();
+
+    _listener = AppLifecycleListener(
+      onExitRequested: () async {
+        logger.d('exit requested');
+        if (isPkg) {
+          await context.read<XController>().beforeExitCleanup();
+        }
+        return AppExitResponse.exit;
+      },
+      // This fires for each state change. Callbacks above fire only for
+      // specific state transitions.
+      // onStateChange: (state) => logger.d('state change: $state'),
+    );
+  }
+
+  Future<void> _register(String scheme) async {
+    String appPath = Platform.resolvedExecutable;
+
+    String protocolRegKey = 'Software\\Classes\\$scheme';
+    RegistryValue protocolRegValue = const RegistryValue.string(
+      'URL Protocol',
+      '',
+    );
+    String protocolCmdRegKey = 'shell\\open\\command';
+    RegistryValue protocolCmdRegValue = RegistryValue.string(
+      '',
+      '"$appPath" "%1"',
+    );
+
+    final regKey = Registry.currentUser.createKey(protocolRegKey);
+    regKey.createValue(protocolRegValue);
+    regKey.createKey(protocolCmdRegKey).createValue(protocolCmdRegValue);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    _listener.dispose();
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    logger.d(state);
+    super.didChangeAppLifecycleState(state);
+  }
+
+  void handlerAppLinks(Uri uri) {
+    logger.d(uri);
+    if (uri.host == 'login-callback') {
+      // Handle Supabase auth callback
+      logger.d('Auth callback received: $uri');
+      snack(AppLocalizations.of(context)?.loginSuccess);
+      final authProvider = context.read<AuthProvider>();
+      Future.delayed(const Duration(seconds: 2), () {
+        // sometimes, the session is not refreshed for unknown reason. So refresh it manually.
+        if (authProvider.currentSession == null) {
+          authProvider.refreshUser();
+        }
+      });
+      // The Supabase client should handle this automatically
+    } else if (uri.host == 'order-success') {}
+  }
+}

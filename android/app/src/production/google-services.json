@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "934434866680",
+    "project_id": "nunu-2801b",
+    "storage_bucket": "nunu-2801b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:934434866680:android:4ec1af47d87269356e420d",
+        "android_client_info": {
+          "package_name": "monster.nunu.wqeeer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTI4RUOt--xhZrr1bdVoiCKZ7EO1ffLrU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:934434866680:android:e23e6ac165ca77156e420d",
+        "android_client_info": {
+          "package_name": "monster.nunu.wqeeer.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTI4RUOt--xhZrr1bdVoiCKZ7EO1ffLrU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:934434866680:android:654a21184a1541206e420d",
+        "android_client_info": {
+          "package_name": "monster.nunu.wqeeer.staging"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTI4RUOt--xhZrr1bdVoiCKZ7EO1ffLrU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
