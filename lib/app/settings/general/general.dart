@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_common/util/country.dart';
 import 'package:flutter_common/widgets/app_bar.dart';
 import 'package:gap/gap.dart';
-import 'package:launch_at_startup/launch_at_startup.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -140,61 +139,61 @@ class _ThemeModeSettingState extends State<ThemeModeSetting> {
   }
 }
 
-class StartOnBootSetting extends StatefulWidget {
-  const StartOnBootSetting({super.key});
+// class StartOnBootSetting extends StatefulWidget {
+//   const StartOnBootSetting({super.key});
 
-  @override
-  State<StartOnBootSetting> createState() => _StartOnBootSettingState();
-}
+//   @override
+//   State<StartOnBootSetting> createState() => _StartOnBootSettingState();
+// }
 
-class _StartOnBootSettingState extends State<StartOnBootSetting> {
-  bool _startOnBoot = false;
+// class _StartOnBootSettingState extends State<StartOnBootSetting> {
+//   bool _startOnBoot = false;
 
-  @override
-  void initState() {
-    super.initState();
-    _startOnBoot = context.read<SharedPreferences>().startOnBoot;
-  }
+//   @override
+//   void initState() {
+//     super.initState();
+//     _startOnBoot = context.read<SharedPreferences>().startOnBoot;
+//   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            Text(
-              AppLocalizations.of(context)!.startOnBoot,
-              style: Theme.of(context).textTheme.bodyLarge,
-            ),
-            Expanded(child: SizedBox()),
-            Switch(
-              value: _startOnBoot,
-              onChanged: (value) async {
-                context.read<SharedPreferences>().setStartOnBoot(value);
-                setState(() {
-                  _startOnBoot = value;
-                });
-                if (value) {
-                  await launchAtStartup.enable();
-                } else {
-                  await launchAtStartup.disable();
-                }
-              },
-            ),
-          ],
-        ),
-        const Gap(10),
-        Text(
-          AppLocalizations.of(context)!.startOnBootDesc,
-          style: Theme.of(context).textTheme.bodySmall!.copyWith(
-            color: Theme.of(context).colorScheme.onSurfaceVariant,
-          ),
-        ),
-      ],
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Column(
+//       crossAxisAlignment: CrossAxisAlignment.start,
+//       children: [
+//         Row(
+//           children: [
+//             Text(
+//               AppLocalizations.of(context)!.startOnBoot,
+//               style: Theme.of(context).textTheme.bodyLarge,
+//             ),
+//             Expanded(child: SizedBox()),
+//             Switch(
+//               value: _startOnBoot,
+//               onChanged: (value) async {
+//                 context.read<SharedPreferences>().setStartOnBoot(value);
+//                 setState(() {
+//                   _startOnBoot = value;
+//                 });
+//                 if (value) {
+//                   await launchAtStartup.enable();
+//                 } else {
+//                   await launchAtStartup.disable();
+//                 }
+//               },
+//             ),
+//           ],
+//         ),
+//         const Gap(10),
+//         Text(
+//           AppLocalizations.of(context)!.startOnBootDesc,
+//           style: Theme.of(context).textTheme.bodySmall!.copyWith(
+//             color: Theme.of(context).colorScheme.onSurfaceVariant,
+//           ),
+//         ),
+//       ],
+//     );
+//   }
+// }
 
 class AlwaysOnSetting extends StatefulWidget {
   const AlwaysOnSetting({super.key});

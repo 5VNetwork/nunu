@@ -10,7 +10,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter_common/widgets/dialog.dart';
 import 'package:flutter_common/widgets/progress.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -18,9 +17,6 @@ import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:http/http.dart';
-import 'package:launch_at_startup/launch_at_startup.dart';
-import 'package:macos_window_utils/macos/ns_window_button_type.dart';
-import 'package:macos_window_utils/window_manipulator.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
@@ -70,9 +66,7 @@ import 'package:nunu/pref_helper.dart';
 import 'package:nunu/utils/path.dart';
 import 'package:nunu/l10n/app_localizations.dart';
 import 'package:nunu/theme.dart';
-import 'package:window_manager/window_manager.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tray_manager/tray_manager.dart';
 import 'package:win32_registry/win32_registry.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_common/services/auto_update.dart';
@@ -122,7 +116,7 @@ void main() async {
   final githubAssetName = await assetName();
 
   await Future.wait([
-    _initWindow(pref),
+    // _initWindow(pref),
     Future(() async {
       if (Platform.isWindows) {
         isRunningAsAdmin = await windowsHostApi!.isRunningAsAdmin();
@@ -140,7 +134,7 @@ void main() async {
     xApiClient: apiClient,
   );
   await _initSupabase(storage, httpClient);
-  await setStartOnBoot(pref);
+  // await setStartOnBoot(pref);
 
   final authProvider = SupabaseAuth(
     webClientId: webClientId,
@@ -338,57 +332,57 @@ final GlobalKey<ScaffoldMessengerState> rootScaffoldMessengerKey =
     GlobalKey<ScaffoldMessengerState>();
 
 /// customize window
-Future<void> _initWindow(SharedPreferences pref) async {
-  if (desktopPlatforms) {
-    if (desktopPlatforms) {
-      await windowManager.ensureInitialized();
-    }
-    if (Platform.isMacOS) {
-      await WindowManipulator.initialize();
+// Future<void> _initWindow(SharedPreferences pref) async {
+//   if (desktopPlatforms) {
+//     if (desktopPlatforms) {
+//       await windowManager.ensureInitialized();
+//     }
+//     if (Platform.isMacOS) {
+//       await WindowManipulator.initialize();
 
-      WindowManipulator.hideTitle();
-      WindowManipulator.makeTitlebarTransparent();
-      WindowManipulator.enableFullSizeContentView();
-      WindowManipulator.overrideStandardWindowButtonPosition(
-        buttonType: NSWindowButtonType.closeButton,
-        offset: const Offset(15, 20),
-      );
-      WindowManipulator.overrideStandardWindowButtonPosition(
-        buttonType: NSWindowButtonType.miniaturizeButton,
-        offset: const Offset(35, 20),
-      );
-      WindowManipulator.overrideStandardWindowButtonPosition(
-        buttonType: NSWindowButtonType.zoomButton,
-        offset: const Offset(55, 20),
-      );
-    }
-    if (Platform.isWindows || Platform.isLinux) {
-      WindowOptions windowOptions = WindowOptions(
-        titleBarStyle: TitleBarStyle.hidden,
-        alwaysOnTop: false,
-        skipTaskbar: false,
-        size: Size(pref.windowWidth, pref.windowHeight),
-      );
-      await windowManager.waitUntilReadyToShow(windowOptions, () async {
-        if (pref.windowX != null && pref.windowY != null) {
-          await windowManager.setPosition(Offset(pref.windowX!, pref.windowY!));
-        } else {
-          await windowManager.center();
-        }
-        await windowManager.show();
-      });
-    } else {
-      if (pref.windowX != null && pref.windowY != null) {
-        await windowManager.setPosition(Offset(pref.windowX!, pref.windowY!));
-      } else {
-        await windowManager.center();
-      }
-      await windowManager.setSize(Size(pref.windowWidth, pref.windowHeight));
-    }
-  }
+//       WindowManipulator.hideTitle();
+//       WindowManipulator.makeTitlebarTransparent();
+//       WindowManipulator.enableFullSizeContentView();
+//       WindowManipulator.overrideStandardWindowButtonPosition(
+//         buttonType: NSWindowButtonType.closeButton,
+//         offset: const Offset(15, 20),
+//       );
+//       WindowManipulator.overrideStandardWindowButtonPosition(
+//         buttonType: NSWindowButtonType.miniaturizeButton,
+//         offset: const Offset(35, 20),
+//       );
+//       WindowManipulator.overrideStandardWindowButtonPosition(
+//         buttonType: NSWindowButtonType.zoomButton,
+//         offset: const Offset(55, 20),
+//       );
+//     }
+//     if (Platform.isWindows || Platform.isLinux) {
+//       WindowOptions windowOptions = WindowOptions(
+//         titleBarStyle: TitleBarStyle.hidden,
+//         alwaysOnTop: false,
+//         skipTaskbar: false,
+//         size: Size(pref.windowWidth, pref.windowHeight),
+//       );
+//       await windowManager.waitUntilReadyToShow(windowOptions, () async {
+//         if (pref.windowX != null && pref.windowY != null) {
+//           await windowManager.setPosition(Offset(pref.windowX!, pref.windowY!));
+//         } else {
+//           await windowManager.center();
+//         }
+//         await windowManager.show();
+//       });
+//     } else {
+//       if (pref.windowX != null && pref.windowY != null) {
+//         await windowManager.setPosition(Offset(pref.windowX!, pref.windowY!));
+//       } else {
+//         await windowManager.center();
+//       }
+//       await windowManager.setSize(Size(pref.windowWidth, pref.windowHeight));
+//     }
+//   }
 
-  logger.d('window initialized');
-}
+//   logger.d('window initialized');
+// }
 
 Future<void> _initSupabase(
   FlutterSecureStorage storage,
@@ -407,24 +401,24 @@ Future<void> _initSupabase(
   );
 }
 
-Future<void> setStartOnBoot(SharedPreferences pref) async {
-  if (Platform.isWindows) {
-    try {
-      PackageInfo packageInfo = await PackageInfo.fromPlatform();
-      launchAtStartup.setup(
-        appName: packageInfo.appName,
-        appPath: Platform.resolvedExecutable,
-        // Set packageName parameter to support MSIX.
-        packageName: packageInfo.packageName,
-      );
-      if (pref.startOnBoot && !await launchAtStartup.isEnabled()) {
-        await launchAtStartup.enable();
-      }
-    } catch (e) {
-      logger.e('Error setting up launch at startup', error: e);
-    }
-  }
-}
+// Future<void> setStartOnBoot(SharedPreferences pref) async {
+//   if (Platform.isWindows) {
+//     try {
+//       PackageInfo packageInfo = await PackageInfo.fromPlatform();
+//       launchAtStartup.setup(
+//         appName: packageInfo.appName,
+//         appPath: Platform.resolvedExecutable,
+//         // Set packageName parameter to support MSIX.
+//         packageName: packageInfo.packageName,
+//       );
+//       if (pref.startOnBoot && !await launchAtStartup.isEnabled()) {
+//         await launchAtStartup.enable();
+//       }
+//     } catch (e) {
+//       logger.e('Error setting up launch at startup', error: e);
+//     }
+//   }
+// }
 
 void periodicFetchCountries(SharedPreferences pref) async {
   PeriodicTask(

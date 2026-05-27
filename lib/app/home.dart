@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:io';
-import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +25,6 @@ import 'package:nunu/l10n/app_localizations.dart';
 import 'package:nunu/main.dart';
 import 'package:nunu/pref_helper.dart';
 import 'package:nunu/utils/default_network.dart';
-import 'package:window_manager/window_manager.dart';
 import 'package:flutter_common/common.dart';
 import 'package:flutter_common/util/country.dart';
 import 'package:country/country.dart';
@@ -162,16 +160,17 @@ class _VpnHomePageState extends State<VpnHomePage> {
         elevation: 0,
         leading: Platform.isMacOS ? null : settingButton,
         // leadingWidth: desktopPlatform ? 148 : 168,
-        title: desktopPlatform
+        title: /* desktopPlatform
             ? ConstrainedBox(
                 constraints: BoxConstraints(maxHeight: 24),
                 child: MoveWindow(child: title),
               )
-            : title,
+            : */
+            title,
         centerTitle: true,
-        flexibleSpace: desktopPlatform
-            ? MoveWindow(child: Container(color: Colors.transparent))
-            : null,
+        // flexibleSpace: desktopPlatform
+        //     ? MoveWindow(child: Container(color: Colors.transparent))
+        //     : null,
         actions: [
           Padding(
             padding: Platform.isMacOS
@@ -179,19 +178,19 @@ class _VpnHomePageState extends State<VpnHomePage> {
                 : const EdgeInsets.symmetric(horizontal: 4),
             child: shareButton,
           ),
-          if (Platform.isWindows || Platform.isLinux)
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: IconButton(
-                onPressed: () async {
-                  await windowManager.hide();
-                },
-                icon: Icon(
-                  Icons.remove_rounded,
-                  color: colorScheme.onSurface.withOpacity(0.87),
-                ),
-              ),
-            ),
+          // if (Platform.isWindows || Platform.isLinux)
+          //   Padding(
+          //     padding: const EdgeInsets.all(8.0),
+          //     child: IconButton(
+          //       onPressed: () async {
+          //         await windowManager.hide();
+          //       },
+          //       icon: Icon(
+          //         Icons.remove_rounded,
+          //         color: colorScheme.onSurface.withOpacity(0.87),
+          //       ),
+          //     ),
+          //   ),
           if (Platform.isMacOS)
             Padding(
               padding: const EdgeInsets.only(right: 8.0),

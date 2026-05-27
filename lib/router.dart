@@ -105,18 +105,18 @@ void initRouter(AuthProvider authProvider) {
               : null,
           body: Column(
             children: [
-              if (Platform.isWindows || Platform.isLinux)
-                SizedBox(
-                  height: 44,
-                  child: Row(
-                    children: [
-                      Expanded(child: MoveWindow(child: SizedBox.expand())),
-                      const Gap(5),
-                      const WindowButtons(),
-                      const Gap(5),
-                    ],
-                  ),
-                ),
+              // if (Platform.isWindows || Platform.isLinux)
+              //   SizedBox(
+              //     height: 44,
+              //     child: Row(
+              //       children: [
+              //         Expanded(child: MoveWindow(child: SizedBox.expand())),
+              //         const Gap(5),
+              //         const WindowButtons(),
+              //         const Gap(5),
+              //       ],
+              //     ),
+              //   ),
               Expanded(
                 child: Center(
                   child: SignInPage(

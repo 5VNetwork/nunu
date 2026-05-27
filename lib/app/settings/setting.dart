@@ -521,6 +521,13 @@ class _BottomActions extends StatelessWidget {
           const Gap(4),
         ],
         const Version(),
+        if (!isProduction())
+          ElevatedButton(
+            onPressed: () {
+              throw StateError('This is test exception');
+            },
+            child: const Text('Verify Sentry Setup'),
+          ),
       ],
     );
   }

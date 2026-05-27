@@ -1,6 +1,6 @@
 # <img src="assets/dev/nunu.svg" alt="Nunu Icon" width="20" style="vertical-align: -3px;  padding-right: 4px;   filter: invert(1)"/> Nunu
 
-Nunu加速器 完全永久免费，不限流量。加速你的网络，保护你的自由与权利
+努努加速器 完全永久免费，不限流量。加速你的网络，保护你的自由与权利
 
 Nunu is a accelerator that can accelerate your network.
 

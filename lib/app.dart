@@ -38,9 +38,9 @@ class _AppState extends State<App> with WidgetsBindingObserver {
       themeMode: _themeMode,
       theme: lightTheme(_locale),
       darkTheme: darkTheme(_locale),
-      builder: desktopPlatforms
-          ? (context, child) => DesktopTray(child: child!)
-          : null,
+      // builder: desktopPlatforms
+      //     ? (context, child) => DesktopTray(child: child!)
+      //     : null,
       routerConfig: router,
       localizationsDelegates: [
         ...AppLocalizations.localizationsDelegates,
