@@ -201,23 +201,38 @@ class _VpnHomePageState extends State<VpnHomePage> {
       body: SafeArea(
         child: Consumer<AuthRepo>(
           builder: (context, authRepo, child) {
-            // if (!isProduction()) {
-            //   return Stack(
-            //     children: [
-            //       _HomeBody(),
-            //       Positioned(
-            //         top: 0,
-            //         left: 0,
-            //         right: 0,
-            //         child: HandlersBeingUsed(),
-            //       ),
-            //     ],
-            //   );
-            // }
+            if (!isProduction()) {
+              return Stack(
+                children: [
+                  _HomeBody(),
+                  Positioned(
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    child: HandlersBeingUsed(),
+                  ),
+                ],
+              );
+            }
             return const _HomeBody();
           },
         ),
       ),
+    );
+  }
+}
+
+class HandlersBeingUsed extends StatelessWidget {
+  const HandlersBeingUsed({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final handlers = context.watch<XController>().handlers;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: handlers
+          .map((handler) => Text(handler, style: TextStyle(fontSize: 8)))
+          .toList(),
     );
   }
 }
@@ -288,7 +303,10 @@ class _HomeBody extends StatelessWidget {
                                             width: 1.5,
                                           ),
                                         ),
-                                        child: const BannerAdWidget(),
+                                        child: SizedBox(
+                                          height: 150,
+                                          child: const BannerAdWidget(),
+                                        ),
                                       ),
                                     ),
                                   ),
