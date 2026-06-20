@@ -77,6 +77,12 @@ void initRouter(AuthProvider authProvider) {
                   child: OpenSourceSoftwareNoticeScreen(),
                 ),
               ),
+              GoRoute(
+                parentNavigatorKey: rootNavigationKey,
+                path: 'ads',
+                pageBuilder: (context, state) =>
+                    const CupertinoPage(child: PromotionPage()),
+              ),
             ],
           ),
         ],

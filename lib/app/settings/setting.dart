@@ -43,7 +43,8 @@ final InAppReview inAppReview = InAppReview.instance;
 enum SettingGroup {
   account,
   preferences,
-  about;
+  about,
+  ads;
 
   String? label(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
@@ -54,6 +55,8 @@ enum SettingGroup {
         return l10n.general.toUpperCase();
       case SettingGroup.about:
         return l10n.about.toUpperCase();
+      case SettingGroup.ads:
+        return '推广';
     }
   }
 }
@@ -82,6 +85,11 @@ enum SettingItem {
   openSourceSoftwareNotice(
     icon: Icon(Icons.code_rounded),
     pathSegment: 'openSourceSoftwareNotice',
+    group: SettingGroup.about,
+  ),
+  ads(
+    icon: Icon(Icons.campaign_outlined),
+    pathSegment: 'ads',
     group: SettingGroup.about,
   );
 
@@ -125,6 +133,8 @@ enum SettingItem {
         return Text(AppLocalizations.of(context)!.contactUs);
       case SettingItem.openSourceSoftwareNotice:
         return Text(AppLocalizations.of(context)!.openSourceSoftwareNotice);
+      case SettingItem.ads:
+        return Text('推广');
     }
   }
 
@@ -139,6 +149,8 @@ enum SettingItem {
       case SettingItem.contactUs:
         return null;
       case SettingItem.openSourceSoftwareNotice:
+        return null;
+      case SettingItem.ads:
         return null;
     }
   }
