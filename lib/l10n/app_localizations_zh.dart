@@ -1698,7 +1698,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get dnsNameDesc => 'DNS服务器名称可以在入站条件那里引用，以指定它所使用的节点。';
 
   @override
-  String get directAppSetDesc => '在安卓上，直连应用集合内的应用不会经过Nunu（Split Tunnel）';
+  String get directAppSetDesc => '选择不经过努努加速器的应用';
+
+  @override
+  String get splitTunnel => '分应用';
 
   @override
   String get deleteDebugLogs => '删除日志文件';

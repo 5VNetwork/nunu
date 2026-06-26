@@ -72,6 +72,11 @@ enum SettingItem {
     pathSegment: 'general',
     group: SettingGroup.preferences,
   ),
+  splitTunnel(
+    icon: Icon(Icons.apps_rounded),
+    pathSegment: 'split-tunnel',
+    group: SettingGroup.preferences,
+  ),
   privacyPolicy(
     icon: Icon(Icons.shield_outlined),
     pathSegment: 'privacy',
@@ -127,6 +132,8 @@ enum SettingItem {
         return Text(AppLocalizations.of(context)!.account);
       case SettingItem.general:
         return Text(AppLocalizations.of(context)!.general);
+      case SettingItem.splitTunnel:
+        return Text(AppLocalizations.of(context)!.splitTunnel);
       case SettingItem.privacyPolicy:
         return Text(AppLocalizations.of(context)!.privacyPolicy);
       case SettingItem.contactUs:
@@ -144,6 +151,8 @@ enum SettingItem {
         return null;
       case SettingItem.general:
         return null;
+      case SettingItem.splitTunnel:
+        return Text(AppLocalizations.of(context)!.directAppSetDesc);
       case SettingItem.privacyPolicy:
         return null;
       case SettingItem.contactUs:
@@ -170,6 +179,9 @@ class CompactSettingScreen extends StatelessWidget {
 
     final groups = <SettingGroup, List<SettingItem>>{};
     for (final item in SettingItem.values) {
+      if (item == SettingItem.splitTunnel && !Platform.isAndroid) {
+        continue;
+      }
       groups.putIfAbsent(item.group, () => []).add(item);
     }
 

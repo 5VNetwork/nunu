@@ -83,6 +83,13 @@ void initRouter(AuthProvider authProvider) {
                 pageBuilder: (context, state) =>
                     const CupertinoPage(child: PromotionPage()),
               ),
+              if (Platform.isAndroid)
+                GoRoute(
+                  parentNavigatorKey: rootNavigationKey,
+                  path: 'split-tunnel',
+                  pageBuilder: (context, state) =>
+                      const CupertinoPage(child: SplitTunnelPage()),
+                ),
             ],
           ),
         ],

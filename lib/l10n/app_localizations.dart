@@ -3289,6 +3289,12 @@ abstract class AppLocalizations {
   /// **'On Android, applications in the direct app set will not go through Nunu (Split Tunnel)'**
   String get directAppSetDesc;
 
+  /// No description provided for @splitTunnel.
+  ///
+  /// In en, this message translates to:
+  /// **'Split Tunnel'**
+  String get splitTunnel;
+
   /// No description provided for @deleteDebugLogs.
   ///
   /// In en, this message translates to:

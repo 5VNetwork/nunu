@@ -131,12 +131,8 @@ class _CountryListState extends State<_CountryList> {
             child: ListView.builder(
               shrinkWrap: true,
               // one for auto, one for devider between selectable and unselectable
-              itemCount: _selectableCountries.length + 2,
+              itemCount: _selectableCountries.length + 1,
               itemBuilder: (ctx, index) {
-                if (index == _selectableCountries.length + 1) {
-                  return const Divider();
-                }
-
                 String country = '';
                 if (index != 0) {
                   if (index <= _selectableCountries.length) {

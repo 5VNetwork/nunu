@@ -1751,6 +1751,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get directAppSetDesc => 'On Android, applications in the direct app set will not go through Nunu (Split Tunnel)';
 
   @override
+  String get splitTunnel => 'Split Tunnel';
+
+  @override
   String get deleteDebugLogs => 'Delete Debug Logs';
 
   @override

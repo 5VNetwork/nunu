@@ -1751,6 +1751,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get directAppSetDesc => 'На Android приложения из набора прямых приложений не будут проходить через Nunu (разделенный туннель)';
 
   @override
+  String get splitTunnel => 'Раздельный туннель';
+
+  @override
   String get deleteDebugLogs => 'Удалить журналы отладки';
 
   @override
