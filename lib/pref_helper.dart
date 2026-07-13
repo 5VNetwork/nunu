@@ -264,6 +264,19 @@ extension PrefHelperExtension on SharedPreferences {
   void setNeedReInstallWindowsService(bool need) {
     setBool('needReInstallWindowsService', need);
   }
+
+  // return either a string or a RouteMode
+  DefaultRouteMode get routingMode {
+    final mode = getInt('routingMode');
+    if (mode == null) {
+      return DefaultRouteMode.gfw;
+    }
+    return DefaultRouteMode.values[mode];
+  }
+
+  void setRoutingMode(DefaultRouteMode mode) {
+    setInt('routingMode', mode.index);
+  }
 }
 
 enum InboundMode {

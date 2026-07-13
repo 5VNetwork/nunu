@@ -5,9 +5,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nunu/utils/logger.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tm/common.dart';
+import 'package:tm/fetch_result_provider.dart';
 import 'package:tm/private.dart';
 import 'package:tm/x_controller.dart';
 import 'package:tm/status_cubit.dart';
@@ -35,6 +37,7 @@ import 'package:tm/ads/banner_ad.dart';
 part 'inbound_mode_selector.dart';
 part 'home_button.dart';
 part 'home_country_selector.dart';
+part 'home_mode_selector.dart';
 
 class VpnHomePage extends StatefulWidget {
   const VpnHomePage({super.key});

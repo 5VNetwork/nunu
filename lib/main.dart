@@ -25,6 +25,7 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart' hide AuthState;
 import 'package:tm/common.dart';
+import 'package:tm/fetch_result_provider.dart';
 import 'package:tm/root_certs.dart';
 import 'package:tm/tm.dart';
 import 'package:tm/x_controller.dart';
@@ -109,13 +110,11 @@ void main() async {
 
   if (enableFirebase) {
     await initializeFirebaseApp();
-    // _initFcm();
   }
 
   version = (await PackageInfo.fromPlatform()).version;
 
   FlutterSecureStorage storage = await getSecureStorage();
-  final githubAssetName = await assetName();
 
   await Future.wait([
     // _initWindow(pref),
@@ -136,7 +135,6 @@ void main() async {
     xApiClient: apiClient,
   );
   await _initSupabase(storage, httpClient);
-  // await setStartOnBoot(pref);
 
   final authProvider = SupabaseAuth(
     webClientId: webClientId,
@@ -151,7 +149,6 @@ void main() async {
     "App start time: ${DateTime.now().difference(startTime).inSeconds}s",
   );
 
-  periodicFetchCountries(pref);
   periodicFetchGeo(pref);
 
   final app = MultiProvider(
@@ -202,10 +199,24 @@ void main() async {
           if (Platform.isWindows) {
             MessageFlutterApi.setUp(controller);
           }
-          httpClient.setHandlerConfigGetter(controller);
           return controller;
         },
         lazy: false,
+      ),
+      ChangeNotifierProvider<FetchResultProvider>(
+        lazy: false,
+        create: (ctx) {
+          final f = FetchResultProvider(
+            xApiClient: ctx.read<XApiClient>(),
+            pref: pref,
+            secureStorage: storage,
+            supabase: supabase,
+            authRepo: ctx.read<AuthRepo>(),
+            xController: ctx.read<XController>(),
+          );
+          httpClient.setHandlerConfigGetter(f);
+          return f;
+        },
       ),
       BlocProvider(
         create: (context) => ChoiceCubit(
@@ -401,41 +412,6 @@ Future<void> _initSupabase(
     url: supabaseUrl,
     anonKey: supabaseApiKey,
   );
-}
-
-// Future<void> setStartOnBoot(SharedPreferences pref) async {
-//   if (Platform.isWindows) {
-//     try {
-//       PackageInfo packageInfo = await PackageInfo.fromPlatform();
-//       launchAtStartup.setup(
-//         appName: packageInfo.appName,
-//         appPath: Platform.resolvedExecutable,
-//         // Set packageName parameter to support MSIX.
-//         packageName: packageInfo.packageName,
-//       );
-//       if (pref.startOnBoot && !await launchAtStartup.isEnabled()) {
-//         await launchAtStartup.enable();
-//       }
-//     } catch (e) {
-//       logger.e('Error setting up launch at startup', error: e);
-//     }
-//   }
-// }
-
-void periodicFetchCountries(SharedPreferences pref) async {
-  PeriodicTask(
-    task: () async {
-      try {
-        final response = await downloadToMemoryMulti(countryUrls);
-        pref.setCountries(utf8.decode(response));
-      } catch (e) {
-        logger.e('Error fetching countries', error: e);
-      }
-    },
-    sharedPreferences: pref,
-    period: const Duration(hours: 6),
-    lastRunKey: 'last_country_fetch',
-  ).start();
 }
 
 ScheduledTask? _geoScheduledTask;

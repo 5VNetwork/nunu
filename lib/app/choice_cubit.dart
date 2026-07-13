@@ -22,14 +22,24 @@ class Choice extends Equatable {
   final String country;
   // when country is auto, this is the actual country that the user is connected to
   final String? realtimeCountry;
+  final DefaultRouteMode routeMode;
 
-  Choice({required this.country, this.realtimeCountry});
+  Choice({
+    required this.country,
+    this.realtimeCountry,
+    required this.routeMode,
+  });
 
   @override
-  List<Object?> get props => [country, realtimeCountry];
+  List<Object?> get props => [country, realtimeCountry, routeMode];
 
-  Choice copyWith({String? country, ValueGetter<String?>? realtimeCountry}) {
+  Choice copyWith({
+    String? country,
+    ValueGetter<String?>? realtimeCountry,
+    DefaultRouteMode? routeMode,
+  }) {
     return Choice(
+      routeMode: routeMode ?? this.routeMode,
       country: country ?? this.country,
       realtimeCountry: realtimeCountry != null
           ? realtimeCountry()
@@ -50,7 +60,7 @@ class ChoiceCubit extends Cubit<Choice> {
        _xApiClient = xApiClient,
        _xController = xController,
        _authRepo = authRepo,
-       super(Choice(country: _getCountry(pref))) {}
+       super(Choice(country: _getCountry(pref), routeMode: pref.routingMode)) {}
 
   final SharedPreferences _pref;
   final XController _xController;
@@ -70,6 +80,12 @@ class ChoiceCubit extends Cubit<Choice> {
     } catch (e) {
       dialog("抱歉，无法切换国家: $e");
     }
+  }
+
+  Future<void> changeRouteMode(DefaultRouteMode routeMode) async {
+    _pref.setRoutingMode(routeMode);
+    emit(state.copyWith(routeMode: routeMode));
+    await _xController.routingModeChange(routeMode);
   }
 
   @override
