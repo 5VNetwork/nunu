@@ -59,10 +59,6 @@
 	<true/>
 	<key>LSSupportsOpeningDocumentsInPlace</key>
 	<true/>
-	<key>NSCameraUsageDescription</key>
-	<string>Use Camera to scan QR code</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Nunu does not need to access photo library.</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UIBackgroundModes</key>
