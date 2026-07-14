@@ -29,7 +29,11 @@ flutter_ios_podfile_setup
 
 target 'Runner' do
   use_frameworks!
+  use_modular_headers!
 
+  # Explicit shared dependency so Runner + ImageNotification don't each
+  # produce a separate GoogleUtilities.framework / Privacy.bundle on archive.
+  pod 'GoogleUtilities'
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
   target 'RunnerTests' do
     inherit! :search_paths
@@ -45,4 +49,5 @@ end
 target 'ImageNotification' do
   use_frameworks!
   pod 'Firebase/Messaging'
+  pod 'GoogleUtilities'
 end
