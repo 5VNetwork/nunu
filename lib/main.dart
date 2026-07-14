@@ -227,11 +227,12 @@ void main() async {
           authRepo: context.read<AuthRepo>(),
         ),
       ),
-      if (Platform.isAndroid)
+      if (Platform.isAndroid || Platform.isIOS)
         ChangeNotifierProvider(
           create: (context) {
             final vpnMonitor = DefaultNetworkMonitor(
               androidHostApi: androidHostApi,
+              darwinHostApi: darwinHostApi,
             );
             return vpnMonitor;
           },
@@ -452,7 +453,7 @@ Future<String> assetName() async {
 
 FirebaseOptions _firebaseOptionsForCurrentFlavor() {
   return switch (appFlavor) {
-    'produdction' || 'pkg' || 'apk' => DefaultFirebaseOptions.currentPlatform,
+    'production' || 'pkg' || 'apk' => DefaultFirebaseOptions.currentPlatform,
     'staging' => staging.DefaultFirebaseOptions.currentPlatform,
     _ => dev.DefaultFirebaseOptions.currentPlatform,
   };

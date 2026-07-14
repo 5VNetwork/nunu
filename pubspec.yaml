@@ -79,7 +79,7 @@ dependencies:
   sign_in_with_apple: ^7.0.1
   google_sign_in: ^7.2.0
   in_app_review: ^2.0.10
-  flutter_local_notifications: ^19.4.0
+  flutter_local_notifications: ^22.0.1
   flutter_common:
     path: ../flutter_common
   country:

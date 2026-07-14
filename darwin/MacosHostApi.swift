@@ -20,7 +20,12 @@ import Cocoa
 #endif
 class DarwinHostApiImpl: DarwinHostApi {
     private let monitorForDefaultPhysicalNIC = NWPathMonitor(prohibitedInterfaceTypes: [NWInterface.InterfaceType.other])
+    // Unlike monitorForDefaultPhysicalNIC, this one does not prohibit any
+    // interface type, so it observes the real default path including tunnels.
+    private var defaultNetworkMonitor: NWPathMonitor?
+    private var lastIsPhysical: Bool?
     private var flutterApi: DarwinFlutterApi?
+    private var networkFlutterApi: DarwinNetworkFlutterApi?
     
     func appGroupPath() throws -> String {
 #if os(iOS)
@@ -162,5 +167,56 @@ class DarwinHostApiImpl: DarwinHostApi {
     
     func setFlutterApi(_ flutterApi: DarwinFlutterApi) {
         self.flutterApi = flutterApi
+    }
+
+    func setNetworkFlutterApi(_ api: DarwinNetworkFlutterApi) {
+        self.networkFlutterApi = api
+    }
+
+    /// Monitors the default network path and notifies Flutter whenever it
+    /// switches between a physical interface and a tunnel (VPN), mirroring
+    /// AndroidHostApi.startBindToDefaultNetwork.
+    func startMonitorDefaultNetwork() throws {
+        if defaultNetworkMonitor != nil {
+            return
+        }
+        let monitor = NWPathMonitor()
+        defaultNetworkMonitor = monitor
+        monitor.pathUpdateHandler = { [weak self] path in
+            print("default nic path: \(path)")
+            guard let self = self else { return }
+            guard path.status == .satisfied else {
+                // No connectivity; report as non-physical like Android's
+                // unknown-capability branch.
+                self.notifyDefaultNetwork(isPhysical: false)
+                return
+            }
+            self.notifyDefaultNetwork(isPhysical: !Self.isTunnelPath(path))
+        }
+        monitor.start(queue: DispatchQueue.global())
+    }
+
+    private static func isTunnelPath(_ path: Network.NWPath) -> Bool {
+        // The first available interface is the one the default route uses.
+        // Packet Tunnel / WireGuard / IKEv2 VPNs show up as utun/ipsec/ppp,
+        // whose NWInterface type is `.other`.
+        guard let primary = path.availableInterfaces.first else {
+            return false
+        }
+        if primary.type == .other {
+            return true
+        }
+        let tunnelPrefixes = ["utun", "ipsec", "ppp", "tun", "tap"]
+        return tunnelPrefixes.contains { primary.name.hasPrefix($0) }
+    }
+
+    private func notifyDefaultNetwork(isPhysical: Bool) {
+        if lastIsPhysical == isPhysical {
+            return
+        }
+        lastIsPhysical = isPhysical
+        DispatchQueue.main.async {
+            self.networkFlutterApi?.defaultNetworkChanged(isPhysical: isPhysical) { _ in }
+        }
     }
 }

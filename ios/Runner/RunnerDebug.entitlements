@@ -14,11 +14,11 @@
 	</array>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.nunu.dev</string>
+		<string>group.monster.nunu.dev</string>
 	</array>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>$(AppIdentifierPrefix)com.nunu.dev</string>
+		<string>$(AppIdentifierPrefix)monster.nunu.dev</string>
 	</array>
 </dict>
 </plist>

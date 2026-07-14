@@ -97,6 +97,7 @@ protocol DarwinHostApi {
   func redirectStdErr(path: String, completion: @escaping (Result<Void, Error>) -> Void)
   func generateTls() throws -> FlutterStandardTypedData
   func setupShutdownNotification() throws
+  func startMonitorDefaultNetwork() throws
 }
 
 /// Generated setup class from Pigeon to handle messages through the `binaryMessenger`.
@@ -178,6 +179,19 @@ class DarwinHostApiSetup {
     } else {
       setupShutdownNotificationChannel.setMessageHandler(nil)
     }
+    let startMonitorDefaultNetworkChannel = FlutterBasicMessageChannel(name: "dev.flutter.pigeon.nunu.DarwinHostApi.startMonitorDefaultNetwork\(channelSuffix)", binaryMessenger: binaryMessenger, codec: codec)
+    if let api = api {
+      startMonitorDefaultNetworkChannel.setMessageHandler { _, reply in
+        do {
+          try api.startMonitorDefaultNetwork()
+          reply(wrapResult(nil))
+        } catch {
+          reply(wrapError(error))
+        }
+      }
+    } else {
+      startMonitorDefaultNetworkChannel.setMessageHandler(nil)
+    }
   }
 }
 /// Generated protocol from Pigeon that represents Flutter messages that can be called from Swift.
@@ -236,6 +250,43 @@ class DarwinFlutterApi: DarwinFlutterApiProtocol {
     let channelName: String = "dev.flutter.pigeon.nunu.DarwinFlutterApi.onSystemWillSleep\(messageChannelSuffix)"
     let channel = FlutterBasicMessageChannel(name: channelName, binaryMessenger: binaryMessenger, codec: codec)
     channel.sendMessage(nil) { response in
+      guard let listResponse = response as? [Any?] else {
+        completion(.failure(createConnectionError(withChannelName: channelName)))
+        return
+      }
+      if listResponse.count > 1 {
+        let code: String = listResponse[0] as! String
+        let message: String? = nilOrValue(listResponse[1])
+        let details: String? = nilOrValue(listResponse[2])
+        completion(.failure(PigeonError(code: code, message: message, details: details)))
+      } else {
+        completion(.success(()))
+      }
+    }
+  }
+}
+/// Separate from [DarwinFlutterApi] because each FlutterApi can only have one
+/// handler set up on the Dart side, and DarwinFlutterApi is handled by
+/// SystemShutdownNotifier.
+///
+/// Generated protocol from Pigeon that represents Flutter messages that can be called from Swift.
+protocol DarwinNetworkFlutterApiProtocol {
+  func defaultNetworkChanged(isPhysical isPhysicalArg: Bool, completion: @escaping (Result<Void, PigeonError>) -> Void)
+}
+class DarwinNetworkFlutterApi: DarwinNetworkFlutterApiProtocol {
+  private let binaryMessenger: FlutterBinaryMessenger
+  private let messageChannelSuffix: String
+  init(binaryMessenger: FlutterBinaryMessenger, messageChannelSuffix: String = "") {
+    self.binaryMessenger = binaryMessenger
+    self.messageChannelSuffix = messageChannelSuffix.count > 0 ? ".\(messageChannelSuffix)" : ""
+  }
+  var codec: MessagesPigeonCodec {
+    return MessagesPigeonCodec.shared
+  }
+  func defaultNetworkChanged(isPhysical isPhysicalArg: Bool, completion: @escaping (Result<Void, PigeonError>) -> Void) {
+    let channelName: String = "dev.flutter.pigeon.nunu.DarwinNetworkFlutterApi.defaultNetworkChanged\(messageChannelSuffix)"
+    let channel = FlutterBasicMessageChannel(name: channelName, binaryMessenger: binaryMessenger, codec: codec)
+    channel.sendMessage([isPhysicalArg] as [Any?]) { response in
       guard let listResponse = response as? [Any?] else {
         completion(.failure(createConnectionError(withChannelName: channelName)))
         return

@@ -65,4 +65,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'nunu-2801b.firebasestorage.app',
     iosBundleId: 'monster.nunu.production',
   );
+
 }

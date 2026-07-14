@@ -10,6 +10,7 @@ import Flutter
       let controller : FlutterViewController = window?.rootViewController as! FlutterViewController
       let api = DarwinHostApiImpl()
       DarwinHostApiSetup.setUp(binaryMessenger: controller.binaryMessenger, api: api)
+      api.setNetworkFlutterApi(DarwinNetworkFlutterApi(binaryMessenger: controller.binaryMessenger))
 
     if #available(iOS 10.0, *) {
   UNUserNotificationCenter.current().delegate = self as? UNUserNotificationCenterDelegate

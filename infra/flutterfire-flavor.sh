@@ -12,7 +12,7 @@ case $1 in
     flutterfire config \
       --project=nunu-staging \
       --out=lib/firebase_options_dev.dart \
-      --ios-bundle-id=com.nunu.dev \
+      --ios-bundle-id=monster.nunu.dev \
       --ios-out=ios/flavors/dev/GoogleService-Info.plist \
       --macos-bundle-id=monster.nunu.dev \
       --macos-out=macos/flavors/dev/GoogleService-Info.plist \

@@ -12,6 +12,7 @@ class MainFlutterWindow: NSWindow {
         // setup host api
         let api = DarwinHostApiImpl()
         DarwinHostApiSetup.setUp(binaryMessenger: flutterViewController.engine.binaryMessenger, api: api)
+        api.setNetworkFlutterApi(DarwinNetworkFlutterApi(binaryMessenger: flutterViewController.engine.binaryMessenger))
 
         
         RegisterGeneratedPlugins(registry: flutterViewController)

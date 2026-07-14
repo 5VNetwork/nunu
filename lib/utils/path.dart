@@ -166,7 +166,7 @@ Future<Directory> getClashRulesDir() async {
 }
 
 Future<String> getClashRulesPath(String url, {bool isPkg = false}) async {
-  final dir = isPkg ? Directory('/tmp/com.nunu/geo') : await getClashRulesDir();
+  final dir = isPkg ? Directory('/tmp/monster.nunu/geo') : await getClashRulesDir();
   if (!dir.existsSync()) {
     dir.createSync(recursive: true);
   }

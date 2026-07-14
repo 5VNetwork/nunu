@@ -28,14 +28,11 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.nunu</string>
+			<string>monster.nunu</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<!-- production -->
 				<string>com.googleusercontent.apps.952575395446-dts29lpnn4gnn9dbgu2aule8ja6ba7sn</string>
-				<!-- dev -->
 				<string>com.googleusercontent.apps.952575395446-8gumjqa4av8akh8cralh8ug8kb2dckci</string>
-				<!-- staging -->
 				<string>com.googleusercontent.apps.952575395446-2738klk0hmj1mq9mli50lf1u6gkcmcvi</string>
 			</array>
 		</dict>
@@ -43,7 +40,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.nunu</string>
+			<string>monster.nunu</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>nunu</string>

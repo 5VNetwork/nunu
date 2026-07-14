@@ -171,6 +171,24 @@ class DarwinHostApi {
     )
     ;
   }
+
+  Future<void> startMonitorDefaultNetwork() async {
+    final pigeonVar_channelName = 'dev.flutter.pigeon.nunu.DarwinHostApi.startMonitorDefaultNetwork$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channel = BasicMessageChannel<Object?>(
+      pigeonVar_channelName,
+      pigeonChannelCodec,
+      binaryMessenger: pigeonVar_binaryMessenger,
+    );
+    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(null);
+    final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
+
+    _extractReplyValueOrThrow(
+        pigeonVar_replyList,
+        pigeonVar_channelName,
+        isNullValid: true,
+    )
+    ;
+  }
 }
 
 abstract class DarwinFlutterApi {
@@ -232,6 +250,40 @@ abstract class DarwinFlutterApi {
         pigeonVar_channel.setMessageHandler((Object? message) async {
           try {
             api.onSystemWillSleep();
+            return wrapResponse(empty: true);
+          } on PlatformException catch (e) {
+            return wrapResponse(error: e);
+          }          catch (e) {
+            return wrapResponse(error: PlatformException(code: 'error', message: e.toString()));
+          }
+        });
+      }
+    }
+  }
+}
+
+/// Separate from [DarwinFlutterApi] because each FlutterApi can only have one
+/// handler set up on the Dart side, and DarwinFlutterApi is handled by
+/// SystemShutdownNotifier.
+abstract class DarwinNetworkFlutterApi {
+  static const MessageCodec<Object?> pigeonChannelCodec = _PigeonCodec();
+
+  void defaultNetworkChanged(bool isPhysical);
+
+  static void setUp(DarwinNetworkFlutterApi? api, {BinaryMessenger? binaryMessenger, String messageChannelSuffix = '',}) {
+    messageChannelSuffix = messageChannelSuffix.isNotEmpty ? '.$messageChannelSuffix' : '';
+    {
+      final pigeonVar_channel = BasicMessageChannel<Object?>(
+          'dev.flutter.pigeon.nunu.DarwinNetworkFlutterApi.defaultNetworkChanged$messageChannelSuffix', pigeonChannelCodec,
+          binaryMessenger: binaryMessenger);
+      if (api == null) {
+        pigeonVar_channel.setMessageHandler(null);
+      } else {
+        pigeonVar_channel.setMessageHandler((Object? message) async {
+          final List<Object?> args = message! as List<Object?>;
+          final bool arg_isPhysical = args[0]! as bool;
+          try {
+            api.defaultNetworkChanged(arg_isPhysical);
             return wrapResponse(empty: true);
           } on PlatformException catch (e) {
             return wrapResponse(error: e);

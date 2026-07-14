@@ -157,19 +157,19 @@ jobs:
           BUILD_NUMBER=$(grep '^version:' pubspec.yaml | sed 's/version: .*+\(.*\)/\1/')
           VERSION_NAME=$(grep '^version:' pubspec.yaml | sed 's/version: \(.*\)+.*/\1/')
           /usr/libexec/PlistBuddy -c  "Set :CFBundleShortVersionString $VERSION_NAME" \
-          "macos/build/Nunu.xcarchive/Products/Applications/Nunu.app/Contents/Library/SystemExtensions/com.nunu.pkg.se.systemextension/Contents/Info.plist"
+          "macos/build/Nunu.xcarchive/Products/Applications/Nunu.app/Contents/Library/SystemExtensions/monster.nunu.pkg.se.systemextension/Contents/Info.plist"
           /usr/libexec/PlistBuddy -c  "Set :CFBundleVersion $BUILD_NUMBER" \
-          "macos/build/Nunu.xcarchive/Products/Applications/Nunu.app/Contents/Library/SystemExtensions/com.nunu.pkg.se.systemextension/Contents/Info.plist"
+          "macos/build/Nunu.xcarchive/Products/Applications/Nunu.app/Contents/Library/SystemExtensions/monster.nunu.pkg.se.systemextension/Contents/Info.plist"
 
       - name: Sign
         run: |
           cd macos
           xcodebuild -exportArchive -archivePath build/Nunu.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath .
           codesign -d --entitlements Nunu.entitlements --xml Nunu.app
-          codesign -d --entitlements Nunu_SystemExtension.entitlements --xml Nunu.app/Contents/Library/SystemExtensions/com.nunu.pkg.se.systemextension 
+          codesign -d --entitlements Nunu_SystemExtension.entitlements --xml Nunu.app/Contents/Library/SystemExtensions/monster.nunu.pkg.se.systemextension 
           cp pkg.provisionprofile Nunu.app/Contents/embedded.provisionprofile
-          cp pkg_se.provisionprofile Nunu.app/Contents/Library/SystemExtensions/com.nunu.pkg.se.systemextension/Contents/embedded.provisionprofile
-          codesign -s "Developer ID Application" -f --entitlements Nunu_SystemExtension.entitlements --timestamp -o runtime Nunu.app/Contents/Library/SystemExtensions/com.nunu.pkg.se.systemextension
+          cp pkg_se.provisionprofile Nunu.app/Contents/Library/SystemExtensions/monster.nunu.pkg.se.systemextension/Contents/embedded.provisionprofile
+          codesign -s "Developer ID Application" -f --entitlements Nunu_SystemExtension.entitlements --timestamp -o runtime Nunu.app/Contents/Library/SystemExtensions/monster.nunu.pkg.se.systemextension
           codesign -s "Developer ID Application" -f --entitlements Nunu.entitlements --timestamp -o runtime Nunu.app
           codesign --verify --deep --strict --verbose=2  Nunu.app
 

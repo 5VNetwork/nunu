@@ -136,7 +136,7 @@
 		157F43FB2E75A7CA00C7AB3A /* Runnerdebug-pkg.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Runnerdebug-pkg.entitlements"; sourceTree = "<group>"; };
 		15963AB92F71E32E0054CD2E /* RunnerDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RunnerDebug.entitlements; sourceTree = "<group>"; };
 		15994CCD2F3E162000242A00 /* tm.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = tm.xcframework; sourceTree = "<group>"; };
-		15A130F12E71D3C4003E5632 /* com.nunu.pkg.se.systemextension */ = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = com.nunu.pkg.se.systemextension; sourceTree = BUILT_PRODUCTS_DIR; };
+		15A130F12E71D3C4003E5632 /* monster.nunu.pkg.se.systemextension */ = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = monster.nunu.pkg.se.systemextension; sourceTree = BUILT_PRODUCTS_DIR; };
 		15A1F1082E71A1F300AF435D /* RunnerRelease-pkg.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "RunnerRelease-pkg.entitlements"; sourceTree = "<group>"; };
 		15C6EE462E2043A8006DDCF7 /* RunnerDebug-production.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "RunnerDebug-production.entitlements"; sourceTree = "<group>"; };
 		15EEE78E2D63071800642457 /* MacosHostApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MacosHostApi.swift; path = ../darwin/MacosHostApi.swift; sourceTree = SOURCE_ROOT; };
@@ -197,11 +197,15 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		15A130F32E71D3C4003E5632 /* SystemExtension */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = SystemExtension;
 			sourceTree = "<group>";
 		};
 		15EEE8212D6319C100642457 /* PacketTunnel */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = PacketTunnel;
 			sourceTree = "<group>";
 		};
@@ -302,7 +306,7 @@
 				33CC10ED2044A3C60003C045 /* Nunu.app */,
 				331C80D5294CF71000263BE5 /* RunnerTests.xctest */,
 				15EEE81F2D6319C100642457 /* PacketTunnel.appex */,
-				15A130F12E71D3C4003E5632 /* com.nunu.pkg.se.systemextension */,
+				15A130F12E71D3C4003E5632 /* monster.nunu.pkg.se.systemextension */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -418,7 +422,7 @@
 			);
 			name = SystemExtension;
 			productName = SystemExtension;
-			productReference = 15A130F12E71D3C4003E5632 /* com.nunu.pkg.se.systemextension */;
+			productReference = 15A130F12E71D3C4003E5632 /* monster.nunu.pkg.se.systemextension */;
 			productType = "com.apple.product-type.system-extension";
 		};
 		15EEE81E2D6319C100642457 /* PacketTunnel */ = {
@@ -536,7 +540,7 @@
 			);
 			mainGroup = 33CC10E42044A3C60003C045;
 			packageReferences = (
-				15994CF32F3E596700242A00 /* XCLocalSwiftPackageReference "../../nunu-plugin/nunu-packet-tunnel" */,
+				15994CF32F3E596700242A00 /* XCLocalSwiftPackageReference "nunu-packet-tunnel" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 33CC10EE2044A3C60003C045 /* Products */;
@@ -672,13 +676,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -693,13 +693,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -995,7 +991,7 @@
 					"-weak_framework",
 					"\"UserNotifications\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu.staging;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.staging;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1129,7 +1125,7 @@
 					"-weak_framework",
 					"\"UserNotifications\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu.staging.PacketTunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.staging.PacketTunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
@@ -1325,7 +1321,7 @@
 					"-weak_framework",
 					"\"UserNotifications\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu.production;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.production;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1459,7 +1455,7 @@
 					"-weak_framework",
 					"\"UserNotifications\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu.production.PacketTunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.production.PacketTunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
@@ -1651,7 +1647,7 @@
 					"-weak_framework",
 					"\"UserNotifications\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu.production;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.production;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "XC com nunu production mac_app_store 1774778405";
 				SWIFT_VERSION = 5.0;
@@ -1785,7 +1781,7 @@
 					"-weak_framework",
 					"\"UserNotifications\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu.production.PacketTunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.production.PacketTunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "XC com nunu production PacketTunnel mac_app_store 1774778406";
@@ -1975,7 +1971,7 @@
 					"-weak_framework",
 					"\"UserNotifications\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu.staging;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.staging;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2106,7 +2102,7 @@
 					"-weak_framework",
 					"\"UserNotifications\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu.staging.PacketTunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.staging.PacketTunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -2295,7 +2291,7 @@
 					"-weak_framework",
 					"\"UserNotifications\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2426,7 +2422,7 @@
 					"-weak_framework",
 					"\"UserNotifications\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu.PacketTunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.PacketTunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -2615,7 +2611,7 @@
 					"-weak_framework",
 					"\"UserNotifications\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2746,7 +2742,7 @@
 					"-weak_framework",
 					"\"UserNotifications\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu.PacketTunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.PacketTunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -2942,7 +2938,7 @@
 					"-weak_framework",
 					"\"UserNotifications\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.dev;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -3076,7 +3072,7 @@
 					"-weak_framework",
 					"\"UserNotifications\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu.dev.PacketTunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.dev.PacketTunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
@@ -3139,7 +3135,7 @@
 					"-l\"sqlite3\"",
 					"-l\"z\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu.pkg.se;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.pkg.se;
 				PRODUCT_NAME = "$(inherited)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "nunu pkg se";
@@ -3191,7 +3187,7 @@
 					"-l\"sqlite3\"",
 					"-l\"z\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu.pkg.se;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.pkg.se;
 				PRODUCT_NAME = "$(inherited)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -3242,7 +3238,7 @@
 					"-l\"sqlite3\"",
 					"-l\"z\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu.pkg.se;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.pkg.se;
 				PRODUCT_NAME = "$(inherited)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -3294,7 +3290,7 @@
 					"-l\"sqlite3\"",
 					"-l\"z\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu.pkg.se;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.pkg.se;
 				PRODUCT_NAME = "$(inherited)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "nunu pkg se";
@@ -3344,7 +3340,7 @@
 					"-l\"sqlite3\"",
 					"-l\"z\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu.pkg.SystemExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.pkg.SystemExtension;
 				PRODUCT_NAME = "$(inherited)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -3394,7 +3390,7 @@
 					"-l\"sqlite3\"",
 					"-l\"z\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu.pkg.se;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.pkg.se;
 				PRODUCT_NAME = "$(inherited)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "nunu pkg se";
@@ -3443,7 +3439,7 @@
 					"-l\"sqlite3\"",
 					"-l\"z\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu.pkg.PacketTunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.pkg.PacketTunnel;
 				PRODUCT_NAME = "$(inherited)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -3493,7 +3489,7 @@
 					"-l\"sqlite3\"",
 					"-l\"z\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu.pkg.se;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.pkg.se;
 				PRODUCT_NAME = "$(inherited)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "nunu pkg se";
@@ -3542,7 +3538,7 @@
 					"-l\"sqlite3\"",
 					"-l\"z\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu.pkg.PacketTunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.pkg.PacketTunnel;
 				PRODUCT_NAME = "$(inherited)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -3590,7 +3586,7 @@
 					"-l\"sqlite3\"",
 					"-l\"z\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu.pkg.PacketTunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.pkg.PacketTunnel;
 				PRODUCT_NAME = "$(inherited)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -3638,7 +3634,7 @@
 					"-l\"sqlite3\"",
 					"-l\"z\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu.pkg.PacketTunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.pkg.PacketTunnel;
 				PRODUCT_NAME = "$(inherited)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -3830,7 +3826,7 @@
 					"-weak_framework",
 					"\"UserNotifications\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu.pkg;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.pkg;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "nunu pkg";
 				SWIFT_VERSION = 5.0;
@@ -3962,7 +3958,7 @@
 					"-weak_framework",
 					"\"UserNotifications\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu.pkg.PacketTunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.pkg.PacketTunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -4072,7 +4068,7 @@
 					"-weak_framework",
 					"\"UserNotifications\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu.dev.PacketTunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.dev.PacketTunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
@@ -4181,7 +4177,7 @@
 					"-weak_framework",
 					"\"UserNotifications\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu.PacketTunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.PacketTunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -4290,7 +4286,7 @@
 					"-weak_framework",
 					"\"UserNotifications\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu.PacketTunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.PacketTunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -4529,7 +4525,7 @@
 					"-weak_framework",
 					"\"UserNotifications\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
@@ -4780,7 +4776,7 @@
 					"-weak_framework",
 					"\"UserNotifications\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.dev;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -4917,7 +4913,7 @@
 					"-weak_framework",
 					"\"UserNotifications\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nunu;
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
@@ -5058,7 +5054,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		15994CF32F3E596700242A00 /* XCLocalSwiftPackageReference "../../nunu-plugin/nunu-packet-tunnel" */ = {
+		15994CF32F3E596700242A00 /* XCLocalSwiftPackageReference "nunu-packet-tunnel" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = "../../nunu-plugin/nunu-packet-tunnel";
 		};
@@ -5067,7 +5063,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		15994D052F3E59F900242A00 /* NunuPacketTunnel */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 15994CF32F3E596700242A00 /* XCLocalSwiftPackageReference "../../nunu-plugin/nunu-packet-tunnel" */;
+			package = 15994CF32F3E596700242A00 /* XCLocalSwiftPackageReference "nunu-packet-tunnel" */;
 			productName = NunuPacketTunnel;
 		};
 /* End XCSwiftPackageProductDependency section */

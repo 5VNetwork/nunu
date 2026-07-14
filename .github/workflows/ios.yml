@@ -29,7 +29,8 @@ jobs:
     - name: create files 
       run: |
         touch ../nunu-plugin/tm_windows/assets/x.dll
-        touch ../nunu-plugin/tm_windows/assets/umi_service.exe
+        touch ../nunu-plugin/tm_windows/assets/umi_service.zip
+        touch ../nunu-plugin/tm_windows/assets/wintun.dll
         touch ../nunu-plugin/tm_linux/assets/x.so
         touch ../nunu-plugin/tm_linux/assets/x
         mkdir ../nunu-plugin/tm_android/android/libs
@@ -132,6 +133,7 @@ jobs:
 
     - name: Fastlane release
       env:
+        BUNDLE_ID: "monster.nunu.production"
         APPLE_ID: ${{ secrets.APPLE_ID }}
         FASTLANE_IOS_KEY_ID: ${{ secrets.FASTLANE_IOS_KEY_ID }}
         APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}

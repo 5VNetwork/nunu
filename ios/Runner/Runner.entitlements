@@ -10,7 +10,7 @@
 	</array>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.nunu.dev</string>
+		<string>group.monster.nunu.dev</string>
 	</array>
 </dict>
 </plist>

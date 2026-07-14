@@ -92,7 +92,7 @@ jobs:
           APP_STORE_CONNECT_PRIVATE_KEY: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
           CERTIFICATE_PRIVATE_KEY: ${{ secrets.CERTIFICATE_PRIVATE_KEY }}
         run: |
-          app-store-connect fetch-signing-files com.nunu.production --platform MAC_OS --type MAC_APP_STORE --create
+          app-store-connect fetch-signing-files monster.nunu.production --platform MAC_OS --type MAC_APP_STORE --create
           app-store-connect certificates list --type MAC_INSTALLER_DISTRIBUTION --save
 
       - name: Init Keychain

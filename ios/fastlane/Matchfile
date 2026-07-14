@@ -6,9 +6,9 @@ type("appstore") # The default type, can be: appstore, adhoc, enterprise or deve
 
 # Specify all bundle identifiers for your targets
 app_identifier([
-  "com.nunu.production",                    # Main app
-  "com.nunu.production.PacketTunnel",       # PacketTunnel extension
-  "com.nunu.production.ImageNotification"   # ImageNotification extension
+  "monster.nunu.production",                    # Main app
+  "monster.nunu.production.PacketTunnel",       # PacketTunnel extension
+  "monster.nunu.production.ImageNotification"   # ImageNotification extension
 ])
 
 # app_identifier(["tools.fastlane.app", "tools.fastlane.app2"])

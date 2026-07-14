@@ -10,7 +10,7 @@
 	<true/>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>$(TeamIdentifierPrefix)com.nunu.dev</string>
+		<string>$(TeamIdentifierPrefix)monster.nunu.dev</string>
 	</array>
 	<key>com.apple.security.network.client</key>
 	<true/>
@@ -18,7 +18,7 @@
 	<true/>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>$(AppIdentifierPrefix)com.nunu.dev</string>
+		<string>$(AppIdentifierPrefix)monster.nunu.dev</string>
 	</array>
 </dict>
 </plist>

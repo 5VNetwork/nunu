@@ -8,9 +8,9 @@
 	<string>developer-id</string>
 	<key>provisioningProfiles</key>
 	<dict>
-		<key>com.nunu.pkg</key>
+		<key>monster.nunu.pkg</key>
 		<string>nunu pkg</string>
-		<key>com.nunu.pkg.se</key>
+		<key>monster.nunu.pkg.se</key>
 		<string>nunu pkg se</string>
 	</dict>
 	<key>signingCertificate</key>

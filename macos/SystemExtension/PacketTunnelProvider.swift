@@ -48,7 +48,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
 
     private static var defaultSharedDirectory: URL! {
         let groupIdentifier =
-            "K4FDLB3LLD.com.nunu.pkg"
+            "K4FDLB3LLD.monster.nunu.pkg"
             
         return FileManager.default
             .containerURL(
@@ -72,7 +72,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
         monitor.start(queue: DispatchQueue.global())
         setDefaultNIC(path: monitor.currentPath)
         
-        ///Users/shan/Library/Group Containers/K4FDLB3LLD.com.nunu/Library/Caches/stderr.log
+        ///Users/shan/Library/Group Containers/K4FDLB3LLD.monster.nunu/Library/Caches/stderr.log
         ///
         var map: [String: NSObject]? = options
 
@@ -342,7 +342,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
     // Use os_log for PacketTunnel extension logging
     // macOS 26+ redacts NSLog, so we use os_log with public formatting
     private static let logger = Logger(
-        subsystem: "com.nunu.PacketTunnel",
+        subsystem: "monster.nunu.PacketTunnel",
         category: "PacketTunnel"
     )
     

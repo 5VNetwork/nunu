@@ -8,7 +8,7 @@
 	</array>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.nunu</string>
+		<string>group.monster.nunu</string>
 	</array>
 	<key>com.apple.security.network.server</key>
 	<true/>

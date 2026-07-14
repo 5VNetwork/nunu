@@ -8,6 +8,7 @@ list(APPEND FLUTTER_PLUGIN_LIST
   flutter_secure_storage_windows
   pasteboard
   sentry_flutter
+  system_proxy
   tm_windows
   url_launcher_windows
 )

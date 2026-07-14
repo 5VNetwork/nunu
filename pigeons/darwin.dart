@@ -17,6 +17,7 @@ abstract class DarwinHostApi {
   void redirectStdErr(String path);
   Uint8List generateTls();
   void setupShutdownNotification();
+  void startMonitorDefaultNetwork();
 }
 
 @FlutterApi()
@@ -24,6 +25,14 @@ abstract class DarwinFlutterApi {
   void onSystemWillShutdown();
   void onSystemWillRestart();
   void onSystemWillSleep();
+}
+
+/// Separate from [DarwinFlutterApi] because each FlutterApi can only have one
+/// handler set up on the Dart side, and DarwinFlutterApi is handled by
+/// SystemShutdownNotifier.
+@FlutterApi()
+abstract class DarwinNetworkFlutterApi {
+  void defaultNetworkChanged(bool isPhysical);
 }
 
 // class SplitTunnelSettings {
