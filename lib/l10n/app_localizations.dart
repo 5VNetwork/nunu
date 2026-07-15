@@ -307,6 +307,12 @@ abstract class AppLocalizations {
   /// **'Changing country'**
   String get changingCountry;
 
+  /// No description provided for @changingInboundMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Changing inbound'**
+  String get changingInboundMode;
+
   /// No description provided for @disconnecting.
   ///
   /// In en, this message translates to:
@@ -3286,7 +3292,7 @@ abstract class AppLocalizations {
   /// No description provided for @directAppSetDesc.
   ///
   /// In en, this message translates to:
-  /// **'On Android, applications in the direct app set will not go through Nunu (Split Tunnel)'**
+  /// **'Select apps that will not be handled by Nunu'**
   String get directAppSetDesc;
 
   /// No description provided for @splitTunnel.

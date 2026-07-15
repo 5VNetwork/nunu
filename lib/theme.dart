@@ -80,6 +80,44 @@ extension AppColors on ColorScheme {
       : const Color(0xFF7DD3FC).withValues(alpha: 0.25);
 
   Color get iceGlow => primary.withValues(alpha: _isDark ? 0.45 : 0.35);
+
+  // Home connect button
+
+  /// Disconnected (VPN off)
+  Color get connectButtonDisconnectedOuter =>
+      _isDark ? shadowLight : _pureSnow;
+
+  Color get connectButtonDisconnectedBorder =>
+      _isDark ? borderLight : _iceBorder;
+
+  Color get connectButtonDisconnectedFill =>
+      _isDark ? inactiveColor : _frostMist;
+
+  Color get connectButtonDisconnectedIcon =>
+      _isDark ? onSurface.withValues(alpha: 0.70) : _slateIce;
+
+  /// Connected (VPN on)
+  Color get connectButtonConnectedOuter =>
+      _isDark ? primary.withValues(alpha: 0.1) : _iceMist;
+
+  Color get connectButtonConnectedBorder =>
+      _isDark ? primary : _skyIce;
+
+  Color get connectButtonConnectedGlow =>
+      _isDark ? primary.withValues(alpha: 0.4) : _skyIce.withValues(alpha: 0.22);
+
+  Color get connectButtonConnectedFillStart =>
+      _isDark ? primary : _iceGlow;
+
+  Color get connectButtonConnectedFillEnd =>
+      _isDark ? secondary : _glacierBlue;
+
+  Color get connectButtonConnectedIcon =>
+      _isDark ? onPrimary : _pureSnow;
+
+  Color get connectButtonConnectedInnerShadow => _isDark
+      ? shadowDark
+      : _glacierBlue.withValues(alpha: 0.18);
 }
 
 ThemeData lightTheme(Locale? locale) {

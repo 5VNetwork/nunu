@@ -113,7 +113,10 @@ Future<String> getFallbackDomainPath() async {
 }
 
 Future<String> getWintunDir() async {
-  return join((await resourceDir()).path, 'wintun', 'bin');
+  return join(
+    Directory(Platform.resolvedExecutable).parent.path,
+    join('data', 'flutter_assets', 'packages', 'tm_windows', 'assets'),
+  );
 }
 
 Future<String> configFilePath() async {
@@ -166,7 +169,9 @@ Future<Directory> getClashRulesDir() async {
 }
 
 Future<String> getClashRulesPath(String url, {bool isPkg = false}) async {
-  final dir = isPkg ? Directory('/tmp/monster.nunu/geo') : await getClashRulesDir();
+  final dir = isPkg
+      ? Directory('/tmp/monster.nunu/geo')
+      : await getClashRulesDir();
   if (!dir.existsSync()) {
     dir.createSync(recursive: true);
   }
@@ -211,4 +216,21 @@ String getServiceExePath() {
 
 String getServicePath() {
   return join((resourceDirectory).path, 'umi_service.exe');
+}
+
+String getServiceExeZipPath() {
+  final String localExePath = join(
+    'data',
+    'flutter_assets',
+    'packages',
+    'tm_windows',
+    'assets',
+    'umi_service.zip',
+  );
+  String pathToExe = join(
+    Directory(Platform.resolvedExecutable).parent.path,
+    localExePath,
+  );
+  logger.d('pathToExe: $pathToExe');
+  return pathToExe;
 }

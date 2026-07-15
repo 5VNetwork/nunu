@@ -4,13 +4,17 @@
 
 list(APPEND FLUTTER_PLUGIN_LIST
   app_links
+  bitsdojo_window_windows
   firebase_core
   flutter_secure_storage_windows
   pasteboard
+  screen_retriever_windows
   sentry_flutter
   system_proxy
   tm_windows
+  tray_manager
   url_launcher_windows
+  window_manager
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST

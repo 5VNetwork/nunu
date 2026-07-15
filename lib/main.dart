@@ -5,6 +5,7 @@ import 'dart:io';
 import 'dart:typed_data';
 import 'dart:ui';
 
+import 'package:ads/ads_provider.dart';
 import 'package:app_links/app_links.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
@@ -17,6 +18,8 @@ import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:http/http.dart';
+import 'package:macos_window_utils/macos/ns_window_button_type.dart';
+import 'package:macos_window_utils/macos_window_utils.dart';
 import 'package:nunu/app/settings/ads.dart';
 import 'package:tm/features/split_tunnel/ui/split_tunnel_page.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -70,6 +73,7 @@ import 'package:nunu/utils/path.dart';
 import 'package:nunu/l10n/app_localizations.dart';
 import 'package:nunu/theme.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tray_manager/tray_manager.dart';
 import 'package:win32_registry/win32_registry.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_common/services/auto_update.dart';
@@ -87,6 +91,7 @@ import 'package:nunu/firebase_options.dart';
 import 'package:nunu/firebase_options_staging.dart' as staging;
 import 'package:nunu/firebase_options_dev.dart' as dev;
 import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:window_manager/window_manager.dart';
 
 part 'desktop_tray.dart';
 part 'router.dart';
@@ -113,11 +118,11 @@ void main() async {
   }
 
   version = (await PackageInfo.fromPlatform()).version;
-
   FlutterSecureStorage storage = await getSecureStorage();
+  final githubAssetName = await assetName();
 
   await Future.wait([
-    // _initWindow(pref),
+    _initWindow(pref),
     Future(() async {
       if (Platform.isWindows) {
         isRunningAsAdmin = await windowsHostApi!.isRunningAsAdmin();
@@ -155,7 +160,6 @@ void main() async {
     providers: [
       Provider.value(value: apiClient),
       ChangeNotifierProvider<AuthProvider>.value(value: authProvider),
-
       ChangeNotifierProvider.value(value: AuthRepo(authProvider)),
       Provider.value(value: pref),
       Provider.value(value: storage),
@@ -218,6 +222,93 @@ void main() async {
           return f;
         },
       ),
+      if (autoUpdateSupported)
+        ChangeNotifierProvider(
+          lazy: false,
+          create: (ctx) {
+            final a = AutoUpdateService(
+              pref: pref,
+              downloader: directDownloadToFile,
+              currentVersion: version,
+              assetName: githubAssetName,
+              repository: '5vnetwork/nunu',
+              exitCurrentApp: () {
+                return exitCurrentApp(ctx.read<XController>());
+              },
+              autoCheck: true,
+              autoDownload: true,
+              cacheDir: cacheDirectory,
+              downloadUrl: kDebugMode
+                  ? 'https://localhost:21451'
+                  : 'https://nunu.r2.5vnetwork.com',
+              onNewVersionAvailable: (release) {
+                if (rootNavigationKey.currentContext == null) {
+                  return;
+                }
+                showDialog(
+                  context: rootNavigationKey.currentContext!,
+                  barrierDismissible: false,
+                  builder: (context) => HasNewerVersionDialog(
+                    release: release,
+                    setSkipCurrentVersion: () {
+                      rootNavigationKey.currentContext!
+                          .read<AutoUpdateService>()
+                          .setSkipCurrentVersion();
+                    },
+                    updateToRelease: (release) async {
+                      final ctx = rootNavigationKey.currentContext!;
+                      final messenger = ScaffoldMessenger.of(ctx);
+                      final snackBarController = messenger.showSnackBar(
+                        SnackBar(
+                          persist: true,
+                          content: Row(
+                            children: [
+                              Text(
+                                AppLocalizations.of(
+                                  ctx,
+                                )!.downloading(release.version),
+                              ),
+                              const SizedBox(width: 12),
+                              smallCircularProgressIndicator(),
+                            ],
+                          ),
+                        ),
+                      );
+                      try {
+                        await ctx.read<AutoUpdateService>().updateToRelease(
+                          release,
+                        );
+                      } finally {
+                        snackBarController.close();
+                      }
+                    },
+                  ),
+                );
+              },
+              onDownloadComplete: (downloadedInstaller) {
+                if (rootNavigationKey.currentContext == null) {
+                  return;
+                }
+                showDialog(
+                  context: rootNavigationKey.currentContext!,
+                  barrierDismissible: false,
+                  builder: (context) => InstallNewerVersionDialog(
+                    downloadedInstaller: downloadedInstaller,
+                    setSkipCurrentInstaller: rootNavigationKey.currentContext!
+                        .read<AutoUpdateService>()
+                        .setSkipCurrentVersion,
+                    installLocalInstaller: () {
+                      rootNavigationKey.currentContext!
+                          .read<AutoUpdateService>()
+                          .installLocalInstaller();
+                    },
+                  ),
+                );
+              },
+            );
+            return a;
+          },
+        ),
       BlocProvider(
         create: (context) => ChoiceCubit(
           pref: context.read<SharedPreferences>(),
@@ -243,18 +334,19 @@ void main() async {
             AdProt(preferences: context.read<SharedPreferences>()),
         lazy: false,
       ),
-      Provider<OpenInterAdManager>(
-        create: (context) {
-          final adManager = OpenInterAdManager(
-            isTest: !isProduction(),
-            xController: context.read<XController>(),
-            defaultNetworkMonitor: context.read<DefaultNetworkMonitor>(),
-            adProt: context.read<AdProt>(),
-          );
-          return adManager;
-        },
-        lazy: false,
-      ),
+      if (admobEnabled)
+        Provider<OpenInterAdManager>(
+          create: (context) {
+            final adManager = OpenInterAdManager(
+              isTest: !isProduction(),
+              xController: context.read<XController>(),
+              defaultNetworkMonitor: context.read<DefaultNetworkMonitor>(),
+              adProt: context.read<AdProt>(),
+            );
+            return adManager;
+          },
+          lazy: false,
+        ),
       BlocProvider(
         create: (context) => StatusCubit(
           xController: context.read<XController>(),
@@ -263,9 +355,30 @@ void main() async {
           autoUpdateService: autoUpdateSupported
               ? context.read<AutoUpdateService>()
               : null,
-          startAd: context.read<OpenInterAdManager>(),
+          startAd: admobEnabled ? context.read<OpenInterAdManager>() : null,
         ),
       ),
+      if (desktopPlatform)
+        ChangeNotifierProvider<AdsProvider>(
+          create: (context) {
+            final adsProvider = AdsProvider(
+              adsDirectory: path.join(resourceDirectory.path, 'ads'),
+              sharedPreferences: context.read<SharedPreferences>(),
+              downloadFunction: directDownloadToFile,
+              logger: logger,
+            );
+            adsProvider.start();
+            return adsProvider;
+          },
+          lazy: false,
+        ),
+      if (desktopPlatform)
+        ChangeNotifierProvider(
+          create: (context) => InboundModeController(
+            pref: context.read<SharedPreferences>(),
+            xController: context.read<XController>(),
+          ),
+        ),
     ],
     child: const App(),
   );
@@ -346,57 +459,57 @@ final GlobalKey<ScaffoldMessengerState> rootScaffoldMessengerKey =
     GlobalKey<ScaffoldMessengerState>();
 
 /// customize window
-// Future<void> _initWindow(SharedPreferences pref) async {
-//   if (desktopPlatforms) {
-//     if (desktopPlatforms) {
-//       await windowManager.ensureInitialized();
-//     }
-//     if (Platform.isMacOS) {
-//       await WindowManipulator.initialize();
+Future<void> _initWindow(SharedPreferences pref) async {
+  if (desktopPlatforms) {
+    if (desktopPlatforms) {
+      await windowManager.ensureInitialized();
+    }
+    if (Platform.isMacOS) {
+      await WindowManipulator.initialize();
 
-//       WindowManipulator.hideTitle();
-//       WindowManipulator.makeTitlebarTransparent();
-//       WindowManipulator.enableFullSizeContentView();
-//       WindowManipulator.overrideStandardWindowButtonPosition(
-//         buttonType: NSWindowButtonType.closeButton,
-//         offset: const Offset(15, 20),
-//       );
-//       WindowManipulator.overrideStandardWindowButtonPosition(
-//         buttonType: NSWindowButtonType.miniaturizeButton,
-//         offset: const Offset(35, 20),
-//       );
-//       WindowManipulator.overrideStandardWindowButtonPosition(
-//         buttonType: NSWindowButtonType.zoomButton,
-//         offset: const Offset(55, 20),
-//       );
-//     }
-//     if (Platform.isWindows || Platform.isLinux) {
-//       WindowOptions windowOptions = WindowOptions(
-//         titleBarStyle: TitleBarStyle.hidden,
-//         alwaysOnTop: false,
-//         skipTaskbar: false,
-//         size: Size(pref.windowWidth, pref.windowHeight),
-//       );
-//       await windowManager.waitUntilReadyToShow(windowOptions, () async {
-//         if (pref.windowX != null && pref.windowY != null) {
-//           await windowManager.setPosition(Offset(pref.windowX!, pref.windowY!));
-//         } else {
-//           await windowManager.center();
-//         }
-//         await windowManager.show();
-//       });
-//     } else {
-//       if (pref.windowX != null && pref.windowY != null) {
-//         await windowManager.setPosition(Offset(pref.windowX!, pref.windowY!));
-//       } else {
-//         await windowManager.center();
-//       }
-//       await windowManager.setSize(Size(pref.windowWidth, pref.windowHeight));
-//     }
-//   }
+      WindowManipulator.hideTitle();
+      WindowManipulator.makeTitlebarTransparent();
+      WindowManipulator.enableFullSizeContentView();
+      WindowManipulator.overrideStandardWindowButtonPosition(
+        buttonType: NSWindowButtonType.closeButton,
+        offset: const Offset(15, 20),
+      );
+      WindowManipulator.overrideStandardWindowButtonPosition(
+        buttonType: NSWindowButtonType.miniaturizeButton,
+        offset: const Offset(35, 20),
+      );
+      WindowManipulator.overrideStandardWindowButtonPosition(
+        buttonType: NSWindowButtonType.zoomButton,
+        offset: const Offset(55, 20),
+      );
+    }
+    if (Platform.isWindows || Platform.isLinux) {
+      WindowOptions windowOptions = WindowOptions(
+        titleBarStyle: TitleBarStyle.hidden,
+        alwaysOnTop: false,
+        skipTaskbar: false,
+        size: Size(pref.windowWidth, pref.windowHeight),
+      );
+      await windowManager.waitUntilReadyToShow(windowOptions, () async {
+        if (pref.windowX != null && pref.windowY != null) {
+          await windowManager.setPosition(Offset(pref.windowX!, pref.windowY!));
+        } else {
+          await windowManager.center();
+        }
+        await windowManager.show();
+      });
+    } else {
+      if (pref.windowX != null && pref.windowY != null) {
+        await windowManager.setPosition(Offset(pref.windowX!, pref.windowY!));
+      } else {
+        await windowManager.center();
+      }
+      await windowManager.setSize(Size(pref.windowWidth, pref.windowHeight));
+    }
+  }
 
-//   logger.d('window initialized');
-// }
+  logger.d('window initialized');
+}
 
 Future<void> _initSupabase(
   FlutterSecureStorage storage,

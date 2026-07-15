@@ -114,6 +114,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get changingCountry => 'Changing country';
 
   @override
+  String get changingInboundMode => 'Changing inbound';
+
+  @override
   String get disconnecting => 'Disconnecting';
 
   @override
@@ -1748,7 +1751,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get dnsNameDesc => 'A DNS server\'s name can be referenced in the inbound condition to specify which node it uses.';
 
   @override
-  String get directAppSetDesc => 'On Android, applications in the direct app set will not go through Nunu (Split Tunnel)';
+  String get directAppSetDesc => 'Select apps that will not be handled by Nunu';
 
   @override
   String get splitTunnel => 'Split Tunnel';

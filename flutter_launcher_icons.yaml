@@ -12,7 +12,7 @@ flutter_launcher_icons:
   # desaturate_tinted_to_grayscale_ios: true
 
   windows:
-   generate: false
+   generate: true
    image_path: "assets/dev/icon.png"
    icon_size: 256 # min:48, max:256, default: 48
 

@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io';
+import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -33,6 +34,9 @@ import 'package:country/country.dart';
 import 'package:nunu/theme.dart';
 import 'package:tm/default.dart';
 import 'package:tm/ads/banner_ad.dart';
+import 'package:ads/ad.dart' as my;
+import 'package:url_launcher/url_launcher.dart';
+import 'package:window_manager/window_manager.dart';
 
 part 'inbound_mode_selector.dart';
 part 'home_button.dart';
@@ -119,24 +123,25 @@ class _VpnHomePageState extends State<VpnHomePage> {
     );
     final settingButton = Row(
       children: [
-        // Padding(
-        //   padding: const EdgeInsets.all(8.0),
-        //   child: IconButton(
-        //     onPressed: () {
-        //       _scaffoldKey.currentState?.openDrawer();
-        //     },
-        //     icon: Icon(
-        //       Icons.tune_rounded,
-        //       color: colorScheme.onSurface.withOpacity(0.87),
-        //     ),
-        //     tooltip: AppLocalizations.of(context)!.advanced,
-        //   ),
-        // ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: IconButton(
+            onPressed: () {
+              _scaffoldKey.currentState?.openDrawer();
+            },
+            icon: Icon(
+              Icons.tune_rounded,
+              color: colorScheme.onSurface.withOpacity(0.87),
+            ),
+            tooltip: AppLocalizations.of(context)!.advanced,
+          ),
+        ),
         IconButton(
           icon: Icon(
             Icons.ac_unit_rounded,
             color: colorScheme.onSurface.withOpacity(0.87),
           ),
+          tooltip: '设置',
           onPressed: () {
             context.go('/setting');
           },
@@ -146,7 +151,7 @@ class _VpnHomePageState extends State<VpnHomePage> {
       ],
     );
     final title = Text(
-      "努努加速器",
+      "努努",
       style: textTheme.titleMedium?.copyWith(
         letterSpacing: 1,
         fontWeight: FontWeight.bold,
@@ -162,38 +167,42 @@ class _VpnHomePageState extends State<VpnHomePage> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: Platform.isMacOS ? null : settingButton,
-        // leadingWidth: desktopPlatform ? 148 : 168,
-        title: /* desktopPlatform
-            ? ConstrainedBox(
-                constraints: BoxConstraints(maxHeight: 24),
-                child: MoveWindow(child: title),
-              )
-            : */
-            title,
+        leadingWidth: desktopPlatform ? 148 : 168,
+        // title: desktopPlatform
+        //     ? ConstrainedBox(
+        //         constraints: BoxConstraints(maxHeight: 24),
+        //         child: MoveWindow(child: title),
+        //       )
+        //     : title,
         centerTitle: true,
-        // flexibleSpace: desktopPlatform
-        //     ? MoveWindow(child: Container(color: Colors.transparent))
-        //     : null,
+        flexibleSpace: desktopPlatform
+            ? MoveWindow(child: Container(color: Colors.transparent))
+            : null,
         actions: [
           Padding(
             padding: Platform.isMacOS
                 ? const EdgeInsets.only(right: 0)
                 : const EdgeInsets.symmetric(horizontal: 4),
-            child: shareButton,
+            child: IconButton(
+              tooltip: '网站',
+              icon: Icon(Icons.web_rounded, color: colorScheme.primary),
+              onPressed: () => launchUrl(Uri.parse('https://www.nunu.monster')),
+            ),
           ),
-          // if (Platform.isWindows || Platform.isLinux)
-          //   Padding(
-          //     padding: const EdgeInsets.all(8.0),
-          //     child: IconButton(
-          //       onPressed: () async {
-          //         await windowManager.hide();
-          //       },
-          //       icon: Icon(
-          //         Icons.remove_rounded,
-          //         color: colorScheme.onSurface.withOpacity(0.87),
-          //       ),
-          //     ),
-          //   ),
+          if (Platform.isWindows || Platform.isLinux)
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: IconButton(
+                tooltip: '隐藏',
+                onPressed: () async {
+                  await windowManager.hide();
+                },
+                icon: Icon(
+                  Icons.remove_rounded,
+                  color: colorScheme.onSurface.withOpacity(0.87),
+                ),
+              ),
+            ),
           if (Platform.isMacOS)
             Padding(
               padding: const EdgeInsets.only(right: 8.0),
@@ -294,23 +303,34 @@ class _HomeBody extends StatelessWidget {
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  const CountrySelector(),
+                                  Row(
+                                    children: [
+                                      Expanded(child: const CountrySelector()),
+                                      if (desktopPlatform)
+                                        const SizedBox(width: 10),
+                                      if (desktopPlatform)
+                                        Expanded(child: InboundModeSelector()),
+                                    ],
+                                  ),
                                   const SizedBox(height: 24),
                                   Expanded(
                                     child: Align(
                                       alignment: Alignment.bottomCenter,
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          border: Border.all(
-                                            color: colorScheme.borderMedium,
-                                            width: 1.5,
-                                          ),
-                                        ),
-                                        child: SizedBox(
-                                          height: 150,
-                                          child: const BannerAdWidget(),
-                                        ),
-                                      ),
+                                      child: admobEnabled
+                                          ? Container(
+                                              decoration: BoxDecoration(
+                                                border: Border.all(
+                                                  color:
+                                                      colorScheme.borderMedium,
+                                                  width: 1.5,
+                                                ),
+                                              ),
+                                              child: SizedBox(
+                                                height: 150,
+                                                child: const BannerAdWidget(),
+                                              ),
+                                            )
+                                          : my.BannerAdWidget(),
                                     ),
                                   ),
                                   const SizedBox(height: 16),
