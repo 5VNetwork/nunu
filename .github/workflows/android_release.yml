@@ -28,7 +28,8 @@ jobs:
       - name: create files
         run: |
           touch ../nunu-plugin/tm_windows/assets/x.dll
-          touch ../nunu-plugin/tm_windows/assets/umi_service.exe
+          touch ../nunu-plugin/tm_windows/assets/wintun.dll
+          touch ../nunu-plugin/tm_windows/assets/umi_service.zip
           touch ../nunu-plugin/tm_linux/assets/x.so
           touch ../nunu-plugin/tm_linux/assets/x
           mkdir ../nunu-plugin/tm_android/android/libs
