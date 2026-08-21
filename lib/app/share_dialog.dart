@@ -62,7 +62,7 @@ class _ShareDialog extends StatelessWidget {
                       ),
                       const Gap(8),
                       Text(
-                        '我们需要你的帮助',
+                        '分享努努加速器',
                         style: textTheme.labelSmall?.copyWith(
                           color: colorScheme.primary,
                           fontWeight: FontWeight.w600,
@@ -73,72 +73,17 @@ class _ShareDialog extends StatelessWidget {
                   ),
                 ),
                 const Gap(16),
-                Text(
-                  '分享努努加速器',
-                  style: textTheme.headlineSmall?.copyWith(
-                    color: colorScheme.onSurface,
-                    fontWeight: FontWeight.w800,
-                    height: 1.2,
-                  ),
-                ),
-                const Gap(12),
-                Text.rich(
-                  TextSpan(
-                    style: textTheme.bodyMedium?.copyWith(
-                      color: colorScheme.onSurfaceVariant,
-                      height: 1.55,
-                    ),
-                    children: [
-                      const TextSpan(text: '努努加速器'),
-                      TextSpan(
-                        text: '承诺永久免费',
-                        style: TextStyle(
-                          color: colorScheme.primary,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      const TextSpan(text: '，我们极度依靠'),
-                      TextSpan(
-                        text: '用户数量',
-                        style: TextStyle(
-                          color: colorScheme.primary,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      const TextSpan(text: '来生存。'),
-                    ],
-                  ),
-                ),
-                const Gap(8),
-                Text.rich(
-                  TextSpan(
-                    style: textTheme.bodyMedium?.copyWith(
-                      color: colorScheme.onSurfaceVariant,
-                      height: 1.55,
-                    ),
-                    children: [
-                      const TextSpan(text: '如果努努帮到了你，请把它'),
-                      TextSpan(
-                        text: '分享给身边需要的人',
-                        style: TextStyle(
-                          color: colorScheme.primary,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      const TextSpan(text: '，让努努能够继续存在，为更多人提供更好的网络体验。❄'),
-                    ],
-                  ),
-                ),
-                const Gap(20),
                 const _QrCard(url: _shareUrl),
                 const Gap(16),
                 _LinkRow(url: _shareUrl),
                 const Gap(14),
                 Center(
                   child: Text(
-                    '谢谢你的支持 ✦',
+                    '谢谢你的分享 ✦',
                     style: textTheme.bodySmall?.copyWith(
-                      color: colorScheme.onSurfaceVariant.withValues(alpha: 0.7),
+                      color: colorScheme.onSurfaceVariant.withValues(
+                        alpha: 0.7,
+                      ),
                     ),
                   ),
                 ),
@@ -465,9 +410,7 @@ class _LinkRow extends StatelessWidget {
 }
 
 Future<void> _copyShareText() {
-  return Clipboard.setData(
-    ClipboardData(text: '$_shareText $_shareUrl'),
-  );
+  return Clipboard.setData(ClipboardData(text: '$_shareText $_shareUrl'));
 }
 
 Future<bool> _openUrl(String url) async {
@@ -490,9 +433,7 @@ void _showToast(BuildContext context, String message) {
       behavior: SnackBarBehavior.floating,
       duration: const Duration(seconds: 2),
       margin: const EdgeInsets.fromLTRB(20, 0, 20, 24),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(999),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(999)),
     ),
   );
 }

@@ -179,16 +179,17 @@ class _VpnHomePageState extends State<VpnHomePage> {
             ? MoveWindow(child: Container(color: Colors.transparent))
             : null,
         actions: [
-          Padding(
-            padding: Platform.isMacOS
-                ? const EdgeInsets.only(right: 0)
-                : const EdgeInsets.symmetric(horizontal: 4),
-            child: IconButton(
-              tooltip: '网站',
-              icon: Icon(Icons.web_rounded, color: colorScheme.primary),
-              onPressed: () => launchUrl(Uri.parse('https://www.nunu.monster')),
-            ),
-          ),
+          // Padding(
+          //   padding: Platform.isMacOS
+          //       ? const EdgeInsets.only(right: 0)
+          //       : const EdgeInsets.symmetric(horizontal: 4),
+          //   child: IconButton(
+          //     tooltip: '网站',
+          //     icon: Icon(Icons.web_rounded, color: colorScheme.primary),
+          //     onPressed: () => launchUrl(Uri.parse('https://www.nunu.monster')),
+          //   ),
+          // ),
+          shareButton,
           if (Platform.isWindows || Platform.isLinux)
             Padding(
               padding: const EdgeInsets.all(8.0),
