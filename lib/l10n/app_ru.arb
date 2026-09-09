@@ -818,5 +818,53 @@
   "failedToReactivateSubscription": "Не удалось повторно активировать подписку",
   "failedToCancelSubscription": "Не удалось отменить подписку",
   "selectLocation": "Выберите локацию",
-  "supportWelcomeMessage": "Добро пожаловать! Вы можете задать любой вопрос или сообщить о проблеме, например о невозможности открыть некоторые сайты. Спасибо за обратную связь!"
+  "supportWelcomeMessage": "Добро пожаловать! Вы можете задать любой вопрос или сообщить о проблеме, например о невозможности открыть некоторые сайты. Спасибо за обратную связь!",
+  "minuteCount": "{count, plural, one{{count} минута} few{{count} минуты} other{{count} минут}}",
+  "@minuteCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "hourCount": "{count, plural, one{{count} час} few{{count} часа} other{{count} часов}}",
+  "@hourCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "extendSessionTitle": "Хотите более длительное подключение?",
+  "extendSessionBody": "Досмотрите короткую видеорекламу до конца, и это подключение продлится {extended} вместо {base}.",
+  "@extendSessionBody": {
+    "placeholders": {
+      "extended": {
+        "type": "String"
+      },
+      "base": {
+        "type": "String"
+      }
+    }
+  },
+  "extendSessionDeclineNote": "Это необязательно. Подключение без рекламы всё равно даёт вам {base}.",
+  "@extendSessionDeclineNote": {
+    "placeholders": {
+      "base": {
+        "type": "String"
+      }
+    }
+  },
+  "extendSessionWatch": "Смотреть рекламу",
+  "extendSessionNoThanks": "Нет, спасибо",
+  "extendSessionNotEarned": "Реклама не была досмотрена, поэтому это подключение продлится {base}.",
+  "@extendSessionNotEarned": {
+    "placeholders": {
+      "base": {
+        "type": "String"
+      }
+    }
+  },
+  "offerRewardedExtension": "Предлагать более длительное подключение",
+  "offerRewardedExtensionDesc": "При подключении спрашивать, хотите ли вы посмотреть рекламу в обмен на более длительное подключение. Подключение всегда работает и без этого."
 }

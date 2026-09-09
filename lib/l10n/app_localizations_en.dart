@@ -2237,4 +2237,56 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get supportWelcomeMessage => 'Welcome! You can ask anything, report any issue, such as unable to access some websites. Thanks for your feedback!';
+
+  @override
+  String minuteCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count minutes',
+      one: '1 minute',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String hourCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count hours',
+      one: '1 hour',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get extendSessionTitle => 'Need a longer session?';
+
+  @override
+  String extendSessionBody(String extended, String base) {
+    return 'You can watch a short video ad to extend this connection to $extended instead of $base.';
+  }
+
+  @override
+  String extendSessionDeclineNote(String base) {
+    return 'You don\'t have to. Connecting without an ad still gives you $base.';
+  }
+
+  @override
+  String get extendSessionWatch => 'Watch ad';
+
+  @override
+  String get extendSessionNoThanks => 'No thanks';
+
+  @override
+  String extendSessionNotEarned(String base) {
+    return 'The ad wasn\'t finished, so this session lasts $base.';
+  }
+
+  @override
+  String get offerRewardedExtension => 'Offer a longer session';
+
+  @override
+  String get offerRewardedExtensionDesc => 'When you connect, ask whether you\'d like to watch an ad in exchange for a longer connection.';
 }

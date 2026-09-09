@@ -4224,6 +4224,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Welcome! You can ask anything, report any issue, such as unable to access some websites. Thanks for your feedback!'**
   String get supportWelcomeMessage;
+
+  /// No description provided for @minuteCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 minute} other{{count} minutes}}'**
+  String minuteCount(int count);
+
+  /// No description provided for @hourCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 hour} other{{count} hours}}'**
+  String hourCount(int count);
+
+  /// No description provided for @extendSessionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Need a longer session?'**
+  String get extendSessionTitle;
+
+  /// No description provided for @extendSessionBody.
+  ///
+  /// In en, this message translates to:
+  /// **'You can watch a short video ad to extend this connection to {extended} instead of {base}.'**
+  String extendSessionBody(String extended, String base);
+
+  /// No description provided for @extendSessionDeclineNote.
+  ///
+  /// In en, this message translates to:
+  /// **'You don\'t have to. Connecting without an ad still gives you {base}.'**
+  String extendSessionDeclineNote(String base);
+
+  /// No description provided for @extendSessionWatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Watch ad'**
+  String get extendSessionWatch;
+
+  /// No description provided for @extendSessionNoThanks.
+  ///
+  /// In en, this message translates to:
+  /// **'No thanks'**
+  String get extendSessionNoThanks;
+
+  /// No description provided for @extendSessionNotEarned.
+  ///
+  /// In en, this message translates to:
+  /// **'The ad wasn\'t finished, so this session lasts {base}.'**
+  String extendSessionNotEarned(String base);
+
+  /// No description provided for @offerRewardedExtension.
+  ///
+  /// In en, this message translates to:
+  /// **'Offer a longer session'**
+  String get offerRewardedExtension;
+
+  /// No description provided for @offerRewardedExtensionDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'When you connect, ask whether you\'d like to watch an ad in exchange for a longer connection.'**
+  String get offerRewardedExtensionDesc;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -934,5 +934,53 @@
   "oneQuarter": "一个季度",
   "oneHalfYear": "半年",
   "oneYear": "一年",
-  "supportWelcomeMessage": "欢迎！您可以随时提问、反馈问题（例如无法访问某些网站）。感谢您的反馈！"
+  "supportWelcomeMessage": "欢迎！您可以随时提问、反馈问题（例如无法访问某些网站）。感谢您的反馈！",
+  "minuteCount": "{count, plural, other{{count} 分钟}}",
+  "@minuteCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "hourCount": "{count, plural, other{{count} 小时}}",
+  "@hourCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "extendSessionTitle": "需要更长的连接时间吗？",
+  "extendSessionBody": "完整观看一段视频广告，本次连接时长将从 {base} 延长到 {extended}。",
+  "@extendSessionBody": {
+    "placeholders": {
+      "extended": {
+        "type": "String"
+      },
+      "base": {
+        "type": "String"
+      }
+    }
+  },
+  "extendSessionDeclineNote": "这不是必须的。不看广告直接连接，仍然可以使用 {base}。",
+  "@extendSessionDeclineNote": {
+    "placeholders": {
+      "base": {
+        "type": "String"
+      }
+    }
+  },
+  "extendSessionWatch": "观看广告",
+  "extendSessionNoThanks": "不用了",
+  "extendSessionNotEarned": "广告未看完，本次连接时长为 {base}。",
+  "@extendSessionNotEarned": {
+    "placeholders": {
+      "base": {
+        "type": "String"
+      }
+    }
+  },
+  "offerRewardedExtension": "提供更长的连接时长",
+  "offerRewardedExtensionDesc": "连接时询问是否愿意观看广告以换取更长的连接时长。"
 }

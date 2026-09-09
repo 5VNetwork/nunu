@@ -249,6 +249,27 @@ extension PrefHelperExtension on SharedPreferences {
     setBool('enableAppOpenAds', enable);
   }
 
+  /// Whether tapping connect may offer to extend the session in exchange for
+  /// watching a rewarded ad. Turning this off only skips the offer; connecting
+  /// keeps working at the base duration.
+  bool get offerRewardedExtension {
+    return getBool('offerRewardedExtension') ?? true;
+  }
+
+  void setOfferRewardedExtension(bool enable) {
+    setBool('offerRewardedExtension', enable);
+  }
+
+  /// Duration granted to the session currently running, so the countdown stays
+  /// correct when the app is restarted while the tunnel is still up.
+  int? get activeSessionSeconds {
+    return getInt('activeSessionSeconds');
+  }
+
+  void setActiveSessionSeconds(int seconds) {
+    setInt('activeSessionSeconds', seconds);
+  }
+
   String? get installedWindowsServiceVersion {
     return getString('installedWindowsServiceVersion');
   }

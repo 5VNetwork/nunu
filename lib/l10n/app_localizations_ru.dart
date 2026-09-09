@@ -2237,4 +2237,58 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get supportWelcomeMessage => 'Добро пожаловать! Вы можете задать любой вопрос или сообщить о проблеме, например о невозможности открыть некоторые сайты. Спасибо за обратную связь!';
+
+  @override
+  String minuteCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count минут',
+      few: '$count минуты',
+      one: '$count минута',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String hourCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count часов',
+      few: '$count часа',
+      one: '$count час',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get extendSessionTitle => 'Хотите более длительное подключение?';
+
+  @override
+  String extendSessionBody(String extended, String base) {
+    return 'Досмотрите короткую видеорекламу до конца, и это подключение продлится $extended вместо $base.';
+  }
+
+  @override
+  String extendSessionDeclineNote(String base) {
+    return 'Это необязательно. Подключение без рекламы всё равно даёт вам $base.';
+  }
+
+  @override
+  String get extendSessionWatch => 'Смотреть рекламу';
+
+  @override
+  String get extendSessionNoThanks => 'Нет, спасибо';
+
+  @override
+  String extendSessionNotEarned(String base) {
+    return 'Реклама не была досмотрена, поэтому это подключение продлится $base.';
+  }
+
+  @override
+  String get offerRewardedExtension => 'Предлагать более длительное подключение';
+
+  @override
+  String get offerRewardedExtensionDesc => 'При подключении спрашивать, хотите ли вы посмотреть рекламу в обмен на более длительное подключение. Подключение всегда работает и без этого.';
 }

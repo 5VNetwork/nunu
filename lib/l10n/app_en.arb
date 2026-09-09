@@ -927,5 +927,53 @@
   "oneQuarter": "One Quarter",
   "oneHalfYear": "One Half Year",
   "oneYear": "One Year",
-  "supportWelcomeMessage": "Welcome! You can ask anything, report any issue, such as unable to access some websites. Thanks for your feedback!"
+  "supportWelcomeMessage": "Welcome! You can ask anything, report any issue, such as unable to access some websites. Thanks for your feedback!",
+  "minuteCount": "{count, plural, =1{1 minute} other{{count} minutes}}",
+  "@minuteCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "hourCount": "{count, plural, =1{1 hour} other{{count} hours}}",
+  "@hourCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "extendSessionTitle": "Need a longer session?",
+  "extendSessionBody": "You can watch a short video ad to extend this connection to {extended} instead of {base}.",
+  "@extendSessionBody": {
+    "placeholders": {
+      "extended": {
+        "type": "String"
+      },
+      "base": {
+        "type": "String"
+      }
+    }
+  },
+  "extendSessionDeclineNote": "You don't have to. Connecting without an ad still gives you {base}.",
+  "@extendSessionDeclineNote": {
+    "placeholders": {
+      "base": {
+        "type": "String"
+      }
+    }
+  },
+  "extendSessionWatch": "Watch ad",
+  "extendSessionNoThanks": "No thanks",
+  "extendSessionNotEarned": "The ad wasn't finished, so this session lasts {base}.",
+  "@extendSessionNotEarned": {
+    "placeholders": {
+      "base": {
+        "type": "String"
+      }
+    }
+  },
+  "offerRewardedExtension": "Offer a longer session",
+  "offerRewardedExtensionDesc": "When you connect, ask whether you'd like to watch an ad in exchange for a longer connection."
 }

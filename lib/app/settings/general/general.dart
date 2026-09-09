@@ -11,6 +11,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:nunu/app/settings/general/country.dart';
 import 'package:nunu/common/common.dart';
 import 'package:tm/ads/start_ad.dart';
+import 'package:tm/common.dart';
 import 'package:nunu/l10n/app_localizations.dart';
 import 'package:nunu/main.dart';
 import 'package:nunu/pref_helper.dart';
@@ -34,7 +35,12 @@ class GeneralSettingPage extends StatelessWidget {
           : null,
       body: Padding(
         padding: const EdgeInsets.only(top: 8, right: 8),
-        child: ListView(children: [const ThemeModeSetting()]),
+        child: ListView(
+          children: [
+            const ThemeModeSetting(),
+            if (admobEnabled) const OfferRewardedExtensionSetting(),
+          ],
+        ),
       ),
     );
   }
@@ -46,6 +52,44 @@ String _countryLabel(BuildContext context, SharedPreferences pref) {
     return AppLocalizations.of(context)!.auto;
   }
   return getLocalizedCountryName(context, selectedCountry);
+}
+
+class OfferRewardedExtensionSetting extends StatefulWidget {
+  const OfferRewardedExtensionSetting({super.key});
+
+  @override
+  State<OfferRewardedExtensionSetting> createState() =>
+      _OfferRewardedExtensionSettingState();
+}
+
+class _OfferRewardedExtensionSettingState
+    extends State<OfferRewardedExtensionSetting> {
+  late bool _enabled;
+
+  @override
+  void initState() {
+    super.initState();
+    _enabled = context.read<SharedPreferences>().offerRewardedExtension;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    return SwitchListTile(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      secondary: const Icon(Icons.slow_motion_video_rounded),
+      title: Text(
+        l10n.offerRewardedExtension,
+        style: Theme.of(context).textTheme.bodyLarge,
+      ),
+      subtitle: Text(l10n.offerRewardedExtensionDesc),
+      value: _enabled,
+      onChanged: (value) {
+        context.read<SharedPreferences>().setOfferRewardedExtension(value);
+        setState(() => _enabled = value);
+      },
+    );
+  }
 }
 
 class ThemeModeSetting extends StatefulWidget {

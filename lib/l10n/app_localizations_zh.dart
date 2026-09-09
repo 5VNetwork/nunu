@@ -2187,4 +2187,54 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get supportWelcomeMessage => '欢迎！您可以随时提问、反馈问题（例如无法访问某些网站）。感谢您的反馈！';
+
+  @override
+  String minuteCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 分钟',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String hourCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 小时',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get extendSessionTitle => '需要更长的连接时间吗？';
+
+  @override
+  String extendSessionBody(String extended, String base) {
+    return '完整观看一段视频广告，本次连接时长将从 $base 延长到 $extended。';
+  }
+
+  @override
+  String extendSessionDeclineNote(String base) {
+    return '这不是必须的。不看广告直接连接，仍然可以使用 $base。';
+  }
+
+  @override
+  String get extendSessionWatch => '观看广告';
+
+  @override
+  String get extendSessionNoThanks => '不用了';
+
+  @override
+  String extendSessionNotEarned(String base) {
+    return '广告未看完，本次连接时长为 $base。';
+  }
+
+  @override
+  String get offerRewardedExtension => '提供更长的连接时长';
+
+  @override
+  String get offerRewardedExtensionDesc => '连接时询问是否愿意观看广告以换取更长的连接时长。';
 }
