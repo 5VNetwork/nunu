@@ -4246,8 +4246,8 @@ abstract class AppLocalizations {
   /// No description provided for @extendSessionBody.
   ///
   /// In en, this message translates to:
-  /// **'You can watch a short video ad to extend this connection to {extended} instead of {base}.'**
-  String extendSessionBody(String extended, String base);
+  /// **'You can watch a short video ad to extend this connection to {extended} instead of {base}. The minimum data usage will be extended from {minDataUsage} to {rewardDataUsage}.'**
+  String extendSessionBody(String extended, String base, String minDataUsage, String rewardDataUsage);
 
   /// No description provided for @extendSessionDeclineNote.
   ///
@@ -4284,6 +4284,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'When you connect, ask whether you\'d like to watch an ad in exchange for a longer connection.'**
   String get offerRewardedExtensionDesc;
+
+  /// No description provided for @sessionLimitsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'How sessions work'**
+  String get sessionLimitsTitle;
+
+  /// No description provided for @sessionLimitsBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Each connection lasts {duration}. If you still have unused data when that time ends, Nunu stays connected until you use {data}. Remaining data is shown on the home screen after the timer ends.'**
+  String sessionLimitsBody(String duration, String data);
+
+  /// No description provided for @sessionLimitsRewarded.
+  ///
+  /// In en, this message translates to:
+  /// **'Watching an ad extends this session to {duration} and {data}.'**
+  String sessionLimitsRewarded(String duration, String data);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

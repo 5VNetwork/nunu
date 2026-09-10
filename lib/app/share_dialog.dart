@@ -9,7 +9,7 @@ import 'package:nunu/widgets/dialog_shell.dart';
 
 const String _shareUrl = 'https://www.nunu.monster';
 const String _shareTitle = '努努加速器 — 永久免费的网络加速器';
-const String _shareText = '我在用努努加速器，永久免费、不限流量、不限速度，推荐你也试试 ✦';
+const String _shareText = '我在用努努加速器，永久免费、不限流量、推荐你也试试 ✦';
 
 Future<void> showShareDialog(BuildContext context) {
   return showDialog(

@@ -945,13 +945,19 @@
     }
   },
   "extendSessionTitle": "Need a longer session?",
-  "extendSessionBody": "You can watch a short video ad to extend this connection to {extended} instead of {base}.",
+  "extendSessionBody": "You can watch a short video ad to extend this connection to {extended} instead of {base}. The minimum data usage will be extended from {minDataUsage} to {rewardDataUsage}.",
   "@extendSessionBody": {
     "placeholders": {
       "extended": {
         "type": "String"
       },
       "base": {
+        "type": "String"
+      },
+      "minDataUsage": {
+        "type": "String"
+      },
+      "rewardDataUsage": {
         "type": "String"
       }
     }
@@ -975,5 +981,28 @@
     }
   },
   "offerRewardedExtension": "Offer a longer session",
-  "offerRewardedExtensionDesc": "When you connect, ask whether you'd like to watch an ad in exchange for a longer connection."
+  "offerRewardedExtensionDesc": "When you connect, ask whether you'd like to watch an ad in exchange for a longer connection.",
+  "sessionLimitsTitle": "How sessions work",
+  "sessionLimitsBody": "Each connection lasts {duration}. If you still have unused data when that time ends, Nunu stays connected until you use {data}. Remaining data is shown on the home screen after the timer ends.",
+  "@sessionLimitsBody": {
+    "placeholders": {
+      "duration": {
+        "type": "String"
+      },
+      "data": {
+        "type": "String"
+      }
+    }
+  },
+  "sessionLimitsRewarded": "Watching an ad extends this session to {duration} and {data}.",
+  "@sessionLimitsRewarded": {
+    "placeholders": {
+      "duration": {
+        "type": "String"
+      },
+      "data": {
+        "type": "String"
+      }
+    }
+  }
 }

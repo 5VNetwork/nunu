@@ -2266,7 +2266,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get extendSessionTitle => 'Хотите более длительное подключение?';
 
   @override
-  String extendSessionBody(String extended, String base) {
+  String extendSessionBody(String extended, String base, String minDataUsage, String rewardDataUsage) {
     return 'Досмотрите короткую видеорекламу до конца, и это подключение продлится $extended вместо $base.';
   }
 
@@ -2291,4 +2291,17 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get offerRewardedExtensionDesc => 'При подключении спрашивать, хотите ли вы посмотреть рекламу в обмен на более длительное подключение. Подключение всегда работает и без этого.';
+
+  @override
+  String get sessionLimitsTitle => 'Как работают сессии';
+
+  @override
+  String sessionLimitsBody(String duration, String data) {
+    return 'Каждое подключение длится $duration. Если после этого у вас ещё остался трафик, Nunu остаётся подключённым, пока вы не израсходуете $data. Оставшийся трафик показывается на главном экране после окончания таймера.';
+  }
+
+  @override
+  String sessionLimitsRewarded(String duration, String data) {
+    return 'Просмотр рекламы продлевает сессию до $duration и $data.';
+  }
 }

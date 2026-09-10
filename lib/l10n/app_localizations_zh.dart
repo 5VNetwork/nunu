@@ -2212,8 +2212,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get extendSessionTitle => '需要更长的连接时间吗？';
 
   @override
-  String extendSessionBody(String extended, String base) {
-    return '完整观看一段视频广告，本次连接时长将从 $base 延长到 $extended。';
+  String extendSessionBody(String extended, String base, String minDataUsage, String rewardDataUsage) {
+    return '完整观看一段视频广告，本次连接时长将从 $base 延长到 $extended。流量最低额度将从 $minDataUsage 延长到 $rewardDataUsage。';
   }
 
   @override
@@ -2237,4 +2237,17 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get offerRewardedExtensionDesc => '连接时询问是否愿意观看广告以换取更长的连接时长。';
+
+  @override
+  String get sessionLimitsTitle => '连接如何计时';
+
+  @override
+  String sessionLimitsBody(String duration, String data) {
+    return '每次连接时长为 $duration。时间结束后，如果流量尚未用完，努努会继续保持连接，直到用量达到 $data。倒计时结束后，主页会显示剩余流量。';
+  }
+
+  @override
+  String sessionLimitsRewarded(String duration, String data) {
+    return '观看广告可将本次连接延长为 $duration，流量额度改为 $data。';
+  }
 }

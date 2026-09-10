@@ -2264,8 +2264,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get extendSessionTitle => 'Need a longer session?';
 
   @override
-  String extendSessionBody(String extended, String base) {
-    return 'You can watch a short video ad to extend this connection to $extended instead of $base.';
+  String extendSessionBody(String extended, String base, String minDataUsage, String rewardDataUsage) {
+    return 'You can watch a short video ad to extend this connection to $extended instead of $base. The minimum data usage will be extended from $minDataUsage to $rewardDataUsage.';
   }
 
   @override
@@ -2289,4 +2289,17 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get offerRewardedExtensionDesc => 'When you connect, ask whether you\'d like to watch an ad in exchange for a longer connection.';
+
+  @override
+  String get sessionLimitsTitle => 'How sessions work';
+
+  @override
+  String sessionLimitsBody(String duration, String data) {
+    return 'Each connection lasts $duration. If you still have unused data when that time ends, Nunu stays connected until you use $data. Remaining data is shown on the home screen after the timer ends.';
+  }
+
+  @override
+  String sessionLimitsRewarded(String duration, String data) {
+    return 'Watching an ad extends this session to $duration and $data.';
+  }
 }

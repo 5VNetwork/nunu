@@ -40,6 +40,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:window_manager/window_manager.dart';
 import 'package:tm/handler_results_store.dart';
 import 'package:tm/handler_test_runner.dart';
+import 'package:tm/ads/rewarded_extension_prompt.dart';
 
 part 'inbound_mode_selector.dart';
 part 'home_button.dart';
@@ -182,16 +183,14 @@ class _VpnHomePageState extends State<VpnHomePage> {
             ? MoveWindow(child: Container(color: Colors.transparent))
             : null,
         actions: [
-          // Padding(
-          //   padding: Platform.isMacOS
-          //       ? const EdgeInsets.only(right: 0)
-          //       : const EdgeInsets.symmetric(horizontal: 4),
-          //   child: IconButton(
-          //     tooltip: '网站',
-          //     icon: Icon(Icons.web_rounded, color: colorScheme.primary),
-          //     onPressed: () => launchUrl(Uri.parse('https://www.nunu.monster')),
-          //   ),
-          // ),
+          IconButton(
+            tooltip: AppLocalizations.of(context)!.info,
+            icon: Icon(
+              Icons.info_outline_rounded,
+              color: colorScheme.onSurface.withOpacity(0.87),
+            ),
+            onPressed: () => _showSessionLimitsDialog(context),
+          ),
           shareButton,
           if (Platform.isWindows || Platform.isLinux)
             Padding(
@@ -236,6 +235,69 @@ class _VpnHomePageState extends State<VpnHomePage> {
       ),
     );
   }
+}
+
+void _showSessionLimitsDialog(BuildContext context) {
+  final l10n = AppLocalizations.of(context)!;
+  final duration = rewardedDurationLabel(l10n, StatusCubit.baseDuration);
+  final data = bytesToReadable(StatusCubit.dataUsageBytes);
+  final extendedDuration =
+      rewardedDurationLabel(l10n, StatusCubit.rewardedDuration);
+  final extendedData = bytesToReadable(StatusCubit.rewardDurationBytes);
+  final theme = Theme.of(context);
+
+  showDialog<void>(
+    context: context,
+    builder: (context) => AlertDialog(
+      contentPadding: const EdgeInsets.fromLTRB(24, 20, 24, 16),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+      ),
+      title: Row(
+        children: [
+          Icon(
+            Icons.info_outline_rounded,
+            color: theme.colorScheme.primary,
+            size: 28,
+          ),
+          const SizedBox(width: 8),
+          Expanded(child: Text(l10n.sessionLimitsTitle)),
+        ],
+      ),
+      content: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              l10n.sessionLimitsBody(duration, data),
+              style: theme.textTheme.bodyMedium?.copyWith(
+                height: 1.5,
+                color: theme.colorScheme.onSurfaceVariant,
+              ),
+            ),
+            // const SizedBox(height: 12),
+            // Text(
+            //   l10n.sessionLimitsRewarded(extendedDuration, extendedData),
+            //   style: theme.textTheme.bodyMedium?.copyWith(
+            //     height: 1.5,
+            //     color: theme.colorScheme.onSurfaceVariant,
+            //   ),
+            // ),
+          ],
+        ),
+      ),
+      actions: [
+        SizedBox(
+          width: double.infinity,
+          child: ElevatedButton(
+            onPressed: () => Navigator.of(context).pop(),
+            child: Text(l10n.okay),
+          ),
+        ),
+      ],
+    ),
+  );
 }
 
 class HandlersBeingUsed extends StatelessWidget {

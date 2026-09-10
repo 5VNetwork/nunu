@@ -866,5 +866,28 @@
     }
   },
   "offerRewardedExtension": "Предлагать более длительное подключение",
-  "offerRewardedExtensionDesc": "При подключении спрашивать, хотите ли вы посмотреть рекламу в обмен на более длительное подключение. Подключение всегда работает и без этого."
+  "offerRewardedExtensionDesc": "При подключении спрашивать, хотите ли вы посмотреть рекламу в обмен на более длительное подключение. Подключение всегда работает и без этого.",
+  "sessionLimitsTitle": "Как работают сессии",
+  "sessionLimitsBody": "Каждое подключение длится {duration}. Если после этого у вас ещё остался трафик, Nunu остаётся подключённым, пока вы не израсходуете {data}. Оставшийся трафик показывается на главном экране после окончания таймера.",
+  "@sessionLimitsBody": {
+    "placeholders": {
+      "duration": {
+        "type": "String"
+      },
+      "data": {
+        "type": "String"
+      }
+    }
+  },
+  "sessionLimitsRewarded": "Просмотр рекламы продлевает сессию до {duration} и {data}.",
+  "@sessionLimitsRewarded": {
+    "placeholders": {
+      "duration": {
+        "type": "String"
+      },
+      "data": {
+        "type": "String"
+      }
+    }
+  }
 }

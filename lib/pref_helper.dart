@@ -270,6 +270,14 @@ extension PrefHelperExtension on SharedPreferences {
     setInt('activeSessionSeconds', seconds);
   }
 
+  int? get activeSessionDataUsage {
+    return getInt('activeSessionDataUsage');
+  }
+
+  void setActiveSessionDataUsage(int bytes) {
+    setInt('activeSessionDataUsage', bytes);
+  }
+
   String? get installedWindowsServiceVersion {
     return getString('installedWindowsServiceVersion');
   }

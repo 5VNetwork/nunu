@@ -255,6 +255,10 @@ class _HomeButtonState extends State<HomeButton> with TickerProviderStateMixin {
                           ],
                           const SizedBox(height: 10),
                           const _Timer(),
+                          if (isConnected && status.pastDuration) ...[
+                            const SizedBox(height: 6),
+                            const _SessionDataUsage(),
+                          ],
                         ],
                       ),
                     ),
@@ -328,6 +332,34 @@ class _Timer extends StatelessWidget {
             fontWeight: FontWeight.w300,
             fontFeatures: const [FontFeature.tabularFigures()],
           ),
+        );
+      },
+    );
+  }
+}
+
+class _SessionDataUsage extends StatelessWidget {
+  const _SessionDataUsage();
+
+  @override
+  Widget build(BuildContext context) {
+    final quota = context.read<StatusCubit>().sessionDataUsage;
+    if (quota <= 0) {
+      return const SizedBox.shrink();
+    }
+    final colorScheme = Theme.of(context).colorScheme;
+    final style = TextStyle(
+      color: colorScheme.onSurface.withOpacity(0.70),
+      fontSize: 13,
+      fontWeight: FontWeight.w500,
+      fontFeatures: const [FontFeature.tabularFigures()],
+    );
+    return ValueListenableBuilder<int>(
+      valueListenable: context.read<XController>().sessionTraffic,
+      builder: (context, used, _) {
+        return Text(
+          '${bytesToReadable(used)} / ${bytesToReadable(quota)}',
+          style: style,
         );
       },
     );
