@@ -15,7 +15,7 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archßive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 0.2.7+16
+version: 0.2.8+17
 
 environment:
   sdk: ">=3.8.0 <4.0.0"
@@ -32,7 +32,6 @@ dependencies:
     sdk: flutter
   ffi: ^2.1.2
   go_router: ^14.2.0
-  protobuf: ^6.0.0
   tm:
     path: ../nunu-plugin/tm
   google_fonts: ^8.0.2
@@ -44,40 +43,24 @@ dependencies:
   flutter_bloc: ^8.1.6
   bloc: ^8.1.4
   logger: ^2.4.0
-  uuid: ^4.4.2
   http: ^1.5.0
   shared_preferences: ^2.3.2
   gap: ^3.0.1
-  flutter_svg: ^2.0.10+1
-  flutter_swipe_action_cell: ^3.1.5
-  freezed_annotation: ^3.0.0
+  json_annotation: ^4.9.0
   pasteboard: ^0.4.0
-  zxing2: ^0.2.3
-  image: ^4.3.0
   path_provider: ^2.1.5
   path: ^1.9.0
-  percent_indicator: ^4.2.4
   app_links: ^6.4.0
   archive: ^3.6.1
   url_launcher: ^6.3.1
-  rxdart: ^0.28.0
-  fixnum: ^1.1.1
   package_info_plus: ^8.3.0
   grpc: ^5.1.0
-  lru_cache: ^0.0.2
   flutter_secure_storage: ^10.0.0
-  vector_graphics: ^1.1.18
-  convert: ^3.1.2
   qr_flutter: ^4.1.0
   auto_size_text: ^3.0.0
-  installed_apps: ^1.6.0
   crypto: ^3.0.6
-  encrypt: ^5.0.3
   device_info_plus: ^11.5.0
-  flutter_staggered_grid_view: ^0.7.0
   supabase_flutter: ^2.9.1
-  sign_in_with_apple: ^7.0.1
-  google_sign_in: ^7.2.0
   in_app_review: ^2.0.10
   flutter_local_notifications: ^22.0.1
   flutter_common:
@@ -88,7 +71,6 @@ dependencies:
     path: ../flutter_common/packages/ads
   cryptography: ^2.9.0
   retry: ^3.1.2
-  logging: ^1.3.0
   google_mobile_ads: ^8.0.0
   firebase_core: ^4.9.0
   firebase_analytics: ^12.4.1
@@ -100,9 +82,7 @@ dependencies:
 dev_dependencies:
   sentry_dart_plugin: ^3.2.1
   flutter_launcher_icons: ^0.14.3
-  json_annotation: ^4.9.0
   pigeon: ^26.2.3
-  mockito: ^5.4.6
   flutter_test:
     sdk: flutter
   ffigen: ^18.0.0
@@ -114,11 +94,9 @@ dev_dependencies:
   flutter_lints: ^6.0.0
   build_runner: ^2.7.2
   json_serializable: ^6.8.0
-  freezed: ^3.1.0
   # 3.16.10+ avoids picking crashpad_handler.exe as the MSIX entry (Sentry).
   msix: ^3.16.13
   flutter_oss_licenses: ^3.0.4
-  in_app_purchase_platform_interface: ^1.4.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
