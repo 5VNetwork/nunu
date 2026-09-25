@@ -4,7 +4,7 @@
 
 Nunu（努努加速器）是一款面向手机的 **免费 VPN**，帮助你稳定访问网络、保护隐私与上网自由。无论你是在找「梯子」「翻墙」工具，还是日常要用的 **VPN**，努努都承诺：**完全永久免费，不限流量**。
 
-官网：[www.nunu.monster](https://www.nunu.monster) · [免费 VPN 介绍页](https://www.nunu.monster/free-vpn)
+官网：[www.nunu.monster](https://www.nunu.monster) · [备用官网](https://www.nunuvpn.com/zh)
 
 ## 为什么选择努努（免费 VPN / 梯子）
 
