@@ -1701,10 +1701,28 @@ class AppLocalizationsZh extends AppLocalizations {
   String get dnsNameDesc => 'DNS服务器名称可以在入站条件那里引用，以指定它所使用的节点。';
 
   @override
-  String get directAppSetDesc => '选择不经过努努加速器的应用';
+  String get directAppSetDesc => '选择不经过努努的应用或者只经过努努的应用';
 
   @override
   String get splitTunnel => '分应用';
+
+  @override
+  String get splitTunnelBlacklist => '黑名单';
+
+  @override
+  String get splitTunnelWhitelist => '白名单';
+
+  @override
+  String get splitTunnelBlacklistDesc => '所选应用不经过 Nunu，直接访问网络';
+
+  @override
+  String get splitTunnelWhitelistDesc => '仅所选应用经过 Nunu，其他应用不经过努努处理';
+
+  @override
+  String get splitTunnelWhitelistEmptyWarning => '白名单模式请至少选择一个应用，否则将无法连接';
+
+  @override
+  String get whitelistEmptyMessage => '请在设置-分应用中选择需要经过 Nunu 的应用';
 
   @override
   String get deleteDebugLogs => '删除日志文件';
@@ -2243,7 +2261,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String sessionLimitsBody(String duration, String data) {
-    return '每次连接时长为 $duration。时间结束后，如果流量尚未用完，努努会继续保持连接，直到用量达到 $data。倒计时结束后，主页会显示剩余流量。';
+    return '每次连接时长最少为 $duration，时间结束后，如果流量尚未用完，努努会继续保持连接，直到用量达到 $data。';
   }
 
   @override

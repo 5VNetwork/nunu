@@ -28,6 +28,7 @@ import 'package:nunu/l10n/app_localizations.dart';
 import 'package:nunu/main.dart';
 import 'package:nunu/pref_helper.dart';
 import 'package:nunu/utils/default_network.dart';
+import 'package:nunu/utils/review_prompt.dart';
 import 'package:flutter_common/common.dart';
 import 'package:flutter_common/util/country.dart';
 import 'package:country/country.dart';
@@ -61,6 +62,7 @@ class _VpnHomePageState extends State<VpnHomePage> {
   void initState() {
     super.initState();
     final pref = context.read<SharedPreferences>();
+    ReviewPrompt(pref).onAppOpen();
     if (Platform.isAndroid && !pref.hasShownVpnServiceInfo) {
       pref.setHasShownVpnServiceInfo(true);
       WidgetsBinding.instance.addPostFrameCallback((timeStamp) {

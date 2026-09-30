@@ -33,12 +33,11 @@ import 'package:nunu/utils/debug.dart';
 import 'package:nunu/utils/logger.dart';
 import 'package:nunu/utils/path.dart';
 import 'package:nunu/widgets/pro_icon.dart';
-import 'package:in_app_review/in_app_review.dart';
 import 'package:flutter_common/widgets/app_bar.dart';
 import 'package:tm_windows/tm_windows_bindings_generated.dart';
 import 'package:nunu/theme.dart';
-
-final InAppReview inAppReview = InAppReview.instance;
+import 'package:nunu/utils/review_prompt.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 enum SettingGroup {
   account,
@@ -520,15 +519,10 @@ class _BottomActions extends StatelessWidget {
               child: _ActionButton(
                 icon: Icons.rate_review_outlined,
                 label: l10n.rateApp,
-                onTap: () async {
-                  if (await inAppReview.isAvailable()) {
-                    inAppReview.requestReview();
-                  } else {
-                    inAppReview.openStoreListing(
-                      appStoreId: '',
-                      microsoftStoreId: '',
-                    );
-                  }
+                onTap: () {
+                  ReviewPrompt(
+                    context.read<SharedPreferences>(),
+                  ).openReviewOrStoreListing();
                 },
               ),
             ),

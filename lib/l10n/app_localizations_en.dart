@@ -1757,6 +1757,24 @@ class AppLocalizationsEn extends AppLocalizations {
   String get splitTunnel => 'Split Tunnel';
 
   @override
+  String get splitTunnelBlacklist => 'Blacklist';
+
+  @override
+  String get splitTunnelWhitelist => 'Whitelist';
+
+  @override
+  String get splitTunnelBlacklistDesc => 'Selected apps bypass Nunu and go directly to the internet';
+
+  @override
+  String get splitTunnelWhitelistDesc => 'Only selected apps go through Nunu';
+
+  @override
+  String get splitTunnelWhitelistEmptyWarning => 'Select at least one app for whitelist mode, or connection will fail';
+
+  @override
+  String get whitelistEmptyMessage => 'Please select the apps that should go through Nunu in Settings';
+
+  @override
   String get deleteDebugLogs => 'Delete Debug Logs';
 
   @override

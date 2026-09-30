@@ -3301,6 +3301,42 @@ abstract class AppLocalizations {
   /// **'Split Tunnel'**
   String get splitTunnel;
 
+  /// No description provided for @splitTunnelBlacklist.
+  ///
+  /// In en, this message translates to:
+  /// **'Blacklist'**
+  String get splitTunnelBlacklist;
+
+  /// No description provided for @splitTunnelWhitelist.
+  ///
+  /// In en, this message translates to:
+  /// **'Whitelist'**
+  String get splitTunnelWhitelist;
+
+  /// No description provided for @splitTunnelBlacklistDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Selected apps bypass Nunu and go directly to the internet'**
+  String get splitTunnelBlacklistDesc;
+
+  /// No description provided for @splitTunnelWhitelistDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Only selected apps go through Nunu'**
+  String get splitTunnelWhitelistDesc;
+
+  /// No description provided for @splitTunnelWhitelistEmptyWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Select at least one app for whitelist mode, or connection will fail'**
+  String get splitTunnelWhitelistEmptyWarning;
+
+  /// No description provided for @whitelistEmptyMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Please select the apps that should go through Nunu in Settings'**
+  String get whitelistEmptyMessage;
+
   /// No description provided for @deleteDebugLogs.
   ///
   /// In en, this message translates to:

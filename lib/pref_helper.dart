@@ -294,6 +294,26 @@ extension PrefHelperExtension on SharedPreferences {
     setBool('needReInstallWindowsService', need);
   }
 
+  DateTime? get firstOpenAt {
+    final time = getInt('firstOpenAt');
+    if (time == null) return null;
+    return DateTime.fromMillisecondsSinceEpoch(time);
+  }
+
+  void setFirstOpenAt(DateTime time) {
+    setInt('firstOpenAt', time.millisecondsSinceEpoch);
+  }
+
+  DateTime? get lastReviewPromptAt {
+    final time = getInt('lastReviewPromptAt');
+    if (time == null) return null;
+    return DateTime.fromMillisecondsSinceEpoch(time);
+  }
+
+  void setLastReviewPromptAt(DateTime time) {
+    setInt('lastReviewPromptAt', time.millisecondsSinceEpoch);
+  }
+
   // return either a string or a RouteMode
   DefaultRouteMode get routingMode {
     final mode = getInt('routingMode');
@@ -306,6 +326,28 @@ extension PrefHelperExtension on SharedPreferences {
   void setRoutingMode(DefaultRouteMode mode) {
     setInt('routingMode', mode.index);
   }
+
+  /// Android split tunnel: blacklist (bypass) vs whitelist (only these use VPN).
+  SplitTunnelMode get splitTunnelMode {
+    final i = getInt('splitTunnelMode');
+    if (i == null || i < 0 || i >= SplitTunnelMode.values.length) {
+      return SplitTunnelMode.blacklist;
+    }
+    return SplitTunnelMode.values[i];
+  }
+
+  void setSplitTunnelMode(SplitTunnelMode mode) {
+    setInt('splitTunnelMode', mode.index);
+  }
+}
+
+/// Android TUN per-app filter mode for split tunnel.
+enum SplitTunnelMode {
+  /// Selected apps bypass the VPN.
+  blacklist,
+
+  /// Only selected apps go through the VPN.
+  whitelist,
 }
 
 enum InboundMode {

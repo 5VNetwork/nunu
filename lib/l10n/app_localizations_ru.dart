@@ -1757,6 +1757,24 @@ class AppLocalizationsRu extends AppLocalizations {
   String get splitTunnel => 'Раздельный туннель';
 
   @override
+  String get splitTunnelBlacklist => 'Чёрный список';
+
+  @override
+  String get splitTunnelWhitelist => 'Белый список';
+
+  @override
+  String get splitTunnelBlacklistDesc => 'Выбранные приложения обходят Nunu и выходят в интернет напрямую';
+
+  @override
+  String get splitTunnelWhitelistDesc => 'Только выбранные приложения проходят через Nunu; остальные обходят VPN';
+
+  @override
+  String get splitTunnelWhitelistEmptyWarning => 'Выберите хотя бы одно приложение для режима белого списка, иначе подключение не удастся';
+
+  @override
+  String get whitelistEmptyMessage => 'Пожалуйста, выберите в настройках приложения, которые должны проходить через Nunu';
+
+  @override
   String get deleteDebugLogs => 'Удалить журналы отладки';
 
   @override
