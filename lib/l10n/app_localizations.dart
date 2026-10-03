@@ -655,6 +655,30 @@ abstract class AppLocalizations {
   /// **'Add to Direct?'**
   String get addToDirect;
 
+  /// No description provided for @vpnBlockDomains.
+  ///
+  /// In en, this message translates to:
+  /// **'Block VPN websites'**
+  String get vpnBlockDomains;
+
+  /// No description provided for @vpnBlockDomainsDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Websites that block VPN traffic will be specially handled in our VPN servers. However, this does not guarantee normal access.'**
+  String get vpnBlockDomainsDesc;
+
+  /// No description provided for @addVpnBlockDomain.
+  ///
+  /// In en, this message translates to:
+  /// **'Add domain'**
+  String get addVpnBlockDomain;
+
+  /// No description provided for @vpnBlockDomainTooShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Domain must be at least 5 characters'**
+  String get vpnBlockDomainTooShort;
+
   /// No description provided for @default0.
   ///
   /// In en, this message translates to:

@@ -288,6 +288,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get addToDirect => 'Add to Direct?';
 
   @override
+  String get vpnBlockDomains => 'Block VPN websites';
+
+  @override
+  String get vpnBlockDomainsDesc => 'Websites that block VPN traffic will be specially handled in our VPN servers. However, this does not guarantee normal access.';
+
+  @override
+  String get addVpnBlockDomain => 'Add domain';
+
+  @override
+  String get vpnBlockDomainTooShort => 'Domain must be at least 5 characters';
+
+  @override
   String get default0 => 'Default';
 
   @override

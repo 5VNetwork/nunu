@@ -288,6 +288,18 @@ class AppLocalizationsZh extends AppLocalizations {
   String get addToDirect => '添加到直连?';
 
   @override
+  String get vpnBlockDomains => '禁止VPN的网站';
+
+  @override
+  String get vpnBlockDomainsDesc => '部分网站会封锁 VPN 流量，请将这些网站添加到列表里，它们的流量在服务器会被特殊处理。但是，这依旧无法保证能正常访问';
+
+  @override
+  String get addVpnBlockDomain => '添加域名';
+
+  @override
+  String get vpnBlockDomainTooShort => '域名至少需要5个字符';
+
+  @override
   String get default0 => '默认';
 
   @override

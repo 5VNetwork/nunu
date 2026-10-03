@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:nunu/app/vpn_block_domains.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tm/x_controller.dart';
@@ -30,7 +31,11 @@ class Control extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [const FakeDns()],
+      children: [
+        const FakeDns(),
+        const SizedBox(height: 8),
+        const VpnBlockDomains(),
+      ],
     );
   }
 }

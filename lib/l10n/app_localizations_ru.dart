@@ -288,6 +288,18 @@ class AppLocalizationsRu extends AppLocalizations {
   String get addToDirect => 'Добавить в Direct?';
 
   @override
+  String get vpnBlockDomains => 'Обход VPN-блокировки';
+
+  @override
+  String get vpnBlockDomainsDesc => 'Сайты, блокирующие VPN-трафик, будут подключаться напрямую без туннеля';
+
+  @override
+  String get addVpnBlockDomain => 'Добавить домен для обхода';
+
+  @override
+  String get vpnBlockDomainTooShort => 'Домен должен содержать не менее 5 символов';
+
+  @override
   String get default0 => 'По умолчанию';
 
   @override
