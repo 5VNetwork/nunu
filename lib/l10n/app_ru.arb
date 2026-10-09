@@ -92,6 +92,7 @@
   "confirm": "Подтверждать",
   "addToProxy": "Добавить в прокси?",
   "addToDirect": "Добавить в Direct?",
+  "addToVpnBlock": "Обход блокировки VPN",
   "vpnBlockDomains": "Обход VPN-блокировки",
   "vpnBlockDomainsDesc": "Сайты, блокирующие VPN-трафик, будут подключаться напрямую без туннеля",
   "addVpnBlockDomain": "Добавить домен для обхода",
@@ -899,5 +900,11 @@
         "type": "String"
       }
     }
-  }
+  },
+  "hideSessionOngoingIndicator": "Скрыть индикатор активной сессии",
+  "showSessionOngoingIndicator": "Показать индикатор активной сессии",
+  "hideRealtimeUsage": "Скрыть использование в реальном времени",
+  "showRealtimeUsage": "Показать использование в реальном времени",
+  "hideDuplicateSessions": "Скрыть повторяющиеся сессии",
+  "showDuplicateSessions": "Показать повторяющиеся сессии"
 }

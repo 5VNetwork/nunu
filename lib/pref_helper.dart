@@ -148,6 +148,14 @@ extension PrefHelperExtension on SharedPreferences {
     setBool('shareLog', enable);
   }
 
+  bool get enableDebugLog {
+    return getBool('enableDebugLog') ?? false;
+  }
+
+  void setEnableDebugLog(bool enable) {
+    setBool('enableDebugLog', enable);
+  }
+
   DateTime? get lastUploadTime {
     final time = getInt('lastLogUploadTime');
     if (time == null) return null;
@@ -225,6 +233,54 @@ extension PrefHelperExtension on SharedPreferences {
     setBool('fakeDns', enable);
   }
 
+  bool get enableLog {
+    return getBool('enableLog') ?? false;
+  }
+
+  set enableLog(bool enable) {
+    setBool('enableLog', enable);
+  }
+
+  bool get showApp {
+    return getBool('showApp') ?? true;
+  }
+
+  void setShowApp(bool show) {
+    setBool('showApp', show);
+  }
+
+  bool get showHandler {
+    return getBool('showHandler') ?? false;
+  }
+
+  void setShowHandler(bool show) {
+    setBool('showHandler', show);
+  }
+
+  bool get showSessionOngoing {
+    return getBool('showSessionOngoing') ?? true;
+  }
+
+  void setShowSessionOngoing(bool show) {
+    setBool('showSessionOngoing', show);
+  }
+
+  bool get showRealtimeUsage {
+    return getBool('showRealtimeUsage') ?? false;
+  }
+
+  void setShowRealtimeUsage(bool show) {
+    setBool('showRealtimeUsage', show);
+  }
+
+  bool get dismissDuplicateSessions {
+    return getBool('dismissDuplicateSessions') ?? true;
+  }
+
+  void setDismissDuplicateSessions(bool dismiss) {
+    setBool('dismissDuplicateSessions', dismiss);
+  }
+
   String get selectedCountry {
     return getString('selectedCountry') ?? '';
   }
@@ -247,6 +303,14 @@ extension PrefHelperExtension on SharedPreferences {
 
   void setEnableAppOpenAds(bool enable) {
     setBool('enableAppOpenAds', enable);
+  }
+
+  bool get balanceMode {
+    return getBool('balanceMode') ?? false;
+  }
+
+  void setBalanceMode(bool enable) {
+    setBool('balanceMode', enable);
   }
 
   /// Whether tapping connect may offer to extend the session in exchange for

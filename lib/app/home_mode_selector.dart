@@ -11,12 +11,11 @@ class ModeSelector extends StatelessWidget {
       onTap: () {
         showModalBottomSheet(
           context: context,
-
           backgroundColor: colorScheme.surface,
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
           ),
-          builder: (ctx) => SafeArea(child: const _ModeList()),
+          builder: (ctx) => SafeArea(child: SizedBox(height: 300, child: const _ModeList())),
         );
       },
       child: Container(
@@ -74,10 +73,6 @@ class ModeSelector extends StatelessWidget {
                   ],
                 ),
                 const Spacer(),
-                // Icon(
-                //   Icons.keyboard_arrow_up_rounded,
-                //   color: colorScheme.onSurface.withOpacity(0.70),
-                // ),
               ],
             );
           },
@@ -95,7 +90,9 @@ class _ModeList extends StatelessWidget {
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
     DefaultRouteMode currentMode = context.read<ChoiceCubit>().state.routeMode;
-    final isInChina = userInChina(context.read<SharedPreferences>());
+    final modes = DefaultRouteMode.values
+        .where((e) => e != DefaultRouteMode.proxyAll)
+        .toList();
 
     return Container(
       padding: const EdgeInsets.all(20),
@@ -111,17 +108,13 @@ class _ModeList extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20),
-          Flexible(
+          Expanded(
             child: ListView.builder(
               physics: const NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              itemCount: 2,
+              itemCount: modes.length,
               itemBuilder: (ctx, index) {
-                final mode = DefaultRouteMode.values
-                    .where((e) => e != DefaultRouteMode.proxyAll)
-                    .toList()[index];
+                final mode = modes[index];
                 final isSelected = mode == currentMode;
-                final isSelectable = true;
                 final titleColor = isSelected
                     ? colorScheme.primary
                     : colorScheme.onSurface;
@@ -141,7 +134,6 @@ class _ModeList extends StatelessWidget {
                         : null,
                   ),
                   child: ListTile(
-                    enabled: isSelectable,
                     contentPadding: const EdgeInsets.symmetric(
                       horizontal: 16,
                       vertical: 8,
@@ -181,18 +173,18 @@ class _ModeList extends StatelessWidget {
               },
             ),
           ),
-          // const SizedBox(height: 8),
-          // Align(
-          //   alignment: Alignment.centerRight,
-          //   child: TextButton.icon(
-          //     onPressed: () {
-          //       Navigator.pop(context);
-          //       context.push('/route');
-          //     },
-          //     icon: const Icon(Icons.tune),
-          //     label: Text(AppLocalizations.of(context)!.advanced),
-          //   ),
-          // ),
+          const SizedBox(height: 8),
+          Align(
+            alignment: Alignment.centerRight,
+            child: TextButton.icon(
+              onPressed: () {
+                Navigator.pop(context);
+                context.push('/route');
+              },
+              icon: const Icon(Icons.tune),
+              label: Text(AppLocalizations.of(context)!.advanced),
+            ),
+          ),
         ],
       ),
     );

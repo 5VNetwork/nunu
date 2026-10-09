@@ -288,6 +288,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get addToDirect => 'Добавить в Direct?';
 
   @override
+  String get addToVpnBlock => 'Обход блокировки VPN';
+
+  @override
   String get vpnBlockDomains => 'Обход VPN-блокировки';
 
   @override
@@ -2334,4 +2337,22 @@ class AppLocalizationsRu extends AppLocalizations {
   String sessionLimitsRewarded(String duration, String data) {
     return 'Просмотр рекламы продлевает сессию до $duration и $data.';
   }
+
+  @override
+  String get hideSessionOngoingIndicator => 'Скрыть индикатор активной сессии';
+
+  @override
+  String get showSessionOngoingIndicator => 'Показать индикатор активной сессии';
+
+  @override
+  String get hideRealtimeUsage => 'Скрыть использование в реальном времени';
+
+  @override
+  String get showRealtimeUsage => 'Показать использование в реальном времени';
+
+  @override
+  String get hideDuplicateSessions => 'Скрыть повторяющиеся сессии';
+
+  @override
+  String get showDuplicateSessions => 'Показать повторяющиеся сессии';
 }

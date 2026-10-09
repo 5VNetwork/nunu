@@ -51,6 +51,9 @@ import 'package:nunu/app/settings/general/general.dart';
 import 'package:nunu/app/settings/open_source_software_notice_screen.dart';
 import 'package:nunu/app/settings/privacy.dart';
 import 'package:nunu/app/settings/setting.dart';
+import 'package:nunu/app/log/log_bloc.dart';
+import 'package:nunu/app/log/log_page.dart';
+import 'package:nunu/features/routing/ui/routing_rules_page.dart';
 import 'package:nunu/utils/default_network.dart';
 import 'package:nunu/utils/geodata.dart';
 import 'package:nunu/utils/windows_host_api.g.dart';
@@ -356,6 +359,13 @@ void main() async {
               ? context.read<AutoUpdateService>()
               : null,
           startAd: admobEnabled ? context.read<OpenInterAdManager>() : null,
+        ),
+      ),
+      BlocProvider(
+        lazy: false,
+        create: (context) => LogBloc(
+          pref: context.read<SharedPreferences>(),
+          xController: context.read<XController>(),
         ),
       ),
       if (desktopPlatform)

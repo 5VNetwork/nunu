@@ -36,6 +36,12 @@ jobs:
           mkdir ../nunu-plugin/tm_android/android/libs
           mkdir -p ../flutter_common/packages/ads/assets/ads
 
+      - name: Download wintun.dll
+        shell: bash
+        run: |
+          mkdir -p ../nunu-plugin/tm_windows/assets
+          curl -fL "https://download.5vnetwork.com/wintun.dll" -o ../nunu-plugin/tm_windows/assets/wintun.dll
+
       - name: Cache fonts
         id: cache-fonts
         uses: actions/cache@v4
@@ -78,11 +84,16 @@ jobs:
           Expand-Archive -Path x_win_x86_64.zip -DestinationPath ./x_win_x86_64 -Force
       #          Expand-Archive -Path x_win_arm64.zip -DestinationPath ./x_win_arm64 -Force
 
-      - name: copy files to nunu_plugin
+      - name: copy files to umivpn_plugin
         run: |
           cp x_win_x86_64/x.dll ../nunu-plugin/tm_windows/assets/x.dll
-          cp x_win_x86_64/umi_service.exe ../nunu-plugin/tm_windows/assets/umi_service.exe
-          cp x_win_x86_64/service_install.exe service_install.exe
+
+      - name: zip nunu_service.exe
+        shell: powershell
+        run: |
+          Rename-Item -Path x_win_x86_64/umi_service.exe -NewName nunu_service.exe
+          Compress-Archive -Path x_win_x86_64/nunu_service.exe -DestinationPath x_win_x86_64/nunu_service.zip -Force
+          Copy-Item x_win_x86_64/nunu_service.zip ../nunu-plugin/tm_windows/assets/nunu_service.zip -Force
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
@@ -128,6 +139,14 @@ jobs:
           LOG_KEY: ${{ secrets.LOG_KEY }}
         run: |
           dart run msix:create --store --windows-build-args "--obfuscate --split-debug-info=symbols --dart-define=STORE=true --dart-define=LOG_KEY=$env:LOG_KEY --dart-define=URL=$env:URL" -n store
+
+      - name: Upload MSIX artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: store-msix-${{ steps.get_version.outputs.version }}
+          path: build/windows/msix/store.msix
+          if-no-files-found: error
+          retention-days: 7
 
       - name: Upload debug symbols (Windows Store)
         env:
@@ -356,12 +375,12 @@ jobs:
   #         GH_TOKEN: ${{ secrets.PAT_TOKEN }}
   #       run: |
   #         gh release download ${{ steps.get_version.outputs.version }} \
-  #           -R 5VNetwork/nunu \
-  #           -p "NunuInstaller.exe"
+  #           -R 5VNetwork/umivpn \
+  #           -p "UmiVPNInstaller.exe"
 
   #     - name: Upload Windows Installer to R2
   #       run: |
-  #         aws s3 cp NunuInstaller.exe s3://nunu/ \
+  #         aws s3 cp UmiVPNInstaller.exe s3://umivpn/ \
   #           --profile r2 \
   #           --endpoint-url https://37c1d94ef4ab81c55c6e7d0158613800.r2.cloudflarestorage.com
 

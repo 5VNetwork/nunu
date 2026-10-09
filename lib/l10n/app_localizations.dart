@@ -655,6 +655,12 @@ abstract class AppLocalizations {
   /// **'Add to Direct?'**
   String get addToDirect;
 
+  /// No description provided for @addToVpnBlock.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to \"Block VPN websites\"'**
+  String get addToVpnBlock;
+
   /// No description provided for @vpnBlockDomains.
   ///
   /// In en, this message translates to:
@@ -4362,6 +4368,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Watching an ad extends this session to {duration} and {data}.'**
   String sessionLimitsRewarded(String duration, String data);
+
+  /// No description provided for @hideSessionOngoingIndicator.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide Session Ongoing Indicator'**
+  String get hideSessionOngoingIndicator;
+
+  /// No description provided for @showSessionOngoingIndicator.
+  ///
+  /// In en, this message translates to:
+  /// **'Show Session Ongoing Indicator'**
+  String get showSessionOngoingIndicator;
+
+  /// No description provided for @hideRealtimeUsage.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide Realtime Usage'**
+  String get hideRealtimeUsage;
+
+  /// No description provided for @showRealtimeUsage.
+  ///
+  /// In en, this message translates to:
+  /// **'Show Realtime Usage'**
+  String get showRealtimeUsage;
+
+  /// No description provided for @hideDuplicateSessions.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide Duplicate Sessions'**
+  String get hideDuplicateSessions;
+
+  /// No description provided for @showDuplicateSessions.
+  ///
+  /// In en, this message translates to:
+  /// **'Show Duplicate Sessions'**
+  String get showDuplicateSessions;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

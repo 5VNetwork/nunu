@@ -47,6 +47,7 @@ part 'inbound_mode_selector.dart';
 part 'home_button.dart';
 part 'home_country_selector.dart';
 part 'home_mode_selector.dart';
+part 'home_traffic_card.dart';
 
 class VpnHomePage extends StatefulWidget {
   const VpnHomePage({super.key});
@@ -152,8 +153,16 @@ class _VpnHomePageState extends State<VpnHomePage> {
             context.go('/setting');
           },
         ),
-
         SizedBox(width: 8),
+        if (!admobEnabled)
+          IconButton(
+            onPressed: () => context.go('/log'),
+            icon: Icon(
+              Icons.receipt_long_rounded,
+              color: colorScheme.onSurface.withOpacity(0.87),
+            ),
+            tooltip: AppLocalizations.of(context)!.log,
+          ),
       ],
     );
     final title = Text(
@@ -185,14 +194,29 @@ class _VpnHomePageState extends State<VpnHomePage> {
             ? MoveWindow(child: Container(color: Colors.transparent))
             : null,
         actions: [
-          IconButton(
-            tooltip: AppLocalizations.of(context)!.info,
-            icon: Icon(
-              Icons.info_outline_rounded,
-              color: colorScheme.onSurface.withOpacity(0.87),
+          Padding(
+            padding: const EdgeInsets.only(right: 8.0),
+            child: IconButton(
+              tooltip: AppLocalizations.of(context)!.website,
+              icon: Icon(
+                Icons.language_rounded,
+                color: colorScheme.onSurface.withOpacity(0.87),
+              ),
+              onPressed: () => launchUrl(
+                Uri.parse(websiteUrl),
+                mode: LaunchMode.externalApplication,
+              ),
             ),
-            onPressed: () => _showSessionLimitsDialog(context),
           ),
+          if (admobEnabled)
+            IconButton(
+              tooltip: AppLocalizations.of(context)!.info,
+              icon: Icon(
+                Icons.info_outline_rounded,
+                color: colorScheme.onSurface.withOpacity(0.87),
+              ),
+              onPressed: () => _showSessionLimitsDialog(context),
+            ),
           shareButton,
           if (Platform.isWindows || Platform.isLinux)
             Padding(
@@ -243,8 +267,10 @@ void _showSessionLimitsDialog(BuildContext context) {
   final l10n = AppLocalizations.of(context)!;
   final duration = rewardedDurationLabel(l10n, StatusCubit.baseDuration);
   final data = bytesToReadable(StatusCubit.dataUsageBytes);
-  final extendedDuration =
-      rewardedDurationLabel(l10n, StatusCubit.rewardedDuration);
+  final extendedDuration = rewardedDurationLabel(
+    l10n,
+    StatusCubit.rewardedDuration,
+  );
   final extendedData = bytesToReadable(StatusCubit.rewardDurationBytes);
   final theme = Theme.of(context);
 
@@ -252,9 +278,7 @@ void _showSessionLimitsDialog(BuildContext context) {
     context: context,
     builder: (context) => AlertDialog(
       contentPadding: const EdgeInsets.fromLTRB(24, 20, 24, 16),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       title: Row(
         children: [
           Icon(
@@ -380,6 +404,17 @@ class _HomeBody extends StatelessWidget {
                                         Expanded(child: InboundModeSelector()),
                                     ],
                                   ),
+                                  if (!admobEnabled)
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 10.0),
+                                      child: Row(
+                                        children: [
+                                          Expanded(child: _TrafficCard()),
+                                          const SizedBox(width: 10),
+                                          Expanded(child: ModeSelector()),
+                                        ],
+                                      ),
+                                    ),
                                   const SizedBox(height: 24),
                                   Expanded(
                                     child: Align(

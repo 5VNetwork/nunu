@@ -35,10 +35,16 @@ class AuthRepo extends ChangeNotifier {
 
   void setTestUser() {
     _user = const User(id: 'test', email: 'test@test.com');
+    _userProfile = const UserProfile(
+      id: 'test',
+      email: 'test@test.com',
+      limitedDataUsed: 1024 * 1024 * 1024 * 3,
+    );
     notifyListeners();
     // after 5 minutes, set the user to unauthenticated
     Future.delayed(const Duration(minutes: 5), () {
       _user = null;
+      _userProfile = null;
       notifyListeners();
     });
   }
@@ -55,6 +61,75 @@ class AuthRepo extends ChangeNotifier {
     return _authProvider.currentSession?.accessToken;
   }
 
+  UserProfile? get userProfile => _userProfile;
+  UserProfile? _userProfile;
+
+  Future<UserProfile?> fetchProfile() async {
+    if (_user == null) {
+      return null;
+    }
+    final token = await getValidAccessToken();
+    if (token == null) {
+      return null;
+    }
+
+    try {
+      final data = await _fetchProfileJson(token: token);
+      final profile = UserProfile.fromJson(data);
+      _userProfile = profile;
+      return profile;
+    } catch (e, stackTrace) {
+      logger.e('Error fetching profile', error: e, stackTrace: stackTrace);
+      rethrow;
+    }
+  }
+
+  /// Returns a non-expired access token, refreshing the Supabase session
+  /// when the current one is expired or about to expire.
+  Future<String?> getValidAccessToken() async {
+    var session = _authProvider.currentSession;
+    if (session == null) {
+      return null;
+    }
+    // Refresh a bit before the actual expiry to avoid races with the server.
+    const skewSeconds = 60;
+    final expiresAt = session.expiresAt;
+    final nowSeconds = DateTime.now().millisecondsSinceEpoch ~/ 1000;
+    final needsRefresh =
+        session.isExpired ||
+        (expiresAt != null && expiresAt - nowSeconds <= skewSeconds);
+    if (needsRefresh) {
+      try {
+        logger?.i('Refreshing Supabase session');
+        await _authProvider.refreshUser();
+        session = _authProvider.currentSession;
+      } catch (e) {
+        logger?.e('Failed to refresh Supabase session', error: e);
+        return null;
+      }
+    }
+    return session?.accessToken;
+  }
+
+  Future<Map<String, dynamic>> _fetchProfileJson({
+    required String token,
+  }) async {
+    final response = await supabase.functions.invoke(
+      'get-profile',
+      headers: {
+        'Authorization': 'Bearer $token',
+        'User-Agent': 'UmiVPN/$version',
+      },
+    );
+    if (response.status != 200 || response.data == null) {
+      throw Exception(
+        'get-profile failed: ${response.status} ${response.data}',
+      );
+    }
+
+    return Map<String, dynamic>.from(response.data as Map);
+  }
+
   @override
   void dispose() {
     _userSubscription.cancel();
@@ -66,28 +141,32 @@ class UserProfile {
   const UserProfile({
     required this.id,
     required this.email,
-    this.stripeCustomerId,
+    required this.limitedDataUsed,
   });
 
   final String id;
   final String email;
-  final String? stripeCustomerId;
+  final int limitedDataUsed;
 
-  static DateTime? _parseDateTime(dynamic value) {
-    if (value == null) return null;
-    if (value is DateTime) return value;
-    if (value is String) return DateTime.parse(value);
-    return DateTime.tryParse(value.toString());
-  }
+  /// Remaining limited-platform quota in bytes.
+  int get remainingData => limitedDataUsed;
 
   factory UserProfile.fromJson(Map<String, dynamic> json) {
+    final limitedDataUsed = json['limited_data_used'];
     return UserProfile(
-      id: json['id'] as String,
+      id: json['user_id'] as String,
       email: json['email'] as String,
+      limitedDataUsed: limitedDataUsed is int
+          ? limitedDataUsed
+          : int.parse(limitedDataUsed.toString()),
     );
   }
 
   Map<String, dynamic> toJson() {
-    return {'id': id, 'email': email};
+    return {
+      'user_id': id,
+      'email': email,
+      'limited_data_used': limitedDataUsed,
+    };
   }
 }

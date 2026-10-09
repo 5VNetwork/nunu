@@ -288,6 +288,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get addToDirect => '添加到直连?';
 
   @override
+  String get addToVpnBlock => '添加到“禁止VPN的网站”';
+
+  @override
   String get vpnBlockDomains => '禁止VPN的网站';
 
   @override
@@ -2280,4 +2283,22 @@ class AppLocalizationsZh extends AppLocalizations {
   String sessionLimitsRewarded(String duration, String data) {
     return '观看广告可将本次连接延长为 $duration，流量额度改为 $data。';
   }
+
+  @override
+  String get hideSessionOngoingIndicator => '隐藏会话进行中指示器';
+
+  @override
+  String get showSessionOngoingIndicator => '显示会话进行中指示器';
+
+  @override
+  String get hideRealtimeUsage => '隐藏实时用量';
+
+  @override
+  String get showRealtimeUsage => '显示实时用量';
+
+  @override
+  String get hideDuplicateSessions => '隐藏重复会话';
+
+  @override
+  String get showDuplicateSessions => '显示重复会话';
 }

@@ -44,6 +44,14 @@ Directory getTunnelLogDir() {
   return dir;
 }
 
+Future<Directory> getDebugTunnelLogDir() async {
+  final dir = Directory(join((await resourceDir()).path, "debug_tunnel_logs"));
+  if (!dir.existsSync()) {
+    dir.createSync(recursive: true);
+  }
+  return dir;
+}
+
 Future<Directory> getDebugLogDir() async {
   final dir = Directory(join((await resourceDir()).path, "debug_logs"));
   if (!dir.existsSync()) {
@@ -204,7 +212,7 @@ String getServiceExePath() {
     'packages',
     'tm_windows',
     'assets',
-    'umi_service.exe',
+    'nunu_service.exe',
   );
   String pathToExe = join(
     Directory(Platform.resolvedExecutable).parent.path,
@@ -215,7 +223,7 @@ String getServiceExePath() {
 }
 
 String getServicePath() {
-  return join((resourceDirectory).path, 'umi_service.exe');
+  return join((resourceDirectory).path, 'nunu_service.exe');
 }
 
 String getServiceExeZipPath() {
@@ -225,7 +233,7 @@ String getServiceExeZipPath() {
     'packages',
     'tm_windows',
     'assets',
-    'umi_service.zip',
+    'nunu_service.zip',
   );
   String pathToExe = join(
     Directory(Platform.resolvedExecutable).parent.path,
