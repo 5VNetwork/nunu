@@ -148,10 +148,10 @@ jobs:
           if-no-files-found: error
           retention-days: 7
 
-      - name: Upload debug symbols (Windows Store)
-        env:
-          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
-        run: flutter pub run sentry_dart_plugin
+      # - name: Upload debug symbols (Windows Store)
+      #   env:
+      #     SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+      #   run: flutter pub run sentry_dart_plugin
 
       - name: Publish MSIX to the Microsoft Store
         run: msstore publish -v
