@@ -163,7 +163,7 @@ void main() async {
     providers: [
       Provider.value(value: apiClient),
       ChangeNotifierProvider<AuthProvider>.value(value: authProvider),
-      ChangeNotifierProvider.value(value: AuthRepo(authProvider)),
+      ChangeNotifierProvider.value(value: AuthRepo(authProvider, storage)),
       Provider.value(value: pref),
       Provider.value(value: storage),
       Provider<LogUploadService>(

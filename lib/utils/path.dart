@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:crypto/crypto.dart';
 import 'package:flutter/services.dart';
+import 'package:nunu/common/common.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:nunu/main.dart';
@@ -12,6 +13,9 @@ final macPkg = Platform.isMacOS && appFlavor == 'pkg';
 
 /// dir to hold geosite, geoip, wintun.dll, unix socket
 Future<Directory> resourceDir() async {
+  if (Platform.isWindows && isWinStore) {
+    return getProgramDataDir();
+  }
   if (Platform.isWindows || Platform.isAndroid || Platform.isLinux) {
     return await getApplicationSupportDirectory();
   }
@@ -223,7 +227,19 @@ String getServiceExePath() {
 }
 
 String getServicePath() {
-  return join((resourceDirectory).path, 'nunu_service.exe');
+  return join(getProgramDataDir().path, 'nunu_service.exe');
+}
+
+/// Real, non-virtualized per-machine folder (survives MSIX reinstall).
+/// Used for Windows service binaries and persistent device id.
+Directory getProgramDataDir() {
+  final programDataPath =
+      Platform.environment['ProgramData'] ?? r'C:\ProgramData';
+  final dir = Directory(join(programDataPath, 'com.5vnetwork', 'nunu'));
+  if (!dir.existsSync()) {
+    dir.createSync(recursive: true);
+  }
+  return dir;
 }
 
 String getServiceExeZipPath() {

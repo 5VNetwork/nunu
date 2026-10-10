@@ -5,6 +5,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:supabase_flutter/supabase_flutter.dart' hide User;
 import 'package:nunu/auth/user.dart';
 import 'package:nunu/common/common.dart';
@@ -12,6 +13,7 @@ import 'package:nunu/main.dart';
 import 'package:nunu/utils/logger.dart';
 import 'package:flutter_common/auth/auth_provider.dart';
 import 'package:retry/retry.dart';
+import 'package:tm/activate.dart';
 
 const webClientId =
     "952575395446-83mgm25olhkcqqm00el2ctv65m7dkpbk.apps.googleusercontent.com";
@@ -23,10 +25,13 @@ final iosClientId = debug
     : "952575395446-dts29lpnn4gnn9dbgu2aule8ja6ba7sn.apps.googleusercontent.com";
 
 class AuthRepo extends ChangeNotifier {
-  AuthRepo(this._authProvider) {
-    _userSubscription = _authProvider.sessionStreams.listen((user) {
-      _user = user?.toUser;
+  AuthRepo(this._authProvider, FlutterSecureStorage storage) {
+    _userSubscription = _authProvider.sessionStreams.listen((session) {
+      _user = session?.toUser;
       notifyListeners();
+      if (session != null) {
+        unawaited(registerUserDevice(supabase, storage));
+      }
     });
   }
 
