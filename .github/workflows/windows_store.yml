@@ -31,7 +31,6 @@ jobs:
           touch ../nunu-plugin/tm_linux/assets/x.so
           touch ../nunu-plugin/tm_linux/assets/x
           mkdir -p assets/google_fonts
-          mkdir -p assets/geo
           mkdir -p assets/ads
           mkdir ../nunu-plugin/tm_android/android/libs
           mkdir -p ../flutter_common/packages/ads/assets/ads
