@@ -7,13 +7,16 @@ project 'Runner', {
   'Debug' => :debug,
   'Debug-staging' => :debug,
   'Debug-production' => :debug,
+  'Debug-cn' => :debug,
   'Debug-pkg' => :debug,
   'Profile' => :release,
   'Profile-staging' => :release,
   'Profile-production' => :release,
+  'Profile-cn' => :release,
   'Release' => :release,
   'Release-staging' => :release,
   'Release-production' => :release,
+  'Release-cn' => :release,
   'Release-pkg' => :release,
 }
 

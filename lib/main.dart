@@ -93,6 +93,7 @@ import 'package:sentry_flutter/sentry_flutter.dart';
 import 'package:nunu/firebase_options.dart';
 import 'package:nunu/firebase_options_staging.dart' as staging;
 import 'package:nunu/firebase_options_dev.dart' as dev;
+import 'package:nunu/firebase_options_cn.dart' as cn;
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:window_manager/window_manager.dart';
 
@@ -477,21 +478,21 @@ Future<void> _initWindow(SharedPreferences pref) async {
     if (Platform.isMacOS) {
       await WindowManipulator.initialize();
 
-      WindowManipulator.hideTitle();
-      WindowManipulator.makeTitlebarTransparent();
-      WindowManipulator.enableFullSizeContentView();
-      WindowManipulator.overrideStandardWindowButtonPosition(
-        buttonType: NSWindowButtonType.closeButton,
-        offset: const Offset(15, 20),
-      );
-      WindowManipulator.overrideStandardWindowButtonPosition(
-        buttonType: NSWindowButtonType.miniaturizeButton,
-        offset: const Offset(35, 20),
-      );
-      WindowManipulator.overrideStandardWindowButtonPosition(
-        buttonType: NSWindowButtonType.zoomButton,
-        offset: const Offset(55, 20),
-      );
+      // WindowManipulator.hideTitle();
+      // WindowManipulator.makeTitlebarTransparent();
+      // WindowManipulator.enableFullSizeContentView();
+      // WindowManipulator.overrideStandardWindowButtonPosition(
+      //   buttonType: NSWindowButtonType.closeButton,
+      //   offset: const Offset(15, 20),
+      // );
+      // WindowManipulator.overrideStandardWindowButtonPosition(
+      //   buttonType: NSWindowButtonType.miniaturizeButton,
+      //   offset: const Offset(35, 20),
+      // );
+      // WindowManipulator.overrideStandardWindowButtonPosition(
+      //   buttonType: NSWindowButtonType.zoomButton,
+      //   offset: const Offset(55, 20),
+      // );
     }
     if (Platform.isWindows || Platform.isLinux) {
       WindowOptions windowOptions = WindowOptions(
@@ -577,7 +578,8 @@ Future<String> assetName() async {
 FirebaseOptions _firebaseOptionsForCurrentFlavor() {
   return switch (appFlavor) {
     'production' || 'pkg' || 'apk' => DefaultFirebaseOptions.currentPlatform,
-    'staging' => staging.DefaultFirebaseOptions.currentPlatform,
+    'cn' => cn.DefaultFirebaseOptions.currentPlatform,
+    'staging' => DefaultFirebaseOptions.currentPlatform,
     _ => dev.DefaultFirebaseOptions.currentPlatform,
   };
 }

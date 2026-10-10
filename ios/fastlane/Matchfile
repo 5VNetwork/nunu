@@ -8,7 +8,10 @@ type("appstore") # The default type, can be: appstore, adhoc, enterprise or deve
 app_identifier([
   "monster.nunu.production",                    # Main app
   "monster.nunu.production.PacketTunnel",       # PacketTunnel extension
-  "monster.nunu.production.ImageNotification"   # ImageNotification extension
+  "monster.nunu.production.ImageNotification",  # ImageNotification extension
+  "monster.nunu.cn",
+  "monster.nunu.cn.PacketTunnel",
+  "monster.nunu.cn.ImageNotification"
 ])
 
 # app_identifier(["tools.fastlane.app", "tools.fastlane.app2"])

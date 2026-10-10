@@ -86,3 +86,4 @@ ios/fastlane/README.md
 ios/fastlane/report.xml
 .sentry-native/
 sentry.properties
+ios/Runner.ipa

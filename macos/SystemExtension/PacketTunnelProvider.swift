@@ -26,6 +26,8 @@ import Tm
 import OSLog
 
 let XTunnelErrorDomain: String = "XTunnelErrorDomain"
+let XTunnelSessionLimitErrorCode: Int = 100
+let XTunnelSessionLimitDescription: String = "session limit"
 
 public enum XTunnelError: Error {
     case invalidOptions
@@ -435,6 +437,19 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
 class Interface: NSObject, X_darwinInterfaceProtocol {
     func setTunSupport6(_ support6: Bool) throws {
         try packetTunnelProvider.resetNetworkSetting(enable6: support6)
+    }
+
+    func shutdown() {
+        packetTunnelProvider.nsLog(msg: "session limit reached, cancelling tunnel")
+        packetTunnelProvider.cancelTunnelWithError(
+            NSError(
+                domain: XTunnelErrorDomain,
+                code: XTunnelSessionLimitErrorCode,
+                userInfo: [
+                    NSLocalizedDescriptionKey: XTunnelSessionLimitDescription
+                ]
+            )
+        )
     }
 
     private let packetTunnelProvider: PacketTunnelProvider

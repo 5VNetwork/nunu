@@ -3,7 +3,7 @@
 # Feel free to reuse and adapt this script for your own projects
 
 if [[ $# -eq 0 ]]; then
-  echo "Error: No environment specified. Use 'staging' or 'production'."
+  echo "Error: No environment specified. Use 'dev', 'staging', 'production', or 'cn'."
   exit 1
 fi
 
@@ -37,8 +37,17 @@ case $1 in
       --android-package-name=monster.nunu.wqeeer \
       --android-out=android/app/src/production/google-services.json
     ;;
+  cn)
+    flutterfire config \
+      --project=nunu-2801b \
+      --out=lib/firebase_options_cn.dart \
+      --ios-bundle-id=monster.nunu.cn \
+      --ios-out=ios/flavors/cn/GoogleService-Info.plist \
+      --macos-bundle-id=monster.nunu.cn \
+      --macos-out=macos/flavors/cn/GoogleService-Info.plist
+    ;;
   *)
-    echo "Error: Invalid environment specified. Use 'staging' or 'production'."
+    echo "Error: Invalid environment specified. Use 'dev', 'staging', 'production', or 'cn'."
     exit 1
     ;;
 esac

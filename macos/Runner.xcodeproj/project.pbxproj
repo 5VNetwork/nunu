@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -139,6 +139,14 @@
 		15A130F12E71D3C4003E5632 /* monster.nunu.pkg.se.systemextension */ = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = monster.nunu.pkg.se.systemextension; sourceTree = BUILT_PRODUCTS_DIR; };
 		15A1F1082E71A1F300AF435D /* RunnerRelease-pkg.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "RunnerRelease-pkg.entitlements"; sourceTree = "<group>"; };
 		15C6EE462E2043A8006DDCF7 /* RunnerDebug-production.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "RunnerDebug-production.entitlements"; sourceTree = "<group>"; };
+		15CN05A7E8019514D37F78AA /* Pods-Runner.profile-cn.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile-cn.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile-cn.xcconfig"; sourceTree = "<group>"; };
+		15CN133C19C2601148E5BBD9 /* Pods-Runner.debug-cn.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug-cn.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug-cn.xcconfig"; sourceTree = "<group>"; };
+		15CN31AE76413BF2C2378A40 /* RunnerRelease-cn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "RunnerRelease-cn.entitlements"; sourceTree = "<group>"; };
+		15CN5D8C97F2F84C4A13D716 /* Pods-Runner.release-cn.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release-cn.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release-cn.xcconfig"; sourceTree = "<group>"; };
+		15CN626A2D9FC9CDF20742E5 /* Pods-RunnerTests.profile-cn.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.profile-cn.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.profile-cn.xcconfig"; sourceTree = "<group>"; };
+		15CN7E3FCD46593E0143737E /* Pods-RunnerTests.release-cn.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.release-cn.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.release-cn.xcconfig"; sourceTree = "<group>"; };
+		15CNAE5205CB0009B626676C /* Pods-RunnerTests.debug-cn.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.debug-cn.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.debug-cn.xcconfig"; sourceTree = "<group>"; };
+		15CNDD0CCF7691A47B095408 /* RunnerDebug-cn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "RunnerDebug-cn.entitlements"; sourceTree = "<group>"; };
 		15EEE78E2D63071800642457 /* MacosHostApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MacosHostApi.swift; path = ../darwin/MacosHostApi.swift; sourceTree = SOURCE_ROOT; };
 		15EEE78F2D63071800642457 /* Messages.g.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Messages.g.swift; path = ../darwin/Messages.g.swift; sourceTree = SOURCE_ROOT; };
 		15EEE8022D63115100642457 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
@@ -340,7 +348,9 @@
 				157F43FB2E75A7CA00C7AB3A /* Runnerdebug-pkg.entitlements */,
 				15A1F1082E71A1F300AF435D /* RunnerRelease-pkg.entitlements */,
 				15C6EE462E2043A8006DDCF7 /* RunnerDebug-production.entitlements */,
+				15CNDD0CCF7691A47B095408 /* RunnerDebug-cn.entitlements */,
 				1555C9F12DE49EB100F13D0C /* RunnerRelease-production.entitlements */,
+				15CN31AE76413BF2C2378A40 /* RunnerRelease-cn.entitlements */,
 				1555C8D42DDDE2A200F13D0C /* RunnerRelease-staging.entitlements */,
 				15703D252DB6BCEB00529F96 /* RunnerDebug-staging.entitlements */,
 				15EEE78E2D63071800642457 /* MacosHostApi.swift */,
@@ -361,6 +371,12 @@
 				D7C9C15A031BA8044495C493 /* Pods-Runner.debug.xcconfig */,
 				D09CD23AA30471BC2BD01AE0 /* Pods-Runner.Debug-pkg.xcconfig */,
 				155EA6387D4DBE8025E16308 /* Pods-Runner.debug-production.xcconfig */,
+				15CN133C19C2601148E5BBD9 /* Pods-Runner.debug-cn.xcconfig */,
+				15CN5D8C97F2F84C4A13D716 /* Pods-Runner.release-cn.xcconfig */,
+				15CN05A7E8019514D37F78AA /* Pods-Runner.profile-cn.xcconfig */,
+				15CNAE5205CB0009B626676C /* Pods-RunnerTests.debug-cn.xcconfig */,
+				15CN7E3FCD46593E0143737E /* Pods-RunnerTests.release-cn.xcconfig */,
+				15CN626A2D9FC9CDF20742E5 /* Pods-RunnerTests.profile-cn.xcconfig */,
 				468843486CEDDEECC2E3F46B /* Pods-Runner.debug-staging.xcconfig */,
 				AD928E83BAC475916B7083DA /* Pods-Runner.release.xcconfig */,
 				5B1A25245BB62217AA552225 /* Pods-Runner.Release-pkg.xcconfig */,
@@ -478,8 +494,8 @@
 				15A130EC2E71D135003E5632 /* Embed Frameworks */,
 				D9005513CAAA89D639A41D84 /* [CP] Embed Pods Frameworks */,
 				6A21E5FEA8DBCB632C2D20BB /* [CP] Copy Pods Resources */,
-				28792A90B15121B1DF0DE2F0 /* FlutterFire: "flutterfire bundle-service-file" */,
 				15E4EA252F7A77B4006DE75D /* Embed Foundation Extensions */,
+				9D860C7242D8DC15FBF8E5D1 /* FlutterFire: "flutterfire bundle-service-file" */,
 			);
 			buildRules = (
 			);
@@ -612,24 +628,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		28792A90B15121B1DF0DE2F0 /* FlutterFire: "flutterfire bundle-service-file" */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "FlutterFire: \"flutterfire bundle-service-file\"";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\n#!/bin/bash\nPATH=\"${PATH}:$FLUTTER_ROOT/bin:${PUB_CACHE}/bin:$HOME/.pub-cache/bin\"\n# Define the Resources directory path\nRESOURCES_DIR=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/Resources\"\n\n# Create the Resources directory if it does not exist\n mkdir -p \"$RESOURCES_DIR\"\n\n flutterfire bundle-service-file --plist-destination=\"$RESOURCES_DIR\" --build-configuration=${CONFIGURATION} --platform=macos --apple-project-path=\"${SRCROOT}\"\n";
-		};
 		3399D490228B24CF009A79C7 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -684,6 +682,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		9D860C7242D8DC15FBF8E5D1 /* FlutterFire: "flutterfire bundle-service-file" */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "FlutterFire: \"flutterfire bundle-service-file\"";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\n#!/bin/bash\nPATH=\"${PATH}:$FLUTTER_ROOT/bin:${PUB_CACHE}/bin:$HOME/.pub-cache/bin\"\n# Define the Resources directory path\nRESOURCES_DIR=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/Resources\"\n\n# Create the Resources directory if it does not exist\n mkdir -p \"$RESOURCES_DIR\"\n\n flutterfire bundle-service-file --plist-destination=\"$RESOURCES_DIR\" --build-configuration=${CONFIGURATION} --platform=macos --apple-project-path=\"${SRCROOT}\"\n";
 		};
 		D9005513CAAA89D639A41D84 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -892,104 +908,6 @@
 				MARKETING_VERSION = 1.2.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-ObjC",
-					"-l\"z\"",
-					"-framework",
-					"\"AppAuth\"",
-					"-framework",
-					"\"AppCheckCore\"",
-					"-framework",
-					"\"AppKit\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"CoreText\"",
-					"-framework",
-					"\"FBLPromises\"",
-					"-framework",
-					"\"FirebaseCore\"",
-					"-framework",
-					"\"FirebaseCoreInternal\"",
-					"-framework",
-					"\"FirebaseInstallations\"",
-					"-framework",
-					"\"FirebaseMessaging\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"GTMAppAuth\"",
-					"-framework",
-					"\"GTMSessionFetcher\"",
-					"-framework",
-					"\"GoogleDataTransport\"",
-					"-framework",
-					"\"GoogleSignIn\"",
-					"-framework",
-					"\"GoogleUtilities\"",
-					"-framework",
-					"\"LocalAuthentication\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"app_links\"",
-					"-framework",
-					"\"bitsdojo_window_macos\"",
-					"-framework",
-					"\"device_info_plus\"",
-					"-framework",
-					"\"file_picker\"",
-					"-framework",
-					"\"file_saver\"",
-					"-framework",
-					"\"firebase_core\"",
-					"-framework",
-					"\"firebase_messaging\"",
-					"-framework",
-					"\"flutter_local_notifications\"",
-					"-framework",
-					"\"flutter_secure_storage_darwin\"",
-					"-framework",
-					"\"google_sign_in_ios\"",
-					"-framework",
-					"\"in_app_purchase_storekit\"",
-					"-framework",
-					"\"in_app_review\"",
-					"-framework",
-					"\"macos_window_utils\"",
-					"-framework",
-					"\"mobile_scanner\"",
-					"-framework",
-					"\"nanopb\"",
-					"-framework",
-					"\"package_info_plus\"",
-					"-framework",
-					"\"pasteboard\"",
-					"-framework",
-					"\"path_provider_foundation\"",
-					"-framework",
-					"\"screen_retriever_macos\"",
-					"-framework",
-					"\"shared_preferences_foundation\"",
-					"-framework",
-					"\"sign_in_with_apple\"",
-					"-framework",
-					"\"tm_macos\"",
-					"-framework",
-					"\"tray_manager\"",
-					"-framework",
-					"\"url_launcher_macos\"",
-					"-framework",
-					"\"window_manager\"",
-					"-weak_framework",
-					"\"AuthenticationServices\"",
-					"-weak_framework",
-					"\"DeviceCheck\"",
-					"-weak_framework",
-					"\"UserNotifications\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.staging;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1064,66 +982,6 @@
 					"-ObjC",
 					"-l\"sqlite3\"",
 					"-l\"z\"",
-					"-framework",
-					"\"AppKit\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"FBLPromises\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"GoogleDataTransport\"",
-					"-framework",
-					"\"GoogleUtilities\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"app_links\"",
-					"-framework",
-					"\"bitsdojo_window_macos\"",
-					"-framework",
-					"\"device_info_plus\"",
-					"-framework",
-					"\"file_picker\"",
-					"-framework",
-					"\"flutter_local_notifications\"",
-					"-framework",
-					"\"flutter_secure_storage_darwin\"",
-					"-framework",
-					"\"in_app_purchase_storekit\"",
-					"-framework",
-					"\"in_app_review\"",
-					"-framework",
-					"\"macos_window_utils\"",
-					"-framework",
-					"\"mobile_scanner\"",
-					"-framework",
-					"\"nanopb\"",
-					"-framework",
-					"\"package_info_plus\"",
-					"-framework",
-					"\"pasteboard\"",
-					"-framework",
-					"\"path_provider_foundation\"",
-					"-framework",
-					"\"screen_retriever_macos\"",
-					"-framework",
-					"\"shared_preferences_foundation\"",
-					"-framework",
-					"\"sign_in_with_apple\"",
-					"-framework",
-					"\"tm_macos\"",
-					"-framework",
-					"\"tray_manager\"",
-					"-framework",
-					"\"url_launcher_macos\"",
-					"-framework",
-					"\"window_manager\"",
-					"-weak_framework",
-					"\"UserNotifications\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.staging.PacketTunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1222,104 +1080,6 @@
 				MARKETING_VERSION = 1.2.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-ObjC",
-					"-l\"z\"",
-					"-framework",
-					"\"AppAuth\"",
-					"-framework",
-					"\"AppCheckCore\"",
-					"-framework",
-					"\"AppKit\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"CoreText\"",
-					"-framework",
-					"\"FBLPromises\"",
-					"-framework",
-					"\"FirebaseCore\"",
-					"-framework",
-					"\"FirebaseCoreInternal\"",
-					"-framework",
-					"\"FirebaseInstallations\"",
-					"-framework",
-					"\"FirebaseMessaging\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"GTMAppAuth\"",
-					"-framework",
-					"\"GTMSessionFetcher\"",
-					"-framework",
-					"\"GoogleDataTransport\"",
-					"-framework",
-					"\"GoogleSignIn\"",
-					"-framework",
-					"\"GoogleUtilities\"",
-					"-framework",
-					"\"LocalAuthentication\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"app_links\"",
-					"-framework",
-					"\"bitsdojo_window_macos\"",
-					"-framework",
-					"\"device_info_plus\"",
-					"-framework",
-					"\"file_picker\"",
-					"-framework",
-					"\"file_saver\"",
-					"-framework",
-					"\"firebase_core\"",
-					"-framework",
-					"\"firebase_messaging\"",
-					"-framework",
-					"\"flutter_local_notifications\"",
-					"-framework",
-					"\"flutter_secure_storage_darwin\"",
-					"-framework",
-					"\"google_sign_in_ios\"",
-					"-framework",
-					"\"in_app_purchase_storekit\"",
-					"-framework",
-					"\"in_app_review\"",
-					"-framework",
-					"\"macos_window_utils\"",
-					"-framework",
-					"\"mobile_scanner\"",
-					"-framework",
-					"\"nanopb\"",
-					"-framework",
-					"\"package_info_plus\"",
-					"-framework",
-					"\"pasteboard\"",
-					"-framework",
-					"\"path_provider_foundation\"",
-					"-framework",
-					"\"screen_retriever_macos\"",
-					"-framework",
-					"\"shared_preferences_foundation\"",
-					"-framework",
-					"\"sign_in_with_apple\"",
-					"-framework",
-					"\"tm_macos\"",
-					"-framework",
-					"\"tray_manager\"",
-					"-framework",
-					"\"url_launcher_macos\"",
-					"-framework",
-					"\"window_manager\"",
-					"-weak_framework",
-					"\"AuthenticationServices\"",
-					"-weak_framework",
-					"\"DeviceCheck\"",
-					"-weak_framework",
-					"\"UserNotifications\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.production;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1394,66 +1154,6 @@
 					"-ObjC",
 					"-l\"sqlite3\"",
 					"-l\"z\"",
-					"-framework",
-					"\"AppKit\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"FBLPromises\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"GoogleDataTransport\"",
-					"-framework",
-					"\"GoogleUtilities\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"app_links\"",
-					"-framework",
-					"\"bitsdojo_window_macos\"",
-					"-framework",
-					"\"device_info_plus\"",
-					"-framework",
-					"\"file_picker\"",
-					"-framework",
-					"\"flutter_local_notifications\"",
-					"-framework",
-					"\"flutter_secure_storage_darwin\"",
-					"-framework",
-					"\"in_app_purchase_storekit\"",
-					"-framework",
-					"\"in_app_review\"",
-					"-framework",
-					"\"macos_window_utils\"",
-					"-framework",
-					"\"mobile_scanner\"",
-					"-framework",
-					"\"nanopb\"",
-					"-framework",
-					"\"package_info_plus\"",
-					"-framework",
-					"\"pasteboard\"",
-					"-framework",
-					"\"path_provider_foundation\"",
-					"-framework",
-					"\"screen_retriever_macos\"",
-					"-framework",
-					"\"shared_preferences_foundation\"",
-					"-framework",
-					"\"sign_in_with_apple\"",
-					"-framework",
-					"\"tm_macos\"",
-					"-framework",
-					"\"tray_manager\"",
-					"-framework",
-					"\"url_launcher_macos\"",
-					"-framework",
-					"\"window_manager\"",
-					"-weak_framework",
-					"\"UserNotifications\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.production.PacketTunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1548,104 +1248,6 @@
 				MARKETING_VERSION = 1.2.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-ObjC",
-					"-l\"z\"",
-					"-framework",
-					"\"AppAuth\"",
-					"-framework",
-					"\"AppCheckCore\"",
-					"-framework",
-					"\"AppKit\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"CoreText\"",
-					"-framework",
-					"\"FBLPromises\"",
-					"-framework",
-					"\"FirebaseCore\"",
-					"-framework",
-					"\"FirebaseCoreInternal\"",
-					"-framework",
-					"\"FirebaseInstallations\"",
-					"-framework",
-					"\"FirebaseMessaging\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"GTMAppAuth\"",
-					"-framework",
-					"\"GTMSessionFetcher\"",
-					"-framework",
-					"\"GoogleDataTransport\"",
-					"-framework",
-					"\"GoogleSignIn\"",
-					"-framework",
-					"\"GoogleUtilities\"",
-					"-framework",
-					"\"LocalAuthentication\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"app_links\"",
-					"-framework",
-					"\"bitsdojo_window_macos\"",
-					"-framework",
-					"\"device_info_plus\"",
-					"-framework",
-					"\"file_picker\"",
-					"-framework",
-					"\"file_saver\"",
-					"-framework",
-					"\"firebase_core\"",
-					"-framework",
-					"\"firebase_messaging\"",
-					"-framework",
-					"\"flutter_local_notifications\"",
-					"-framework",
-					"\"flutter_secure_storage_darwin\"",
-					"-framework",
-					"\"google_sign_in_ios\"",
-					"-framework",
-					"\"in_app_purchase_storekit\"",
-					"-framework",
-					"\"in_app_review\"",
-					"-framework",
-					"\"macos_window_utils\"",
-					"-framework",
-					"\"mobile_scanner\"",
-					"-framework",
-					"\"nanopb\"",
-					"-framework",
-					"\"package_info_plus\"",
-					"-framework",
-					"\"pasteboard\"",
-					"-framework",
-					"\"path_provider_foundation\"",
-					"-framework",
-					"\"screen_retriever_macos\"",
-					"-framework",
-					"\"shared_preferences_foundation\"",
-					"-framework",
-					"\"sign_in_with_apple\"",
-					"-framework",
-					"\"tm_macos\"",
-					"-framework",
-					"\"tray_manager\"",
-					"-framework",
-					"\"url_launcher_macos\"",
-					"-framework",
-					"\"window_manager\"",
-					"-weak_framework",
-					"\"AuthenticationServices\"",
-					"-weak_framework",
-					"\"DeviceCheck\"",
-					"-weak_framework",
-					"\"UserNotifications\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.production;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1720,66 +1322,6 @@
 					"-ObjC",
 					"-l\"sqlite3\"",
 					"-l\"z\"",
-					"-framework",
-					"\"AppKit\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"FBLPromises\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"GoogleDataTransport\"",
-					"-framework",
-					"\"GoogleUtilities\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"app_links\"",
-					"-framework",
-					"\"bitsdojo_window_macos\"",
-					"-framework",
-					"\"device_info_plus\"",
-					"-framework",
-					"\"file_picker\"",
-					"-framework",
-					"\"flutter_local_notifications\"",
-					"-framework",
-					"\"flutter_secure_storage_darwin\"",
-					"-framework",
-					"\"in_app_purchase_storekit\"",
-					"-framework",
-					"\"in_app_review\"",
-					"-framework",
-					"\"macos_window_utils\"",
-					"-framework",
-					"\"mobile_scanner\"",
-					"-framework",
-					"\"nanopb\"",
-					"-framework",
-					"\"package_info_plus\"",
-					"-framework",
-					"\"pasteboard\"",
-					"-framework",
-					"\"path_provider_foundation\"",
-					"-framework",
-					"\"screen_retriever_macos\"",
-					"-framework",
-					"\"shared_preferences_foundation\"",
-					"-framework",
-					"\"sign_in_with_apple\"",
-					"-framework",
-					"\"tm_macos\"",
-					"-framework",
-					"\"tray_manager\"",
-					"-framework",
-					"\"url_launcher_macos\"",
-					"-framework",
-					"\"window_manager\"",
-					"-weak_framework",
-					"\"UserNotifications\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.production.PacketTunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1872,104 +1414,6 @@
 				MARKETING_VERSION = 1.2.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-ObjC",
-					"-l\"z\"",
-					"-framework",
-					"\"AppAuth\"",
-					"-framework",
-					"\"AppCheckCore\"",
-					"-framework",
-					"\"AppKit\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"CoreText\"",
-					"-framework",
-					"\"FBLPromises\"",
-					"-framework",
-					"\"FirebaseCore\"",
-					"-framework",
-					"\"FirebaseCoreInternal\"",
-					"-framework",
-					"\"FirebaseInstallations\"",
-					"-framework",
-					"\"FirebaseMessaging\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"GTMAppAuth\"",
-					"-framework",
-					"\"GTMSessionFetcher\"",
-					"-framework",
-					"\"GoogleDataTransport\"",
-					"-framework",
-					"\"GoogleSignIn\"",
-					"-framework",
-					"\"GoogleUtilities\"",
-					"-framework",
-					"\"LocalAuthentication\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"app_links\"",
-					"-framework",
-					"\"bitsdojo_window_macos\"",
-					"-framework",
-					"\"device_info_plus\"",
-					"-framework",
-					"\"file_picker\"",
-					"-framework",
-					"\"file_saver\"",
-					"-framework",
-					"\"firebase_core\"",
-					"-framework",
-					"\"firebase_messaging\"",
-					"-framework",
-					"\"flutter_local_notifications\"",
-					"-framework",
-					"\"flutter_secure_storage_darwin\"",
-					"-framework",
-					"\"google_sign_in_ios\"",
-					"-framework",
-					"\"in_app_purchase_storekit\"",
-					"-framework",
-					"\"in_app_review\"",
-					"-framework",
-					"\"macos_window_utils\"",
-					"-framework",
-					"\"mobile_scanner\"",
-					"-framework",
-					"\"nanopb\"",
-					"-framework",
-					"\"package_info_plus\"",
-					"-framework",
-					"\"pasteboard\"",
-					"-framework",
-					"\"path_provider_foundation\"",
-					"-framework",
-					"\"screen_retriever_macos\"",
-					"-framework",
-					"\"shared_preferences_foundation\"",
-					"-framework",
-					"\"sign_in_with_apple\"",
-					"-framework",
-					"\"tm_macos\"",
-					"-framework",
-					"\"tray_manager\"",
-					"-framework",
-					"\"url_launcher_macos\"",
-					"-framework",
-					"\"window_manager\"",
-					"-weak_framework",
-					"\"AuthenticationServices\"",
-					"-weak_framework",
-					"\"DeviceCheck\"",
-					"-weak_framework",
-					"\"UserNotifications\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.staging;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2041,66 +1485,6 @@
 					"-ObjC",
 					"-l\"sqlite3\"",
 					"-l\"z\"",
-					"-framework",
-					"\"AppKit\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"FBLPromises\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"GoogleDataTransport\"",
-					"-framework",
-					"\"GoogleUtilities\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"app_links\"",
-					"-framework",
-					"\"bitsdojo_window_macos\"",
-					"-framework",
-					"\"device_info_plus\"",
-					"-framework",
-					"\"file_picker\"",
-					"-framework",
-					"\"flutter_local_notifications\"",
-					"-framework",
-					"\"flutter_secure_storage_darwin\"",
-					"-framework",
-					"\"in_app_purchase_storekit\"",
-					"-framework",
-					"\"in_app_review\"",
-					"-framework",
-					"\"macos_window_utils\"",
-					"-framework",
-					"\"mobile_scanner\"",
-					"-framework",
-					"\"nanopb\"",
-					"-framework",
-					"\"package_info_plus\"",
-					"-framework",
-					"\"pasteboard\"",
-					"-framework",
-					"\"path_provider_foundation\"",
-					"-framework",
-					"\"screen_retriever_macos\"",
-					"-framework",
-					"\"shared_preferences_foundation\"",
-					"-framework",
-					"\"sign_in_with_apple\"",
-					"-framework",
-					"\"tm_macos\"",
-					"-framework",
-					"\"tray_manager\"",
-					"-framework",
-					"\"url_launcher_macos\"",
-					"-framework",
-					"\"window_manager\"",
-					"-weak_framework",
-					"\"UserNotifications\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.staging.PacketTunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2192,104 +1576,6 @@
 				MARKETING_VERSION = 1.2.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-ObjC",
-					"-l\"z\"",
-					"-framework",
-					"\"AppAuth\"",
-					"-framework",
-					"\"AppCheckCore\"",
-					"-framework",
-					"\"AppKit\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"CoreText\"",
-					"-framework",
-					"\"FBLPromises\"",
-					"-framework",
-					"\"FirebaseCore\"",
-					"-framework",
-					"\"FirebaseCoreInternal\"",
-					"-framework",
-					"\"FirebaseInstallations\"",
-					"-framework",
-					"\"FirebaseMessaging\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"GTMAppAuth\"",
-					"-framework",
-					"\"GTMSessionFetcher\"",
-					"-framework",
-					"\"GoogleDataTransport\"",
-					"-framework",
-					"\"GoogleSignIn\"",
-					"-framework",
-					"\"GoogleUtilities\"",
-					"-framework",
-					"\"LocalAuthentication\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"app_links\"",
-					"-framework",
-					"\"bitsdojo_window_macos\"",
-					"-framework",
-					"\"device_info_plus\"",
-					"-framework",
-					"\"file_picker\"",
-					"-framework",
-					"\"file_saver\"",
-					"-framework",
-					"\"firebase_core\"",
-					"-framework",
-					"\"firebase_messaging\"",
-					"-framework",
-					"\"flutter_local_notifications\"",
-					"-framework",
-					"\"flutter_secure_storage_darwin\"",
-					"-framework",
-					"\"google_sign_in_ios\"",
-					"-framework",
-					"\"in_app_purchase_storekit\"",
-					"-framework",
-					"\"in_app_review\"",
-					"-framework",
-					"\"macos_window_utils\"",
-					"-framework",
-					"\"mobile_scanner\"",
-					"-framework",
-					"\"nanopb\"",
-					"-framework",
-					"\"package_info_plus\"",
-					"-framework",
-					"\"pasteboard\"",
-					"-framework",
-					"\"path_provider_foundation\"",
-					"-framework",
-					"\"screen_retriever_macos\"",
-					"-framework",
-					"\"shared_preferences_foundation\"",
-					"-framework",
-					"\"sign_in_with_apple\"",
-					"-framework",
-					"\"tm_macos\"",
-					"-framework",
-					"\"tray_manager\"",
-					"-framework",
-					"\"url_launcher_macos\"",
-					"-framework",
-					"\"window_manager\"",
-					"-weak_framework",
-					"\"AuthenticationServices\"",
-					"-weak_framework",
-					"\"DeviceCheck\"",
-					"-weak_framework",
-					"\"UserNotifications\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2361,66 +1647,6 @@
 					"-ObjC",
 					"-l\"sqlite3\"",
 					"-l\"z\"",
-					"-framework",
-					"\"AppKit\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"FBLPromises\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"GoogleDataTransport\"",
-					"-framework",
-					"\"GoogleUtilities\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"app_links\"",
-					"-framework",
-					"\"bitsdojo_window_macos\"",
-					"-framework",
-					"\"device_info_plus\"",
-					"-framework",
-					"\"file_picker\"",
-					"-framework",
-					"\"flutter_local_notifications\"",
-					"-framework",
-					"\"flutter_secure_storage_darwin\"",
-					"-framework",
-					"\"in_app_purchase_storekit\"",
-					"-framework",
-					"\"in_app_review\"",
-					"-framework",
-					"\"macos_window_utils\"",
-					"-framework",
-					"\"mobile_scanner\"",
-					"-framework",
-					"\"nanopb\"",
-					"-framework",
-					"\"package_info_plus\"",
-					"-framework",
-					"\"pasteboard\"",
-					"-framework",
-					"\"path_provider_foundation\"",
-					"-framework",
-					"\"screen_retriever_macos\"",
-					"-framework",
-					"\"shared_preferences_foundation\"",
-					"-framework",
-					"\"sign_in_with_apple\"",
-					"-framework",
-					"\"tm_macos\"",
-					"-framework",
-					"\"tray_manager\"",
-					"-framework",
-					"\"url_launcher_macos\"",
-					"-framework",
-					"\"window_manager\"",
-					"-weak_framework",
-					"\"UserNotifications\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.PacketTunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2512,104 +1738,6 @@
 				MARKETING_VERSION = 1.2.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-ObjC",
-					"-l\"z\"",
-					"-framework",
-					"\"AppAuth\"",
-					"-framework",
-					"\"AppCheckCore\"",
-					"-framework",
-					"\"AppKit\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"CoreText\"",
-					"-framework",
-					"\"FBLPromises\"",
-					"-framework",
-					"\"FirebaseCore\"",
-					"-framework",
-					"\"FirebaseCoreInternal\"",
-					"-framework",
-					"\"FirebaseInstallations\"",
-					"-framework",
-					"\"FirebaseMessaging\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"GTMAppAuth\"",
-					"-framework",
-					"\"GTMSessionFetcher\"",
-					"-framework",
-					"\"GoogleDataTransport\"",
-					"-framework",
-					"\"GoogleSignIn\"",
-					"-framework",
-					"\"GoogleUtilities\"",
-					"-framework",
-					"\"LocalAuthentication\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"app_links\"",
-					"-framework",
-					"\"bitsdojo_window_macos\"",
-					"-framework",
-					"\"device_info_plus\"",
-					"-framework",
-					"\"file_picker\"",
-					"-framework",
-					"\"file_saver\"",
-					"-framework",
-					"\"firebase_core\"",
-					"-framework",
-					"\"firebase_messaging\"",
-					"-framework",
-					"\"flutter_local_notifications\"",
-					"-framework",
-					"\"flutter_secure_storage_darwin\"",
-					"-framework",
-					"\"google_sign_in_ios\"",
-					"-framework",
-					"\"in_app_purchase_storekit\"",
-					"-framework",
-					"\"in_app_review\"",
-					"-framework",
-					"\"macos_window_utils\"",
-					"-framework",
-					"\"mobile_scanner\"",
-					"-framework",
-					"\"nanopb\"",
-					"-framework",
-					"\"package_info_plus\"",
-					"-framework",
-					"\"pasteboard\"",
-					"-framework",
-					"\"path_provider_foundation\"",
-					"-framework",
-					"\"screen_retriever_macos\"",
-					"-framework",
-					"\"shared_preferences_foundation\"",
-					"-framework",
-					"\"sign_in_with_apple\"",
-					"-framework",
-					"\"tm_macos\"",
-					"-framework",
-					"\"tray_manager\"",
-					"-framework",
-					"\"url_launcher_macos\"",
-					"-framework",
-					"\"window_manager\"",
-					"-weak_framework",
-					"\"AuthenticationServices\"",
-					"-weak_framework",
-					"\"DeviceCheck\"",
-					"-weak_framework",
-					"\"UserNotifications\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2681,66 +1809,6 @@
 					"-ObjC",
 					"-l\"sqlite3\"",
 					"-l\"z\"",
-					"-framework",
-					"\"AppKit\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"FBLPromises\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"GoogleDataTransport\"",
-					"-framework",
-					"\"GoogleUtilities\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"app_links\"",
-					"-framework",
-					"\"bitsdojo_window_macos\"",
-					"-framework",
-					"\"device_info_plus\"",
-					"-framework",
-					"\"file_picker\"",
-					"-framework",
-					"\"flutter_local_notifications\"",
-					"-framework",
-					"\"flutter_secure_storage_darwin\"",
-					"-framework",
-					"\"in_app_purchase_storekit\"",
-					"-framework",
-					"\"in_app_review\"",
-					"-framework",
-					"\"macos_window_utils\"",
-					"-framework",
-					"\"mobile_scanner\"",
-					"-framework",
-					"\"nanopb\"",
-					"-framework",
-					"\"package_info_plus\"",
-					"-framework",
-					"\"pasteboard\"",
-					"-framework",
-					"\"path_provider_foundation\"",
-					"-framework",
-					"\"screen_retriever_macos\"",
-					"-framework",
-					"\"shared_preferences_foundation\"",
-					"-framework",
-					"\"sign_in_with_apple\"",
-					"-framework",
-					"\"tm_macos\"",
-					"-framework",
-					"\"tray_manager\"",
-					"-framework",
-					"\"url_launcher_macos\"",
-					"-framework",
-					"\"window_manager\"",
-					"-weak_framework",
-					"\"UserNotifications\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.PacketTunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2839,104 +1907,6 @@
 				MARKETING_VERSION = 1.2.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-ObjC",
-					"-l\"z\"",
-					"-framework",
-					"\"AppAuth\"",
-					"-framework",
-					"\"AppCheckCore\"",
-					"-framework",
-					"\"AppKit\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"CoreText\"",
-					"-framework",
-					"\"FBLPromises\"",
-					"-framework",
-					"\"FirebaseCore\"",
-					"-framework",
-					"\"FirebaseCoreInternal\"",
-					"-framework",
-					"\"FirebaseInstallations\"",
-					"-framework",
-					"\"FirebaseMessaging\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"GTMAppAuth\"",
-					"-framework",
-					"\"GTMSessionFetcher\"",
-					"-framework",
-					"\"GoogleDataTransport\"",
-					"-framework",
-					"\"GoogleSignIn\"",
-					"-framework",
-					"\"GoogleUtilities\"",
-					"-framework",
-					"\"LocalAuthentication\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"app_links\"",
-					"-framework",
-					"\"bitsdojo_window_macos\"",
-					"-framework",
-					"\"device_info_plus\"",
-					"-framework",
-					"\"file_picker\"",
-					"-framework",
-					"\"file_saver\"",
-					"-framework",
-					"\"firebase_core\"",
-					"-framework",
-					"\"firebase_messaging\"",
-					"-framework",
-					"\"flutter_local_notifications\"",
-					"-framework",
-					"\"flutter_secure_storage_darwin\"",
-					"-framework",
-					"\"google_sign_in_ios\"",
-					"-framework",
-					"\"in_app_purchase_storekit\"",
-					"-framework",
-					"\"in_app_review\"",
-					"-framework",
-					"\"macos_window_utils\"",
-					"-framework",
-					"\"mobile_scanner\"",
-					"-framework",
-					"\"nanopb\"",
-					"-framework",
-					"\"package_info_plus\"",
-					"-framework",
-					"\"pasteboard\"",
-					"-framework",
-					"\"path_provider_foundation\"",
-					"-framework",
-					"\"screen_retriever_macos\"",
-					"-framework",
-					"\"shared_preferences_foundation\"",
-					"-framework",
-					"\"sign_in_with_apple\"",
-					"-framework",
-					"\"tm_macos\"",
-					"-framework",
-					"\"tray_manager\"",
-					"-framework",
-					"\"url_launcher_macos\"",
-					"-framework",
-					"\"window_manager\"",
-					"-weak_framework",
-					"\"AuthenticationServices\"",
-					"-weak_framework",
-					"\"DeviceCheck\"",
-					"-weak_framework",
-					"\"UserNotifications\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.dev;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3011,66 +1981,6 @@
 					"-ObjC",
 					"-l\"sqlite3\"",
 					"-l\"z\"",
-					"-framework",
-					"\"AppKit\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"FBLPromises\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"GoogleDataTransport\"",
-					"-framework",
-					"\"GoogleUtilities\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"app_links\"",
-					"-framework",
-					"\"bitsdojo_window_macos\"",
-					"-framework",
-					"\"device_info_plus\"",
-					"-framework",
-					"\"file_picker\"",
-					"-framework",
-					"\"flutter_local_notifications\"",
-					"-framework",
-					"\"flutter_secure_storage_darwin\"",
-					"-framework",
-					"\"in_app_purchase_storekit\"",
-					"-framework",
-					"\"in_app_review\"",
-					"-framework",
-					"\"macos_window_utils\"",
-					"-framework",
-					"\"mobile_scanner\"",
-					"-framework",
-					"\"nanopb\"",
-					"-framework",
-					"\"package_info_plus\"",
-					"-framework",
-					"\"pasteboard\"",
-					"-framework",
-					"\"path_provider_foundation\"",
-					"-framework",
-					"\"screen_retriever_macos\"",
-					"-framework",
-					"\"shared_preferences_foundation\"",
-					"-framework",
-					"\"sign_in_with_apple\"",
-					"-framework",
-					"\"tm_macos\"",
-					"-framework",
-					"\"tray_manager\"",
-					"-framework",
-					"\"url_launcher_macos\"",
-					"-framework",
-					"\"window_manager\"",
-					"-weak_framework",
-					"\"UserNotifications\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.dev.PacketTunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3727,104 +2637,6 @@
 				MARKETING_VERSION = 1.2.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-ObjC",
-					"-l\"z\"",
-					"-framework",
-					"\"AppAuth\"",
-					"-framework",
-					"\"AppCheckCore\"",
-					"-framework",
-					"\"AppKit\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"CoreText\"",
-					"-framework",
-					"\"FBLPromises\"",
-					"-framework",
-					"\"FirebaseCore\"",
-					"-framework",
-					"\"FirebaseCoreInternal\"",
-					"-framework",
-					"\"FirebaseInstallations\"",
-					"-framework",
-					"\"FirebaseMessaging\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"GTMAppAuth\"",
-					"-framework",
-					"\"GTMSessionFetcher\"",
-					"-framework",
-					"\"GoogleDataTransport\"",
-					"-framework",
-					"\"GoogleSignIn\"",
-					"-framework",
-					"\"GoogleUtilities\"",
-					"-framework",
-					"\"LocalAuthentication\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"app_links\"",
-					"-framework",
-					"\"bitsdojo_window_macos\"",
-					"-framework",
-					"\"device_info_plus\"",
-					"-framework",
-					"\"file_picker\"",
-					"-framework",
-					"\"file_saver\"",
-					"-framework",
-					"\"firebase_core\"",
-					"-framework",
-					"\"firebase_messaging\"",
-					"-framework",
-					"\"flutter_local_notifications\"",
-					"-framework",
-					"\"flutter_secure_storage_darwin\"",
-					"-framework",
-					"\"google_sign_in_ios\"",
-					"-framework",
-					"\"in_app_purchase_storekit\"",
-					"-framework",
-					"\"in_app_review\"",
-					"-framework",
-					"\"macos_window_utils\"",
-					"-framework",
-					"\"mobile_scanner\"",
-					"-framework",
-					"\"nanopb\"",
-					"-framework",
-					"\"package_info_plus\"",
-					"-framework",
-					"\"pasteboard\"",
-					"-framework",
-					"\"path_provider_foundation\"",
-					"-framework",
-					"\"screen_retriever_macos\"",
-					"-framework",
-					"\"shared_preferences_foundation\"",
-					"-framework",
-					"\"sign_in_with_apple\"",
-					"-framework",
-					"\"tm_macos\"",
-					"-framework",
-					"\"tray_manager\"",
-					"-framework",
-					"\"url_launcher_macos\"",
-					"-framework",
-					"\"window_manager\"",
-					"-weak_framework",
-					"\"AuthenticationServices\"",
-					"-weak_framework",
-					"\"DeviceCheck\"",
-					"-weak_framework",
-					"\"UserNotifications\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.pkg;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3897,66 +2709,6 @@
 					"-ObjC",
 					"-l\"sqlite3\"",
 					"-l\"z\"",
-					"-framework",
-					"\"AppKit\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"FBLPromises\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"GoogleDataTransport\"",
-					"-framework",
-					"\"GoogleUtilities\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"app_links\"",
-					"-framework",
-					"\"bitsdojo_window_macos\"",
-					"-framework",
-					"\"device_info_plus\"",
-					"-framework",
-					"\"file_picker\"",
-					"-framework",
-					"\"flutter_local_notifications\"",
-					"-framework",
-					"\"flutter_secure_storage_darwin\"",
-					"-framework",
-					"\"in_app_purchase_storekit\"",
-					"-framework",
-					"\"in_app_review\"",
-					"-framework",
-					"\"macos_window_utils\"",
-					"-framework",
-					"\"mobile_scanner\"",
-					"-framework",
-					"\"nanopb\"",
-					"-framework",
-					"\"package_info_plus\"",
-					"-framework",
-					"\"pasteboard\"",
-					"-framework",
-					"\"path_provider_foundation\"",
-					"-framework",
-					"\"screen_retriever_macos\"",
-					"-framework",
-					"\"shared_preferences_foundation\"",
-					"-framework",
-					"\"sign_in_with_apple\"",
-					"-framework",
-					"\"tm_macos\"",
-					"-framework",
-					"\"tray_manager\"",
-					"-framework",
-					"\"url_launcher_macos\"",
-					"-framework",
-					"\"window_manager\"",
-					"-weak_framework",
-					"\"UserNotifications\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.pkg.PacketTunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3967,6 +2719,659 @@
 				SWIFT_VERSION = 5.0;
 			};
 			name = "Release-pkg";
+		};
+		15CN0FB4800A3C4548EBC8CE /* Release-cn */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15CN7E3FCD46593E0143737E /* Pods-RunnerTests.release-cn.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.nunu.RunnerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nunu.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/nunu";
+			};
+			name = "Release-cn";
+		};
+		15CN167946C911CE016502E1 /* Debug-cn */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "SystemExtension/SystemExtensionDebug-pkg.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K4FDLB3LLD;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SystemExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SystemExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSSystemExtensionUsageDescription = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 2.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.pkg.se;
+				PRODUCT_NAME = "$(inherited)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = "Debug-cn";
+		};
+		15CN18576D47C75108246CB6 /* Release-cn */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 6.0;
+			};
+			name = "Release-cn";
+		};
+		15CN3FFFE5689DF9D142FFD6 /* Debug-cn */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = "Debug-cn";
+		};
+		15CN4163DD19D7123C09A2FA /* Debug-cn */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33E5194F232828860026EE4D /* AppInfo.xcconfig */;
+			buildSettings = {
+				APP_DISPLAY_NAME = Nunu;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Runner/RunnerDebug-cn.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K4FDLB3LLD;
+				INFOPLIST_FILE = Runner/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Nunu;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
+					/usr/lib/swift,
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)/",
+					"$(SDKROOT)/usr/lib/swift",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13;
+				MARKETING_VERSION = 1.2.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.cn;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = "Debug-cn";
+		};
+		15CN51A674EDB397B42D38B8 /* Profile-cn */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33E5194F232828860026EE4D /* AppInfo.xcconfig */;
+			buildSettings = {
+				APP_DISPLAY_NAME = Nunu;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Runner/RunnerRelease-cn.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K4FDLB3LLD;
+				INFOPLIST_FILE = Runner/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Nunu;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
+					/usr/lib/swift,
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)/",
+					"$(SDKROOT)/usr/lib/swift",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13;
+				MARKETING_VERSION = 1.2.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.cn;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = "Profile-cn";
+		};
+		15CN6E2EBB41A8024281E716 /* Debug-cn */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "PacketTunnel/PacketTunnelDebug-cn.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K4FDLB3LLD;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PacketTunnel/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PacketTunnel;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11;
+				MARKETING_VERSION = 1.2.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.cn.PacketTunnel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = "Debug-cn";
+		};
+		15CN7FA06980CB5C6C2446D7 /* Profile-cn */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 6.0;
+			};
+			name = "Profile-cn";
+		};
+		15CN83BCFD139630BD2196AB /* Debug-cn */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15CNAE5205CB0009B626676C /* Pods-RunnerTests.debug-cn.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.nunu.RunnerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nunu.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/nunu";
+			};
+			name = "Debug-cn";
+		};
+		15CN8DDABE8538DECE5AD404 /* Profile-cn */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "SystemExtension/SystemExtensionRelease-pkg.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K4FDLB3LLD;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SystemExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SystemExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSSystemExtensionUsageDescription = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 2.0;
+				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.pkg.PacketTunnel;
+				PRODUCT_NAME = "$(inherited)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = "Profile-cn";
+		};
+		15CN960AA7EA185C81E0AB48 /* Profile-cn */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AFA3C8E1D35360C0083082E /* Release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = "Profile-cn";
+		};
+		15CNCA0E2BE451E2AD42D28C /* Profile-cn */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "PacketTunnel/PacketTunnelRelease-cn.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K4FDLB3LLD;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PacketTunnel/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PacketTunnel;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11;
+				MARKETING_VERSION = 1.2.0;
+				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.cn.PacketTunnel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = "Profile-cn";
+		};
+		15CND125C2E64854A2F8A8F9 /* Release-cn */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "PacketTunnel/PacketTunnelRelease-cn.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "3rd Party Mac Developer Application";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = K4FDLB3LLD;
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PacketTunnel/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PacketTunnel;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11;
+				MARKETING_VERSION = 1.2.0;
+				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.cn.PacketTunnel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "monster nunu cn PacketTunnel mac_app_store 1791651335";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = "Release-cn";
+		};
+		15CND234C2E048D46FA2CBAE /* Release-cn */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33E5194F232828860026EE4D /* AppInfo.xcconfig */;
+			buildSettings = {
+				APP_DISPLAY_NAME = Nunu;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Runner/RunnerRelease-cn.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "3rd Party Mac Developer Application";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = K4FDLB3LLD;
+				ENABLE_HARDENED_RUNTIME = NO;
+				INFOPLIST_FILE = Runner/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Nunu;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
+					/usr/lib/swift,
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)/",
+					"$(SDKROOT)/usr/lib/swift",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13;
+				MARKETING_VERSION = 1.2.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.cn;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "XC monster nunu cn mac_app_store 1791650034";
+				SWIFT_VERSION = 5.0;
+			};
+			name = "Release-cn";
+		};
+		15CNDB510D4045DF12ECB8CF /* Debug-cn */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9740EEB21CF90195004384FC /* Debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = "Debug-cn";
+		};
+		15CNE397F866B9045DB303A8 /* Release-cn */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "SystemExtension/SystemExtensionRelease-pkg.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = K4FDLB3LLD;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SystemExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SystemExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSSystemExtensionUsageDescription = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 2.0;
+				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.pkg.se;
+				PRODUCT_NAME = "$(inherited)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = "Release-cn";
+		};
+		15CNEC21CB14ED5D555065C6 /* Release-cn */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AFA3C8E1D35360C0083082E /* Release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = "Release-cn";
+		};
+		15CNFB93F8D1F3A5EAB340BD /* Profile-cn */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15CN626A2D9FC9CDF20742E5 /* Pods-RunnerTests.profile-cn.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.nunu.RunnerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nunu.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/nunu";
+			};
+			name = "Profile-cn";
 		};
 		15EEE8282D6319C100642457 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -4007,66 +3412,6 @@
 					"-ObjC",
 					"-l\"sqlite3\"",
 					"-l\"z\"",
-					"-framework",
-					"\"AppKit\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"FBLPromises\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"GoogleDataTransport\"",
-					"-framework",
-					"\"GoogleUtilities\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"app_links\"",
-					"-framework",
-					"\"bitsdojo_window_macos\"",
-					"-framework",
-					"\"device_info_plus\"",
-					"-framework",
-					"\"file_picker\"",
-					"-framework",
-					"\"flutter_local_notifications\"",
-					"-framework",
-					"\"flutter_secure_storage_darwin\"",
-					"-framework",
-					"\"in_app_purchase_storekit\"",
-					"-framework",
-					"\"in_app_review\"",
-					"-framework",
-					"\"macos_window_utils\"",
-					"-framework",
-					"\"mobile_scanner\"",
-					"-framework",
-					"\"nanopb\"",
-					"-framework",
-					"\"package_info_plus\"",
-					"-framework",
-					"\"pasteboard\"",
-					"-framework",
-					"\"path_provider_foundation\"",
-					"-framework",
-					"\"screen_retriever_macos\"",
-					"-framework",
-					"\"shared_preferences_foundation\"",
-					"-framework",
-					"\"sign_in_with_apple\"",
-					"-framework",
-					"\"tm_macos\"",
-					"-framework",
-					"\"tray_manager\"",
-					"-framework",
-					"\"url_launcher_macos\"",
-					"-framework",
-					"\"window_manager\"",
-					"-weak_framework",
-					"\"UserNotifications\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.dev.PacketTunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4116,66 +3461,6 @@
 					"-ObjC",
 					"-l\"sqlite3\"",
 					"-l\"z\"",
-					"-framework",
-					"\"AppKit\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"FBLPromises\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"GoogleDataTransport\"",
-					"-framework",
-					"\"GoogleUtilities\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"app_links\"",
-					"-framework",
-					"\"bitsdojo_window_macos\"",
-					"-framework",
-					"\"device_info_plus\"",
-					"-framework",
-					"\"file_picker\"",
-					"-framework",
-					"\"flutter_local_notifications\"",
-					"-framework",
-					"\"flutter_secure_storage_darwin\"",
-					"-framework",
-					"\"in_app_purchase_storekit\"",
-					"-framework",
-					"\"in_app_review\"",
-					"-framework",
-					"\"macos_window_utils\"",
-					"-framework",
-					"\"mobile_scanner\"",
-					"-framework",
-					"\"nanopb\"",
-					"-framework",
-					"\"package_info_plus\"",
-					"-framework",
-					"\"pasteboard\"",
-					"-framework",
-					"\"path_provider_foundation\"",
-					"-framework",
-					"\"screen_retriever_macos\"",
-					"-framework",
-					"\"shared_preferences_foundation\"",
-					"-framework",
-					"\"sign_in_with_apple\"",
-					"-framework",
-					"\"tm_macos\"",
-					"-framework",
-					"\"tray_manager\"",
-					"-framework",
-					"\"url_launcher_macos\"",
-					"-framework",
-					"\"window_manager\"",
-					"-weak_framework",
-					"\"UserNotifications\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.PacketTunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4225,66 +3510,6 @@
 					"-ObjC",
 					"-l\"sqlite3\"",
 					"-l\"z\"",
-					"-framework",
-					"\"AppKit\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"FBLPromises\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"GoogleDataTransport\"",
-					"-framework",
-					"\"GoogleUtilities\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"app_links\"",
-					"-framework",
-					"\"bitsdojo_window_macos\"",
-					"-framework",
-					"\"device_info_plus\"",
-					"-framework",
-					"\"file_picker\"",
-					"-framework",
-					"\"flutter_local_notifications\"",
-					"-framework",
-					"\"flutter_secure_storage_darwin\"",
-					"-framework",
-					"\"in_app_purchase_storekit\"",
-					"-framework",
-					"\"in_app_review\"",
-					"-framework",
-					"\"macos_window_utils\"",
-					"-framework",
-					"\"mobile_scanner\"",
-					"-framework",
-					"\"nanopb\"",
-					"-framework",
-					"\"package_info_plus\"",
-					"-framework",
-					"\"pasteboard\"",
-					"-framework",
-					"\"path_provider_foundation\"",
-					"-framework",
-					"\"screen_retriever_macos\"",
-					"-framework",
-					"\"shared_preferences_foundation\"",
-					"-framework",
-					"\"sign_in_with_apple\"",
-					"-framework",
-					"\"tm_macos\"",
-					"-framework",
-					"\"tray_manager\"",
-					"-framework",
-					"\"url_launcher_macos\"",
-					"-framework",
-					"\"window_manager\"",
-					"-weak_framework",
-					"\"UserNotifications\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.PacketTunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4426,104 +3651,6 @@
 				MARKETING_VERSION = 1.2.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-ObjC",
-					"-l\"z\"",
-					"-framework",
-					"\"AppAuth\"",
-					"-framework",
-					"\"AppCheckCore\"",
-					"-framework",
-					"\"AppKit\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"CoreText\"",
-					"-framework",
-					"\"FBLPromises\"",
-					"-framework",
-					"\"FirebaseCore\"",
-					"-framework",
-					"\"FirebaseCoreInternal\"",
-					"-framework",
-					"\"FirebaseInstallations\"",
-					"-framework",
-					"\"FirebaseMessaging\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"GTMAppAuth\"",
-					"-framework",
-					"\"GTMSessionFetcher\"",
-					"-framework",
-					"\"GoogleDataTransport\"",
-					"-framework",
-					"\"GoogleSignIn\"",
-					"-framework",
-					"\"GoogleUtilities\"",
-					"-framework",
-					"\"LocalAuthentication\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"app_links\"",
-					"-framework",
-					"\"bitsdojo_window_macos\"",
-					"-framework",
-					"\"device_info_plus\"",
-					"-framework",
-					"\"file_picker\"",
-					"-framework",
-					"\"file_saver\"",
-					"-framework",
-					"\"firebase_core\"",
-					"-framework",
-					"\"firebase_messaging\"",
-					"-framework",
-					"\"flutter_local_notifications\"",
-					"-framework",
-					"\"flutter_secure_storage_darwin\"",
-					"-framework",
-					"\"google_sign_in_ios\"",
-					"-framework",
-					"\"in_app_purchase_storekit\"",
-					"-framework",
-					"\"in_app_review\"",
-					"-framework",
-					"\"macos_window_utils\"",
-					"-framework",
-					"\"mobile_scanner\"",
-					"-framework",
-					"\"nanopb\"",
-					"-framework",
-					"\"package_info_plus\"",
-					"-framework",
-					"\"pasteboard\"",
-					"-framework",
-					"\"path_provider_foundation\"",
-					"-framework",
-					"\"screen_retriever_macos\"",
-					"-framework",
-					"\"shared_preferences_foundation\"",
-					"-framework",
-					"\"sign_in_with_apple\"",
-					"-framework",
-					"\"tm_macos\"",
-					"-framework",
-					"\"tray_manager\"",
-					"-framework",
-					"\"url_launcher_macos\"",
-					"-framework",
-					"\"window_manager\"",
-					"-weak_framework",
-					"\"AuthenticationServices\"",
-					"-weak_framework",
-					"\"DeviceCheck\"",
-					"-weak_framework",
-					"\"UserNotifications\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4677,104 +3804,6 @@
 				MARKETING_VERSION = 1.2.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-ObjC",
-					"-l\"z\"",
-					"-framework",
-					"\"AppAuth\"",
-					"-framework",
-					"\"AppCheckCore\"",
-					"-framework",
-					"\"AppKit\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"CoreText\"",
-					"-framework",
-					"\"FBLPromises\"",
-					"-framework",
-					"\"FirebaseCore\"",
-					"-framework",
-					"\"FirebaseCoreInternal\"",
-					"-framework",
-					"\"FirebaseInstallations\"",
-					"-framework",
-					"\"FirebaseMessaging\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"GTMAppAuth\"",
-					"-framework",
-					"\"GTMSessionFetcher\"",
-					"-framework",
-					"\"GoogleDataTransport\"",
-					"-framework",
-					"\"GoogleSignIn\"",
-					"-framework",
-					"\"GoogleUtilities\"",
-					"-framework",
-					"\"LocalAuthentication\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"app_links\"",
-					"-framework",
-					"\"bitsdojo_window_macos\"",
-					"-framework",
-					"\"device_info_plus\"",
-					"-framework",
-					"\"file_picker\"",
-					"-framework",
-					"\"file_saver\"",
-					"-framework",
-					"\"firebase_core\"",
-					"-framework",
-					"\"firebase_messaging\"",
-					"-framework",
-					"\"flutter_local_notifications\"",
-					"-framework",
-					"\"flutter_secure_storage_darwin\"",
-					"-framework",
-					"\"google_sign_in_ios\"",
-					"-framework",
-					"\"in_app_purchase_storekit\"",
-					"-framework",
-					"\"in_app_review\"",
-					"-framework",
-					"\"macos_window_utils\"",
-					"-framework",
-					"\"mobile_scanner\"",
-					"-framework",
-					"\"nanopb\"",
-					"-framework",
-					"\"package_info_plus\"",
-					"-framework",
-					"\"pasteboard\"",
-					"-framework",
-					"\"path_provider_foundation\"",
-					"-framework",
-					"\"screen_retriever_macos\"",
-					"-framework",
-					"\"shared_preferences_foundation\"",
-					"-framework",
-					"\"sign_in_with_apple\"",
-					"-framework",
-					"\"tm_macos\"",
-					"-framework",
-					"\"tray_manager\"",
-					"-framework",
-					"\"url_launcher_macos\"",
-					"-framework",
-					"\"window_manager\"",
-					"-weak_framework",
-					"\"AuthenticationServices\"",
-					"-weak_framework",
-					"\"DeviceCheck\"",
-					"-weak_framework",
-					"\"UserNotifications\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu.dev;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4814,104 +3843,6 @@
 				MARKETING_VERSION = 1.2.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-ObjC",
-					"-l\"z\"",
-					"-framework",
-					"\"AppAuth\"",
-					"-framework",
-					"\"AppCheckCore\"",
-					"-framework",
-					"\"AppKit\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"CoreText\"",
-					"-framework",
-					"\"FBLPromises\"",
-					"-framework",
-					"\"FirebaseCore\"",
-					"-framework",
-					"\"FirebaseCoreInternal\"",
-					"-framework",
-					"\"FirebaseInstallations\"",
-					"-framework",
-					"\"FirebaseMessaging\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"GTMAppAuth\"",
-					"-framework",
-					"\"GTMSessionFetcher\"",
-					"-framework",
-					"\"GoogleDataTransport\"",
-					"-framework",
-					"\"GoogleSignIn\"",
-					"-framework",
-					"\"GoogleUtilities\"",
-					"-framework",
-					"\"LocalAuthentication\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"app_links\"",
-					"-framework",
-					"\"bitsdojo_window_macos\"",
-					"-framework",
-					"\"device_info_plus\"",
-					"-framework",
-					"\"file_picker\"",
-					"-framework",
-					"\"file_saver\"",
-					"-framework",
-					"\"firebase_core\"",
-					"-framework",
-					"\"firebase_messaging\"",
-					"-framework",
-					"\"flutter_local_notifications\"",
-					"-framework",
-					"\"flutter_secure_storage_darwin\"",
-					"-framework",
-					"\"google_sign_in_ios\"",
-					"-framework",
-					"\"in_app_purchase_storekit\"",
-					"-framework",
-					"\"in_app_review\"",
-					"-framework",
-					"\"macos_window_utils\"",
-					"-framework",
-					"\"mobile_scanner\"",
-					"-framework",
-					"\"nanopb\"",
-					"-framework",
-					"\"package_info_plus\"",
-					"-framework",
-					"\"pasteboard\"",
-					"-framework",
-					"\"path_provider_foundation\"",
-					"-framework",
-					"\"screen_retriever_macos\"",
-					"-framework",
-					"\"shared_preferences_foundation\"",
-					"-framework",
-					"\"sign_in_with_apple\"",
-					"-framework",
-					"\"tm_macos\"",
-					"-framework",
-					"\"tray_manager\"",
-					"-framework",
-					"\"url_launcher_macos\"",
-					"-framework",
-					"\"window_manager\"",
-					"-weak_framework",
-					"\"AuthenticationServices\"",
-					"-weak_framework",
-					"\"DeviceCheck\"",
-					"-weak_framework",
-					"\"UserNotifications\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = monster.nunu;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4949,14 +3880,17 @@
 				15A130FF2E71D3C5003E5632 /* Debug */,
 				157F43562E752BFD00C7AB3A /* Debug-pkg */,
 				15A131002E71D3C5003E5632 /* Debug-production */,
+				15CN167946C911CE016502E1 /* Debug-cn */,
 				15A131012E71D3C5003E5632 /* Debug-staging */,
 				15A131022E71D3C5003E5632 /* Release */,
 				15A131032E71D3C5003E5632 /* Release-pkg */,
 				15A131042E71D3C5003E5632 /* Release-staging */,
 				15A131052E71D3C5003E5632 /* Release-production */,
+				15CNE397F866B9045DB303A8 /* Release-cn */,
 				15A131062E71D3C5003E5632 /* Profile */,
 				15A131072E71D3C5003E5632 /* Profile-staging */,
 				15A131082E71D3C5003E5632 /* Profile-production */,
+				15CN8DDABE8538DECE5AD404 /* Profile-cn */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -4967,14 +3901,17 @@
 				15EEE8282D6319C100642457 /* Debug */,
 				157F43552E752BFD00C7AB3A /* Debug-pkg */,
 				155380392DB5F96000B064E8 /* Debug-production */,
+				15CN6E2EBB41A8024281E716 /* Debug-cn */,
 				155380342DB5F95500B064E8 /* Debug-staging */,
 				15EEE8292D6319C100642457 /* Release */,
 				15A1F0AC2E71688F00AF435D /* Release-pkg */,
 				155380432DB5F99700B064E8 /* Release-staging */,
 				1553803E2DB5F98E00B064E8 /* Release-production */,
+				15CND125C2E64854A2F8A8F9 /* Release-cn */,
 				15EEE82A2D6319C100642457 /* Profile */,
 				1553804D2DB5F9A900B064E8 /* Profile-staging */,
 				155380482DB5F9A000B064E8 /* Profile-production */,
+				15CNCA0E2BE451E2AD42D28C /* Profile-cn */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -4985,14 +3922,17 @@
 				331C80DB294CF71000263BE5 /* Debug */,
 				157F43532E752BFD00C7AB3A /* Debug-pkg */,
 				155380372DB5F96000B064E8 /* Debug-production */,
+				15CN83BCFD139630BD2196AB /* Debug-cn */,
 				155380322DB5F95500B064E8 /* Debug-staging */,
 				331C80DC294CF71000263BE5 /* Release */,
 				15A1F0AA2E71688F00AF435D /* Release-pkg */,
 				155380412DB5F99700B064E8 /* Release-staging */,
 				1553803C2DB5F98E00B064E8 /* Release-production */,
+				15CN0FB4800A3C4548EBC8CE /* Release-cn */,
 				331C80DD294CF71000263BE5 /* Profile */,
 				1553804B2DB5F9A900B064E8 /* Profile-staging */,
 				155380462DB5F9A000B064E8 /* Profile-production */,
+				15CNFB93F8D1F3A5EAB340BD /* Profile-cn */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -5003,14 +3943,17 @@
 				33CC10F92044A3C60003C045 /* Debug */,
 				157F43512E752BFD00C7AB3A /* Debug-pkg */,
 				155380352DB5F96000B064E8 /* Debug-production */,
+				15CNDB510D4045DF12ECB8CF /* Debug-cn */,
 				155380302DB5F95500B064E8 /* Debug-staging */,
 				33CC10FA2044A3C60003C045 /* Release */,
 				15A1F0A82E71688F00AF435D /* Release-pkg */,
 				1553803F2DB5F99700B064E8 /* Release-staging */,
 				1553803A2DB5F98E00B064E8 /* Release-production */,
+				15CNEC21CB14ED5D555065C6 /* Release-cn */,
 				338D0CE9231458BD00FA5F75 /* Profile */,
 				155380492DB5F9A900B064E8 /* Profile-staging */,
 				155380442DB5F9A000B064E8 /* Profile-production */,
+				15CN960AA7EA185C81E0AB48 /* Profile-cn */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -5021,14 +3964,17 @@
 				33CC10FC2044A3C60003C045 /* Debug */,
 				157F43522E752BFD00C7AB3A /* Debug-pkg */,
 				155380362DB5F96000B064E8 /* Debug-production */,
+				15CN4163DD19D7123C09A2FA /* Debug-cn */,
 				155380312DB5F95500B064E8 /* Debug-staging */,
 				33CC10FD2044A3C60003C045 /* Release */,
 				15A1F0A92E71688F00AF435D /* Release-pkg */,
 				155380402DB5F99700B064E8 /* Release-staging */,
 				1553803B2DB5F98E00B064E8 /* Release-production */,
+				15CND234C2E048D46FA2CBAE /* Release-cn */,
 				338D0CEA231458BD00FA5F75 /* Profile */,
 				1553804A2DB5F9A900B064E8 /* Profile-staging */,
 				155380452DB5F9A000B064E8 /* Profile-production */,
+				15CN51A674EDB397B42D38B8 /* Profile-cn */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -5039,14 +3985,17 @@
 				33CC111C2044C6BA0003C045 /* Debug */,
 				157F43542E752BFD00C7AB3A /* Debug-pkg */,
 				155380382DB5F96000B064E8 /* Debug-production */,
+				15CN3FFFE5689DF9D142FFD6 /* Debug-cn */,
 				155380332DB5F95500B064E8 /* Debug-staging */,
 				33CC111D2044C6BA0003C045 /* Release */,
 				15A1F0AB2E71688F00AF435D /* Release-pkg */,
 				155380422DB5F99700B064E8 /* Release-staging */,
 				1553803D2DB5F98E00B064E8 /* Release-production */,
+				15CN18576D47C75108246CB6 /* Release-cn */,
 				338D0CEB231458BD00FA5F75 /* Profile */,
 				1553804C2DB5F9A900B064E8 /* Profile-staging */,
 				155380472DB5F9A000B064E8 /* Profile-production */,
+				15CN7FA06980CB5C6C2446D7 /* Profile-cn */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -181,7 +181,7 @@ class _VpnHomePageState extends State<VpnHomePage> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: Platform.isMacOS ? null : settingButton,
+        leading: settingButton,
         leadingWidth: desktopPlatform ? 148 : 168,
         // title: desktopPlatform
         //     ? ConstrainedBox(
@@ -217,10 +217,13 @@ class _VpnHomePageState extends State<VpnHomePage> {
               ),
               onPressed: () => _showSessionLimitsDialog(context),
             ),
-          shareButton,
+          Padding(
+            padding: const EdgeInsets.only(right: 8.0),
+            child: shareButton,
+          ),
           if (Platform.isWindows || Platform.isLinux)
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(right: 8.0),
               child: IconButton(
                 tooltip: '隐藏',
                 onPressed: () async {
@@ -231,11 +234,6 @@ class _VpnHomePageState extends State<VpnHomePage> {
                   color: colorScheme.onSurface.withOpacity(0.87),
                 ),
               ),
-            ),
-          if (Platform.isMacOS)
-            Padding(
-              padding: const EdgeInsets.only(right: 8.0),
-              child: settingButton,
             ),
         ],
       ),
