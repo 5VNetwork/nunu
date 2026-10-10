@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+   width="48"
+   height="48"
+   viewBox="0 0 48 48"
+   version="1.1"
+   xmlns="http://www.w3.org/2000/svg">
+  <!--
+    Outline / template tray icon derived from assets/dev/48.svg.
+    Black strokes on transparent background for macOS isTemplate icons.
+  -->
+  <g
+     fill="none"
+     stroke="#000000"
+     stroke-width="3"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     transform="translate(24,24) scale(0.94) translate(-24,-24)">
+    <!-- Outer shell + three prongs (from 48_grey.svg path) -->
+    <path
+       d="M 18.268102,42.330898 C 8.2356097,42.330898 0.10264746,34.197941 0.102642,24.165449 0.102642,14.132957 8.2356097,6 18.268102,6 h 23.330846 c 2.210797,0 4.002989,1.7921909 4.002989,4.00293 0,2.210797 -1.792192,4.002989 -4.002989,4.002989 h -2.846682 c -1.48709,0 -2.692632,1.205543 -2.692632,2.692634 0,1.48709 1.205542,2.692634 2.692632,2.692634 h 4.371148 c 2.703806,0 4.895715,2.191908 4.895715,4.895772 0,2.703806 -2.191909,4.895715 -4.895715,4.895715 h -5.99881 c -1.759134,0 -3.185125,1.425991 -3.185125,3.185125 0,1.759079 1.425991,3.185126 3.185125,3.185126 h 1.221956 c 1.87172,0 3.388988,1.517325 3.388988,3.388985 0,1.87172 -1.517268,3.388988 -3.388988,3.388988 z" />
+    <!-- Inner orb as clean circle (reads better at tray size than the filled oval path) -->
+    <circle cx="16.2" cy="24.15" r="11.2" />
+  </g>
+</svg>

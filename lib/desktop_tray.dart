@@ -95,9 +95,9 @@ class _DesktopTrayState extends State<DesktopTray>
       if (status == XStatus.connected ||
           status == XStatus.connecting ||
           status == XStatus.preparing) {
-        iconPath = 'assets/icons/umi_glass.png';
+        iconPath = 'assets/icons/48.png';
       } else {
-        iconPath = 'assets/icons/umi_48.png';
+        iconPath = 'assets/icons/48_outline.png';
       }
     }
     await trayManager.setIcon(
