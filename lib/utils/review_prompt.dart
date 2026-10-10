@@ -5,7 +5,7 @@ import 'package:nunu/pref_helper.dart';
 import 'package:nunu/utils/logger.dart';
 
 const appStoreId = '6790730070';
-const microsoftStoreId = '9N9HJP6DB31L';
+const microsoftStoreId = '9P1ZGPV8PJMT';
 
 /// Prompts for an App Store / Play Store / Microsoft Store review after the
 /// user has had the app installed for a while.

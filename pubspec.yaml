@@ -160,10 +160,10 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
 msix_config:
-  msstore_appId: 9N9HJP6DB31L
-  display_name: Nunu
+  msstore_appId: 9P1ZGPV8PJMT
+  display_name: NunuVPN
   publisher_display_name: 5V Network
-  identity_name: 5VNetwork.Nunu
+  identity_name: 5VNetwork.VPN-VPN
   msix_version: 0.2.3.0
   logo_path: windows/runner/resources/app_icon.ico
   capabilities: internetClient
