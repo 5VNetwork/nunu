@@ -81,8 +81,8 @@ dependencies:
   rxdart: ^0.28.0
   lru_cache: ^0.0.2
   installed_apps: ^1.6.0
-  file_picker: ^10.1.9
   win32_registry: ^2.1.0
+  file_selector: ^1.1.0
 
 dev_dependencies:
   sentry_dart_plugin: ^3.2.1

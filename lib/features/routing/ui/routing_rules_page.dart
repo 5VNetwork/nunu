@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:file_picker/file_picker.dart';
+import 'package:file_selector/file_selector.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_common/widgets/app_bar.dart';
@@ -415,11 +415,14 @@ class _AppSection extends StatelessWidget {
       return;
     }
     if (action == 'file') {
-      final picked = await FilePicker.platform.pickFiles(
-        type: Platform.isWindows ? FileType.custom : FileType.any,
-        allowedExtensions: Platform.isWindows ? ['exe'] : null,
+      final file = await openFile(
+        acceptedTypeGroups: Platform.isWindows
+            ? const [
+                XTypeGroup(label: 'exe', extensions: ['exe']),
+              ]
+            : const [],
       );
-      final path = picked?.files.first.path;
+      final path = file?.path;
       if (path == null || path.isEmpty) {
         return;
       }
