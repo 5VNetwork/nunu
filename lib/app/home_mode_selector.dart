@@ -15,7 +15,7 @@ class ModeSelector extends StatelessWidget {
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
           ),
-          builder: (ctx) => SafeArea(child: SizedBox(height: 300, child: const _ModeList())),
+          builder: (ctx) => const SafeArea(child: _ModeList()),
         );
       },
       child: Container(
@@ -108,71 +108,63 @@ class _ModeList extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20),
-          Expanded(
-            child: ListView.builder(
-              physics: const NeverScrollableScrollPhysics(),
-              itemCount: modes.length,
-              itemBuilder: (ctx, index) {
-                final mode = modes[index];
-                final isSelected = mode == currentMode;
-                final titleColor = isSelected
-                    ? colorScheme.primary
-                    : colorScheme.onSurface;
-                final subtitleColor = colorScheme.onSurface.withOpacity(0.70);
-                return Container(
-                  margin: const EdgeInsets.only(bottom: 8),
-                  decoration: BoxDecoration(
-                    color: isSelected
-                        ? colorScheme.primary.withOpacity(0.1)
-                        : Colors.transparent,
-                    borderRadius: BorderRadius.circular(12),
-                    border: isSelected
-                        ? Border.all(
-                            color: colorScheme.primary.withOpacity(0.3),
-                            width: 1.5,
-                          )
-                        : null,
+          ...modes.map((mode) {
+            final isSelected = mode == currentMode;
+            final titleColor = isSelected
+                ? colorScheme.primary
+                : colorScheme.onSurface;
+            final subtitleColor = colorScheme.onSurface.withOpacity(0.70);
+            return Container(
+              margin: const EdgeInsets.only(bottom: 8),
+              decoration: BoxDecoration(
+                color: isSelected
+                    ? colorScheme.primary.withOpacity(0.1)
+                    : Colors.transparent,
+                borderRadius: BorderRadius.circular(12),
+                border: isSelected
+                    ? Border.all(
+                        color: colorScheme.primary.withOpacity(0.3),
+                        width: 1.5,
+                      )
+                    : null,
+              ),
+              child: ListTile(
+                contentPadding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 8,
+                ),
+                title: Text(
+                  mode.toLocalString(AppLocalizations.of(context)!),
+                  style: TextStyle(
+                    color: titleColor,
+                    fontWeight:
+                        isSelected ? FontWeight.w700 : FontWeight.w500,
+                    fontSize: 15,
                   ),
-                  child: ListTile(
-                    contentPadding: const EdgeInsets.symmetric(
-                      horizontal: 16,
-                      vertical: 8,
-                    ),
-                    title: Text(
-                      mode.toLocalString(AppLocalizations.of(context)!),
-                      style: TextStyle(
-                        color: titleColor,
-                        fontWeight: isSelected
-                            ? FontWeight.w700
-                            : FontWeight.w500,
-                        fontSize: 15,
-                      ),
-                    ),
-                    subtitle: Padding(
-                      padding: const EdgeInsets.only(top: 4),
-                      child: Text(
-                        mode.description(context),
-                        style: TextStyle(color: subtitleColor, fontSize: 12),
-                      ),
-                    ),
-                    trailing: isSelected
-                        ? Icon(
-                            Icons.check_circle_rounded,
-                            color: colorScheme.primary,
-                            size: 24,
-                          )
-                        : null,
-                    onTap: () {
-                      if (mode != currentMode) {
-                        context.read<ChoiceCubit>().changeRouteMode(mode);
-                      }
-                      Navigator.pop(context);
-                    },
+                ),
+                subtitle: Padding(
+                  padding: const EdgeInsets.only(top: 4),
+                  child: Text(
+                    mode.description(context),
+                    style: TextStyle(color: subtitleColor, fontSize: 12),
                   ),
-                );
-              },
-            ),
-          ),
+                ),
+                trailing: isSelected
+                    ? Icon(
+                        Icons.check_circle_rounded,
+                        color: colorScheme.primary,
+                        size: 24,
+                      )
+                    : null,
+                onTap: () {
+                  if (mode != currentMode) {
+                    context.read<ChoiceCubit>().changeRouteMode(mode);
+                  }
+                  Navigator.pop(context);
+                },
+              ),
+            );
+          }),
           const SizedBox(height: 8),
           Align(
             alignment: Alignment.centerRight,

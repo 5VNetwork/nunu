@@ -369,7 +369,7 @@ void main() async {
           xController: context.read<XController>(),
         ),
       ),
-      if (desktopPlatform)
+      if (!admobEnabled)
         ChangeNotifierProvider<AdsProvider>(
           create: (context) {
             final adsProvider = AdsProvider(
