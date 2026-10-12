@@ -46,6 +46,13 @@ case $1 in
       --macos-bundle-id=monster.nunu.cn \
       --macos-out=macos/flavors/cn/GoogleService-Info.plist
     ;;
+  apk)
+    flutterfire config \
+      --project=nunu-2801b \
+      --out=lib/firebase_options_apk.dart \
+      --android-package-name=monster.nunu.wqeeer.apk \
+      --android-out=android/app/src/apk/google-services.json
+    ;;
   *)
     echo "Error: Invalid environment specified. Use 'dev', 'staging', 'production', or 'cn'."
     exit 1
