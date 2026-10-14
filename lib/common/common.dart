@@ -8,11 +8,9 @@ import 'package:flutter_common/common.dart';
 final desktopPlatforms =
     Platform.isMacOS || Platform.isWindows || Platform.isLinux;
 
-const androidPackageNme = appFlavor == 'staging'
-    ? 'monster.nunu.wqeeer.staging'
-    : appFlavor == 'dev'
-    ? 'monster.nunu.wqeeer.dev'
-    : 'monster.nunu.wqeeer';
+const androidPackageNme = appFlavor == 'production'
+    ? 'monster.nunu.wqeeer'
+    : 'monster.nunu.wqeeer.$appFlavor';
 
 final supabaseUrl = debug
     ? const String.fromEnvironment('SUPABASE_URL')

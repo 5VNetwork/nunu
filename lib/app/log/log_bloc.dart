@@ -372,7 +372,7 @@ class LogBloc extends Bloc<LogEvent, LogState> {
           emit(newLog);
         }
       case UserLogMessage_Message.fallback:
-        logger.d('fallback: ${l.fallback.tag}');
+        logger.d('log fallback: ${l.fallback.tag}');
         final index = _logs.indexOfBackwardsFunction((e) {
           if (e is SessionInfo) {
             return e.sessionId == l.fallback.sid;

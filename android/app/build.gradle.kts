@@ -87,8 +87,8 @@ android {
             resValue(
                 type = "string",
                 name = "app_name",
-                value = "努努")
-            applicationIdSuffix = ""
+                value = "努努VPN")
+            applicationIdSuffix = ".apk"
         }
     }
 

@@ -94,6 +94,7 @@ import 'package:nunu/firebase_options.dart';
 import 'package:nunu/firebase_options_staging.dart' as staging;
 import 'package:nunu/firebase_options_dev.dart' as dev;
 import 'package:nunu/firebase_options_cn.dart' as cn;
+import 'package:nunu/firebase_options_apk.dart' as apk;
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:window_manager/window_manager.dart';
 
@@ -577,7 +578,8 @@ Future<String> assetName() async {
 
 FirebaseOptions _firebaseOptionsForCurrentFlavor() {
   return switch (appFlavor) {
-    'production' || 'pkg' || 'apk' => DefaultFirebaseOptions.currentPlatform,
+    'production' || 'pkg' => DefaultFirebaseOptions.currentPlatform,
+    'apk' => apk.DefaultFirebaseOptions.currentPlatform,
     'cn' => cn.DefaultFirebaseOptions.currentPlatform,
     'staging' => DefaultFirebaseOptions.currentPlatform,
     _ => dev.DefaultFirebaseOptions.currentPlatform,
