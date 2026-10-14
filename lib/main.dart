@@ -16,7 +16,6 @@ import 'package:flutter_common/widgets/progress.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:http/http.dart';
 import 'package:macos_window_utils/macos/ns_window_button_type.dart';
 import 'package:macos_window_utils/macos_window_utils.dart';
@@ -334,11 +333,12 @@ void main() async {
           },
           lazy: false,
         ),
-      ChangeNotifierProvider<AdProt>(
-        create: (context) =>
-            AdProt(preferences: context.read<SharedPreferences>()),
-        lazy: false,
-      ),
+      if (admobEnabled)
+        ChangeNotifierProvider<AdProt>(
+          create: (context) =>
+              AdProt(preferences: context.read<SharedPreferences>()),
+          lazy: false,
+        ),
       if (admobEnabled)
         Provider<OpenInterAdManager>(
           create: (context) {

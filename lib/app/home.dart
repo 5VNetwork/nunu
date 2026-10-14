@@ -383,61 +383,7 @@ class _HomeBody extends StatelessWidget {
                         Expanded(
                           child: Align(
                             alignment: Alignment.bottomCenter,
-                            child: ChangeNotifierProvider(
-                              create: (context) => HomeAdProvider(
-                                defaultNetworkMonitor: context
-                                    .read<DefaultNetworkMonitor>(),
-                                xController: context.read<XController>(),
-                                adClickGuard: context.read<AdProt>(),
-                              ),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Expanded(child: const Selector()),
-                                      if (desktopPlatform)
-                                        const SizedBox(width: 10),
-                                      if (desktopPlatform)
-                                        Expanded(child: InboundModeSelector()),
-                                    ],
-                                  ),
-                                  if (!admobEnabled)
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 10.0),
-                                      child: Row(
-                                        children: [
-                                          Expanded(child: _TrafficCard()),
-                                          const SizedBox(width: 10),
-                                          Expanded(child: ModeSelector()),
-                                        ],
-                                      ),
-                                    ),
-                                  const SizedBox(height: 24),
-                                  Expanded(
-                                    child: Align(
-                                      alignment: Alignment.bottomCenter,
-                                      child: admobEnabled
-                                          ? Container(
-                                              decoration: BoxDecoration(
-                                                border: Border.all(
-                                                  color:
-                                                      colorScheme.borderMedium,
-                                                  width: 1.5,
-                                                ),
-                                              ),
-                                              child: SizedBox(
-                                                height: 150,
-                                                child: const BannerAdWidget(),
-                                              ),
-                                            )
-                                          : my.BannerAdWidget(),
-                                    ),
-                                  ),
-                                  const SizedBox(height: 16),
-                                ],
-                              ),
-                            ),
+                            child: _buildHomeBody(colorScheme),
                           ),
                         ),
                       ],
@@ -449,6 +395,66 @@ class _HomeBody extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildHomeBody(ColorScheme colorScheme) {
+    final column = Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Row(
+          children: [
+            Expanded(child: const Selector()),
+            if (desktopPlatform) const SizedBox(width: 10),
+            if (desktopPlatform) Expanded(child: InboundModeSelector()),
+          ],
+        ),
+        if (!admobEnabled)
+          Padding(
+            padding: const EdgeInsets.only(top: 10.0),
+            child: Row(
+              children: [
+                Expanded(child: _TrafficCard()),
+                const SizedBox(width: 10),
+                Expanded(child: ModeSelector()),
+              ],
+            ),
+          ),
+        const SizedBox(height: 24),
+        Expanded(
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: admobEnabled
+                ? Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: colorScheme.borderMedium,
+                        width: 1.5,
+                      ),
+                    ),
+                    child: const SizedBox(
+                      height: 150,
+                      child: BannerAdWidget(),
+                    ),
+                  )
+                : my.BannerAdWidget(),
+          ),
+        ),
+        const SizedBox(height: 16),
+      ],
+    );
+
+    if (!admobEnabled) {
+      return column;
+    }
+
+    return ChangeNotifierProvider(
+      create: (context) => HomeAdProvider(
+        defaultNetworkMonitor: context.read<DefaultNetworkMonitor>(),
+        xController: context.read<XController>(),
+        adClickGuard: context.read<AdProt>(),
+      ),
+      child: column,
     );
   }
 }
