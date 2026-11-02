@@ -106,7 +106,7 @@ class _DesktopTrayState extends State<DesktopTray>
       iconSize: Platform.isWindows ? 12 : 16,
     );
     if (!Platform.isLinux) {
-      await trayManager.setToolTip('UmiVPN');
+      await trayManager.setToolTip('Nunu');
     }
   }
 

@@ -164,7 +164,7 @@ enum SettingItem {
   }
 }
 
-const String websiteUrl = 'https://www.nunu.monster';
+const String websiteUrl = 'https://www.nunuvpn.com/zh';
 
 class CompactSettingScreen extends StatelessWidget {
   const CompactSettingScreen({super.key});

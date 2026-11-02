@@ -7,7 +7,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:nunu/theme.dart';
 import 'package:nunu/widgets/dialog_shell.dart';
 
-const String _shareUrl = 'https://www.nunu.monster';
+const String _shareUrl = 'https://www.nunuvpn.com/zh';
 const String _shareTitle = '努努加速器 — 永久免费的网络加速器';
 const String _shareText = '我在用努努加速器，永久免费、不限流量、推荐你也试试 ✦';
 
@@ -337,7 +337,7 @@ class _QrCard extends StatelessWidget {
                 ),
                 const Gap(6),
                 Text(
-                  '扫码访问 nunu.monster',
+                  '扫码访问 nunuvpn.com',
                   style: theme.textTheme.bodySmall?.copyWith(
                     color: colorScheme.onSurfaceVariant,
                     fontWeight: FontWeight.w500,

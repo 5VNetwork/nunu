@@ -217,7 +217,7 @@ extension PrefHelperExtension on SharedPreferences {
 
   InboundMode get inboundMode {
     final mode = getInt('inboundMode');
-    if (mode == null) return InboundMode.tun;
+    if (mode == null) return Platform.isWindows ? InboundMode.systemProxy : InboundMode.tun;
     return InboundMode.values[mode];
   }
 

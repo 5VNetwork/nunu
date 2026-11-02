@@ -25,9 +25,9 @@ final debug =
     (applePlatform && appFlavor == null) ||
     (appFlavor == null && kDebugMode && !staging);
 
-const websiteUrl = 'https://www.nunu.monster';
-const privacyPolicyUrl = 'https://www.nunu.monster/privacy';
-const termOfServiceUrl = 'https://www.nunu.monster/terms';
+const websiteUrl = 'https://www.nunuvpn.com/zh';
+const privacyPolicyUrl = 'https://www.nunuvpn.com/zh/privacy';
+const termOfServiceUrl = 'https://www.nunuvpn.com/zh/terms';
 
 const logKey = String.fromEnvironment('LOG_KEY', defaultValue: '1234567890');
 
