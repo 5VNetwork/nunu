@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_common/common.dart';
 import 'package:flutter_common/widgets/app_bar.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
@@ -72,21 +75,22 @@ class _AccountPageState extends State<AccountPage> {
                 Center(
                   child: Row(
                     children: [
-                      // ElevatedButton(
-                      //   onPressed: () {
-                      //     context.go('/sign-in');
-                      //     context.read<AuthProvider>().logOut();
-                      //   },
-                      //   style: ElevatedButton.styleFrom(
-                      //     backgroundColor: Theme.of(
-                      //       context,
-                      //     ).colorScheme.primary,
-                      //     foregroundColor: Theme.of(
-                      //       context,
-                      //     ).colorScheme.onPrimary,
-                      //   ),
-                      //   child: Text(AppLocalizations.of(context)!.logout),
-                      // ),
+                      if (Platform.isIOS)
+                        ElevatedButton(
+                          onPressed: () {
+                            context.go('/sign-in');
+                            context.read<AuthProvider>().logOut();
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Theme.of(
+                              context,
+                            ).colorScheme.primary,
+                            foregroundColor: Theme.of(
+                              context,
+                            ).colorScheme.onPrimary,
+                          ),
+                          child: Text(AppLocalizations.of(context)!.logout),
+                        ),
                       // const Gap(10),
                       // ElevatedButton(
                       //   onPressed: () {
