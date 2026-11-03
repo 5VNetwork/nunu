@@ -41,6 +41,7 @@ final useStripe =
 final androidNonStore = Platform.isAndroid && appFlavor != 'production';
 const isWinStore = bool.fromEnvironment('STORE');
 final autoUpdateSupported = false;
+final appleStoreBuild = Platform.isIOS && appFlavor == 'production';
 // androidNonStore || (Platform.isWindows && !isWinStore) || Platform.isLinux;
 
 bool isProduction() {
