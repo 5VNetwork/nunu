@@ -8,6 +8,7 @@ import 'package:nunu/app/home.dart';
 import 'package:nunu/common/common.dart';
 import 'package:nunu/l10n/app_localizations.dart';
 import 'package:tm/default.dart';
+import 'package:tm/protos/vx/tun/tun.pb.dart';
 
 extension PrefHelperExtension on SharedPreferences {
   bool get initialLaunch {
@@ -223,6 +224,24 @@ extension PrefHelperExtension on SharedPreferences {
 
   void setInboundMode(InboundMode mode) {
     setInt('inboundMode', mode.index);
+  }
+
+  TunConfig_TUN46Setting get tun46Setting {
+    final setting = getInt('tun46Setting');
+    if (setting == null) {
+      return Platform.isWindows
+          ? TunConfig_TUN46Setting.DYNAMIC
+          : TunConfig_TUN46Setting.FOUR_ONLY;
+    }
+    final value = TunConfig_TUN46Setting.values[setting];
+    if (Platform.isAndroid && value == TunConfig_TUN46Setting.DYNAMIC) {
+      return TunConfig_TUN46Setting.FOUR_ONLY;
+    }
+    return value;
+  }
+
+  void setTun46Setting(TunConfig_TUN46Setting setting) {
+    setInt('tun46Setting', setting.value);
   }
 
   bool get fakeDns {

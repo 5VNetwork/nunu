@@ -12,9 +12,12 @@ import 'package:nunu/app/settings/general/country.dart';
 import 'package:nunu/common/common.dart';
 import 'package:tm/ads/start_ad.dart';
 import 'package:tm/common.dart';
+import 'package:tm/protos/vx/tun/tun.pb.dart';
+import 'package:tm/x_controller.dart';
 import 'package:nunu/l10n/app_localizations.dart';
 import 'package:nunu/main.dart';
 import 'package:nunu/pref_helper.dart';
+import 'package:nunu/utils/logger.dart';
 import 'package:flutter_common/services/auto_update.dart';
 import 'package:flutter_common/widgets/progress.dart';
 import 'package:country/country.dart';
@@ -39,6 +42,16 @@ class GeneralSettingPage extends StatelessWidget {
           children: [
             const ThemeModeSetting(),
             if (admobEnabled) const OfferRewardedExtensionSetting(),
+            const Divider(),
+            const Padding(
+              padding: EdgeInsets.only(
+                top: 10,
+                bottom: 10,
+                left: 16,
+                right: 16,
+              ),
+              child: Tun46Setting(),
+            ),
           ],
         ),
       ),
@@ -88,6 +101,88 @@ class _OfferRewardedExtensionSettingState
         context.read<SharedPreferences>().setOfferRewardedExtension(value);
         setState(() => _enabled = value);
       },
+    );
+  }
+}
+
+class Tun46Setting extends StatefulWidget {
+  const Tun46Setting({super.key});
+
+  @override
+  State<Tun46Setting> createState() => _Tun46SettingState();
+}
+
+class _Tun46SettingState extends State<Tun46Setting> {
+  late TunConfig_TUN46Setting _tun46Setting;
+
+  @override
+  void initState() {
+    super.initState();
+    var setting = context.read<SharedPreferences>().tun46Setting;
+    if (Platform.isAndroid && setting == TunConfig_TUN46Setting.DYNAMIC) {
+      setting = TunConfig_TUN46Setting.FOUR_ONLY;
+      context.read<SharedPreferences>().setTun46Setting(setting);
+    }
+    _tun46Setting = setting;
+  }
+
+  Future<void> _onSelected(TunConfig_TUN46Setting? value) async {
+    if (value == null || value == _tun46Setting) return;
+    setState(() => _tun46Setting = value);
+    context.read<SharedPreferences>().setTun46Setting(value);
+    final xController = context.read<XController>();
+    try {
+      await xController.restart();
+    } catch (e) {
+      logger.e('setTun46Setting error', error: e);
+      await xController.stop();
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final entries = <DropdownMenuEntry<TunConfig_TUN46Setting>>[
+      DropdownMenuEntry(
+        value: TunConfig_TUN46Setting.FOUR_ONLY,
+        label: l10n.tun46SettingIpv4Only,
+      ),
+      DropdownMenuEntry(
+        value: TunConfig_TUN46Setting.BOTH,
+        label: l10n.tun46SettingIpv4AndIpv6,
+      ),
+      if (!Platform.isAndroid)
+        DropdownMenuEntry(
+          value: TunConfig_TUN46Setting.DYNAMIC,
+          label: l10n.dependsOnDefaultNic,
+        ),
+    ];
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          l10n.tunIpv6Settings,
+          style: Theme.of(context).textTheme.bodyLarge,
+        ),
+        const Gap(10),
+        DropdownMenu<TunConfig_TUN46Setting>(
+          key: ValueKey(_tun46Setting),
+          initialSelection: _tun46Setting,
+          requestFocusOnTap: false,
+          dropdownMenuEntries: entries,
+          onSelected: _onSelected,
+        ),
+        if (_tun46Setting == TunConfig_TUN46Setting.DYNAMIC) ...[
+          const Gap(10),
+          Text(
+            l10n.dependsOnDefaultNicDesc,
+            style: Theme.of(context).textTheme.bodySmall!.copyWith(
+              color: Theme.of(context).colorScheme.onSurfaceVariant,
+            ),
+          ),
+        ],
+      ],
     );
   }
 }
