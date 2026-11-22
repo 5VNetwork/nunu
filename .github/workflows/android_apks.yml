@@ -34,6 +34,8 @@ jobs:
           touch ../nunu-plugin/tm_linux/assets/x
           mkdir ../nunu-plugin/tm_android/android/libs
           mkdir -p assets/google_fonts
+          # ads assets are gitignored in flutter_common; create the directory for the pubspec entry
+          mkdir -p ../flutter_common/packages/ads/assets/ads
 
       - name: Download geo
         run: |
