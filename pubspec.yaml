@@ -72,8 +72,8 @@ dependencies:
   cryptography: ^2.9.0
   retry: ^3.1.2
   google_mobile_ads: ^8.0.0
-  firebase_core: ^4.9.0
-  firebase_analytics: ^12.4.1
+  firebase_core: ^5.1.0
+  firebase_analytics: ^13.0.1
   window_manager: ^0.4.2
   bitsdojo_window: ^0.1.6
   macos_window_utils: ^1.6.1
