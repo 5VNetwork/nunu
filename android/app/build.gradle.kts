@@ -53,6 +53,10 @@ android {
     buildTypes {
         release  {
             signingConfig = signingConfigs.getByName("release")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro",
+            )
         }
     }
 
@@ -121,6 +125,9 @@ repositories {
 dependencies {
     implementation(files("../../../nunu-plugin/tm_android/android/libs/x.aar"))
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
+    // google_mobile_ads pulls an old WorkManager; AGP 9 R8 needs a newer one
+    // (or the Room keep rule in proguard-rules.pro) to start in release.
+    implementation("androidx.work:work-runtime:2.11.2")
     // implementation("com.google.android.play:integrity:1.4.0")
     // implementation(name: "x", ext: "aar")
 }
