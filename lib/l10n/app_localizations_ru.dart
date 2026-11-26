@@ -2035,7 +2035,13 @@ class AppLocalizationsRu extends AppLocalizations {
   String get currentLocation => 'Location';
 
   @override
+  String get currentLocationUnavailable => 'Текущее местоположение недоступно. Выберите другое.';
+
+  @override
   String get selectLocation => 'Выберите локацию';
+
+  @override
+  String get showRealtimeLogs => 'Показать журналы в реальном времени';
 
   @override
   String get expired => 'Expired';

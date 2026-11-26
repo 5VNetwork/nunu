@@ -2035,7 +2035,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get currentLocation => 'Location';
 
   @override
+  String get currentLocationUnavailable => 'Current location is unavailable. Please select another.';
+
+  @override
   String get selectLocation => 'Select location';
+
+  @override
+  String get showRealtimeLogs => 'Show realtime logs';
 
   @override
   String get expired => 'Expired';

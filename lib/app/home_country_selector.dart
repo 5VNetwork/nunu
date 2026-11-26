@@ -581,7 +581,7 @@ class _SelectionTile extends StatelessWidget {
           ),
           subtitle: currentUnavailable
               ? Text(
-                  'Current location is unavailable. Please select another.',
+                  l10n.currentLocationUnavailable,
                   style: TextStyle(
                     color: colorScheme.error.withOpacity(0.70),
                     fontSize: 12,

@@ -906,5 +906,7 @@
   "hideRealtimeUsage": "Скрыть использование в реальном времени",
   "showRealtimeUsage": "Показать использование в реальном времени",
   "hideDuplicateSessions": "Скрыть повторяющиеся сессии",
-  "showDuplicateSessions": "Показать повторяющиеся сессии"
+  "showDuplicateSessions": "Показать повторяющиеся сессии",
+  "currentLocationUnavailable": "Текущее местоположение недоступно. Выберите другое.",
+  "showRealtimeLogs": "Показать журналы в реальном времени"
 }

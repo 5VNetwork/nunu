@@ -1985,7 +1985,13 @@ class AppLocalizationsZh extends AppLocalizations {
   String get currentLocation => '位置';
 
   @override
+  String get currentLocationUnavailable => '当前位置不可用，请选择其他位置。';
+
+  @override
   String get selectLocation => '选择地区';
+
+  @override
+  String get showRealtimeLogs => '显示实时日志';
 
   @override
   String get expired => '已过期';
